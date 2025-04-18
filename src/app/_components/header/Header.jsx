@@ -15,10 +15,12 @@ export default function Header() {
         <>
      
      {/* lg devices */}
-            <header className="fixed top-0 left-0 right-0 hidden md:flex border-gray-200 border h-20 justify-between px-16">
-                <div className="flex justify-center h-20"><Image src={`${process.env.NEXT_PUBLIC_FRONT_DOMAIN}/logo.svg`} alt="Some description"
+            <header className="fixed top-0 left-0 bg-white right-0 hidden md:flex border-gray-200 border h-auto justify-between px-16">
+                <div className="flex justify-center pt-4"><Image src={`${process.env.NEXT_PUBLIC_FRONT_DOMAIN}/logo.svg`} alt="Some description"
                             width={100}
-                            height={100} /></div>
+                            height={100}
+                             className="h-12 w-auto"
+                            /></div>
 
                 <nav className="flex items-center justify-center">
                     <a href="#" className="text-primary hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
@@ -39,7 +41,7 @@ export default function Header() {
 
 
   {/* small devices */}
-  <header className="md:hidden flex flex-col border-gray-200 border px-4">
+  <header className="fixed top-0 left-0 w-full md:hidden bg-white flex flex-col border-gray-200 border px-4">
       {/* Top Bar */}
       <div className="flex items-center justify-between h-20">
         {/* Logo */}
