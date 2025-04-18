@@ -17,10 +17,18 @@
 body {
   font-family: var(--font-poppins), sans-serif;
 }
-.thin-border {
-  border: 0.5px solid #E7E9ED;
+
+@keyframes slidein {
+  from {
+    transform: translateX(100%); /* <- pehle -100% tha, ab +100% */
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
-.thin-border-bottom {
-  border-bottom: 0.5px solid #E7E9ED;
+.animate-slidein {
+  animation: slidein 0.5s ease-out;
 }

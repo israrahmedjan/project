@@ -1,8 +1,8 @@
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import Mainheader from "@/components/header/header";
-import Mainfooter from "@/components/footer/footer";
 import { ProvidersCustomization } from "@/redux/Providers";
+import Header from "./_components/header/Header";
+import Footer from "./_components/footer/Footer";
 
 
 const poppins = Poppins({
@@ -14,8 +14,8 @@ const poppins = Poppins({
 
 
 export const metadata = {
-  title: "Online Affiliate",
-  description: "Online Affiliate management System",
+  title: "Bussiness Project",
+  description: "Bussiness Project Descriptions",
 };
 
 export default function RootLayout({ children }) {
@@ -23,9 +23,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
     <body className={`${poppins.variable} font-poppins`}>
   <ProvidersCustomization>
-        <Mainheader />
+        <Header />
         {children}
-      <Mainfooter />
+      <Footer />
       </ProvidersCustomization>
       </body>
     </html>
