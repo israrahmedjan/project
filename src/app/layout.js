@@ -26,7 +26,6 @@ export default function RootLayout({ children }) {
         <Header />
         {children}
 
-       
 <script type="text/javascript">
 { `
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -37,12 +36,13 @@ s1.src='https://embed.tawk.to/6803a53302dbf4190e49cac4/1ip73qkpb';
 s1.charset='UTF-8';
 s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
-})(); `
-}
+})();
+`}
 </script>
       <Footer />
       </ProvidersCustomization>
       </body>
     </html>
   );
+  
 }
