@@ -7,7 +7,7 @@ import Landing from "./_components/landing/Landing";
 export default function Home() {
   return (
     <>
-    <div className="mt-[180px]">
+    <div className="mt-[120px]">
     <Landing />
     </div>
     

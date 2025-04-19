@@ -10,7 +10,7 @@ function Landing() {
 
   
   <Image 
-  src={`${process.env.NEXT_PUBLIC_FRONT_DOMAIN}/images/1.png`}
+  src="https://res.cloudinary.com/detdjaspz/image/upload/v1745027433/1_umaiqt.png"
   alt="Landing page"
   width={450}
   height={400}
