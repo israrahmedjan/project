@@ -23,16 +23,16 @@ export default function Header() {
                             /></div>
 
                 <nav className="flex items-center justify-center">
-                    <a href="#" className="text-primary hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
+                    <a href="#" className="text-primary text-lg font-semibold hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
                         Drive
                     </a>
-                    <a href="#" className="text-primary hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
+                    <a href="#" className="text-primary text-lg font-semibold hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
                         Ride
                     </a>
-                    <a href="#" className="text-primary hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
+                    <a href="#" className="text-primary text-lg font-semibold hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
                         Business
                     </a>
-                    <a href="#" className="text-primary hover:text-secondary h-20 flex items-center justify-center px-6">
+                    <a href="#" className="text-primary text-lg font-semibold hover:text-secondary h-20 flex items-center justify-center px-6">
                         About
                     </a>
                 </nav>
