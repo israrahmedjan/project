@@ -26,9 +26,9 @@ function Landing() {
           It is a long established fact that a reader will be distracted by the readable content of a 
           page when looking at its layout. 
           The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters </p>
-          <button className="bg-primary float-right hover:bg-secondary hover:text-white p-3 text-white font-semibold rounded-md shadow-sm hover:shadow-lg transition">
-            Get a Ride
-          </button>
+          <button className="px-4 float-right py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
+      Get a Ride
+    </button>
         </div>
 
       </div>
@@ -36,6 +36,7 @@ function Landing() {
       {/* Row 2 */}
       
      <div className='w-full bg-gray-50 md:pt-16 md:pb-16'>
+      
       <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16  mb-4">
      
       <div className="col-span-2 order-2 md:order-1  border-gray-100 border-r  p-2 md:p-6">
@@ -45,9 +46,9 @@ function Landing() {
           piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,
           </p>
           <div className='flex text-base  justify-between items-center'>
-          <button className="bg-primary hover:bg-secondary hover:text-white p-3 text-white font-semibold rounded-md shadow-sm hover:shadow-lg transition">
-            Learn more
-          </button>
+          <button className="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
+      More About It
+    </button>
           <Link href="#" className='flex'><h2 className='font-semibold text-primary md:text-[18px]'>Learn more about our app</h2><ArrowRight /></Link>
           </div>
         </div>
@@ -70,7 +71,9 @@ function Landing() {
     </div>
 
   {/* Row 3 */}
+  <div className='w-full p-10'><h1 className='text-3xl flex justify-center'>Meet Our Team</h1>
   <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16 mb-4">
+  
           <div className="col-span-4 md:col-span-4 mt-10 mb-10 flex flex-col md:flex-row justify-center gap-2 items-center">
          
  
@@ -137,6 +140,7 @@ function Landing() {
           </button>
         </div>
 
+      </div>
       </div>
 
     </>
