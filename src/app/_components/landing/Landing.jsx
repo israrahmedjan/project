@@ -71,27 +71,37 @@ function Landing() {
 
   {/* Row 3 */}
   <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16 mb-4">
-          <div className="col-span-4 md:col-span-4 border-gray-50 rounded-md shadow-md border flex flex-col md:flex-row justify-center gap-2 items-center">
+          <div className="col-span-4 md:col-span-4 mt-10 mb-10 flex flex-col md:flex-row justify-center gap-2 items-center">
          
  
 
           <div className="flex flex-col items-center bg-white p-6 rounded-2xl shadow-lg w-80">
-    <img src="https://via.placeholder.com/100" alt="Profile Image" className="w-24 h-24 rounded-full object-cover mb-4" />
-    <h2 className="text-xl font-semibold mb-2">Title or Name</h2>
+    <img src="https://img.freepik.com/free-photo/portrait-handsome-fashion-stylish-businessman-model-dressed-elegant-black-classic-suit-posing-metrosexual_158538-9181.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740" alt="Profile Image" className="w-24 h-24 rounded-full object-cover mb-4" />
+    <h2 className="text-xl font-semibold mb-2">Micheal</h2>
     <p className="text-gray-600 text-center mb-4">
       Yeh thoda description ya text hoga jo image ke neeche dikhayega.
     </p>
-    <button className="px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition">
+    <button className="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
       More About It
     </button>
   </div>
   <div className="flex flex-col items-center bg-white p-6 rounded-2xl shadow-lg w-80">
-    <img src="https://via.placeholder.com/100" alt="Profile Image" className="w-24 h-24 rounded-full object-cover mb-4" />
-    <h2 className="text-xl font-semibold mb-2">Title or Name</h2>
-    <p className="text-gray-600 text-center mb-4">
+    <img src="https://img.freepik.com/free-photo/person-job-male-college-men_1150-1779.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740" alt="Profile Image" className="w-24 h-24 rounded-full object-cover mb-4" />
+    <h2 className="text-xl font-semibold mb-2">John</h2>
+    <p className="text-gray-500 text-center mb-4">
       Yeh thoda description ya text hoga jo image ke neeche dikhayega.
     </p>
-    <button className="px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition">
+    <button className="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
+      More About It
+    </button>
+  </div>
+  <div className="flex flex-col items-center bg-white p-6 rounded-2xl shadow-lg w-80">
+    <img src="https://img.freepik.com/free-photo/stylish-guy-jacket-office-simple-wooden-surface_78826-2378.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740" alt="Profile Image" className="w-24 h-24 rounded-full object-cover mb-4" />
+    <h2 className="text-xl font-semibold mb-2">Mitchel Star</h2>
+    <p className="text-gray-500 text-center mb-4">
+      Yeh thoda description ya text hoga jo image ke neeche dikhayega.
+    </p>
+    <button className="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
       More About It
     </button>
   </div>
