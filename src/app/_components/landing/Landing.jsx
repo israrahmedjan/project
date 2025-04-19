@@ -19,7 +19,7 @@ function Landing() {
         </div>
 
         <div className="col-span-3 border border-gray-50 rounded-lg shadow-sm p-2 md:p-6">
-          <h1 className="text-base md:text-3xl pb-2 font-bold">What is Lorem Ipsum?</h1>
+          <h1 className="text-base md:text-3xl pb-2 font-normal text-primary">What is Lorem Ipsum?</h1>
           <p className="text-base text-gray-700 mb-6">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry.
             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
@@ -38,7 +38,7 @@ function Landing() {
       {/* Row 2 */}
       <div className="grid grid-cols-1 md:grid-cols-5 gap-1 md:gap-2 mx-4 md:mx-16 mb-4">
       <div className="col-span-3 border border-gray-50 rounded-lg shadow-sm p-2 md:p-6">
-          <h1 className="text-base md:text-3xl pb-2 font-bold">What is Lorem Ipsum?</h1>
+      <h1 className="text-base md:text-3xl pb-2 font-normal text-primary">What is Lorem Ipsum?</h1>
           <p className="text-base text-gray-700 mb-6">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry.
             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
@@ -83,7 +83,7 @@ function Landing() {
         </div>
 
         <div className="col-span-3 border border-gray-50 rounded-lg shadow-sm p-2 md:p-6">
-          <h1 className="text-base md:text-3xl pb-2 font-bold">What is Lorem Ipsum?</h1>
+        <h1 className="text-base md:text-3xl pb-2 font-normal text-primary">What is Lorem Ipsum?</h1>
           <p className="text-base text-gray-700 mb-6">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry.
             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
