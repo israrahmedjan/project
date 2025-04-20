@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { Menu, X } from 'lucide-react'; // Menu open/close icons
+import Ticker from '../Ticker';
 
 
 export default function Header() {
@@ -38,6 +39,12 @@ export default function Header() {
                 </nav>
 
             </header>
+
+<section className='hidden md:block relative mt-[90px]'>
+            <Ticker  />
+            </section>
+            
+    
 
 
   {/* small devices */}
