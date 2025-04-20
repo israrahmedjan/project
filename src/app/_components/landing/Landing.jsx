@@ -6,12 +6,18 @@ import React from 'react'
 function Landing() {
   const domain = process.env.NEXT_PUBLIC_FRONT_DOMAIN;
   const icons = {
-    'vector': `${domain}images/icons/Vector.png`
+    'vector': `${domain}images/icons/Vector.png`,
+    'vector2': `${domain}images/icons/Vector2.png`,
+    'camera': `${domain}images/icons/camera.png`,
+    'handsdot': `${domain}images/icons/handsdot.png`,
+    'handshake': `${domain}images/icons/handshake.png`,
+    'pie': `${domain}images/icons/pie.png`,
+
   }
   return (
     <>
-{/* Row 1 */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16 mb-10">
+      {/* Row 1 */}
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16 mb-10 ">
         <div className="col-span-2 rounded-md  flex justify-center items-center">
 
 
@@ -23,146 +29,194 @@ function Landing() {
 
           />
 
-       
+
 
         </div>
 
         <div className="col-span-2 border border-gray-50 rounded-lg shadow-sm p-2 md:p-6">
           <h1 className="text-base md:text-3xl pb-2 font-normal text-primary">Why do we use it?</h1>
           <p className="text-base text-gray-500 mb-6 md:mt-6 ">
-          It is a long established fact that a reader will be distracted by the readable content of a 
-          page when looking at its layout. 
-          The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters </p>
-          <p>{icons.vector}</p>
+            It is a long established fact that a reader will be distracted by the readable content of a
+            page when looking at its layout.
+            The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters </p>
           
-          <Image
-            src={`${icons.vector}`}
-            alt="Landing page"
-            width={50}
-            height={50} />
+
 
           <button className="px-4 float-right py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
-      Get a Ride
-    </button>
-    
+            Get a Ride
+          </button>
+
         </div>
 
       </div>
 
       {/* Row 2 */}
-      
-     <div className='w-full bg-gray-50 md:pt-16 md:pb-16'>
-      
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16  mb-4">
-     
-      <div className="col-span-2 order-2 md:order-1  border-gray-100 border-r  p-2 md:p-6">
-      <h1 className="text-base md:text-4xl pb-2 font-normal text-primary md:w-[500px]">Where does it come from standard?</h1>
-          <p className="text-base text-gray-500 mb-2">
-          Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a 
-          piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,
-          </p>
-          <ul className='mb-2 flex flex-col justify-start items-start gap-3'>
-            <li className='flex gap-2 items-center justify-start text-gray-700 text-base italic'><Camera size={20} />over 2000 years old. Richard McClintoc</li>
-            <li className='flex gap-2 items-center justify-start text-gray-700 text-base italic'><Clock size={20} />Contrary to popular belief.</li>
-            <li className='flex gap-2 items-center justify-start text-gray-700 text-base italic mb-8'><Mail size={20} />classical Latin literature from 45 BC, making it.</li>
-          </ul>
-          <div className='flex text-base flex-col md:flex-row  justify-between items-center'>
-          <button className="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
-      More About It
-    </button>
-          <Link href="#" className='flex'><h2 className='font-semibold text-primary md:text-[18px]'>Learn more about our app</h2><ArrowRight /></Link>
+
+      <div className='w-full bg-gray-50 md:pt-16 md:pb-16'>
+
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16  mb-4 ">
+
+          <div className="col-span-2 order-2 md:order-1  border-gray-100 border-r  p-2 md:p-6">
+            <h1 className="text-base md:text-4xl pb-2 font-normal text-primary md:w-[500px]">Where does it come from standard?</h1>
+            <p className="text-base text-gray-500 mb-2">
+              Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
+              piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,
+            </p>
+            <ul className='flex flex-col justify-start items-start gap-3 mb-8 text-sm'>
+              <li className="flex gap-2 items-start text-gray-700 italic">
+                <Image src={icons.vector} alt="vector icon" width={20} height={20} className='' />
+                <div className='flex flex-col'><span className=''>It is a long established fact that</span>
+                <span className=''>over 2000 years old. Richard McClintoc It is a long established</span>
+                </div>
+              </li>
+              <li className="flex gap-2 items-start text-gray-700 italic">
+               <Clock size={20} className='mt-1' />
+                <div className='flex flex-col'><span className=''>The point of using Lorem Ipsum is that  normal  using</span>
+                <span className=''>distribution of letters, as opposed to</span>
+                </div>
+              </li>
+              <li className="flex gap-2 justify-center items-start text-gray-700 italic">
+                <Image src={icons.camera} alt="vector icon" width={25} height={25} className='mt-1' />
+                <div className='flex flex-col '><span className=''>It is a long established fact that</span>
+                <span className=''>over 2000 years old. Richard McClintoc It is a long established</span>
+                </div>
+              </li>
+            </ul>
+            <div className='flex text-base flex-col md:flex-row  justify-between items-center'>
+              <button className="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
+                More About It
+              </button>
+              <Link href="#" className='flex'><h2 className='font-normal text-primary hover:text-secondary md:text-[18px]'>Learn more about our app</h2><ArrowRight /></Link>
+            </div>
           </div>
+
+          <div className="col-span-2 order-1 md:order-2 flex justify-center items-center">
+
+
+            <Image
+              src="https://img.freepik.com/free-photo/fresh-green-plant-twig-with-smartphone_23-2148104488.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740"
+              alt="Landing page"
+              width={450}
+              height={400}
+
+            />
+          </div>
+
+
+
         </div>
-       
-        <div className="col-span-2 order-1 md:order-2 flex justify-center items-center">
-
-
-          <Image
-            src="https://img.freepik.com/free-photo/fresh-green-plant-twig-with-smartphone_23-2148104488.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740"
-            alt="Landing page"
-            width={450}
-            height={400}
-
-          />
-        </div>
-
-     
-
       </div>
-    </div>
 
-  {/* Row 3 */}
-  <div className='w-full p-10'><h1 className='text-3xl flex justify-center'>Meet Our Team</h1>
-  <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16 mb-4">
   
-          <div className="col-span-4 md:col-span-4 mt-10 mb-10 flex flex-col md:flex-row justify-center gap-2 items-center">
-         
- 
 
-          <div className="flex flex-col items-center bg-white p-6 rounded-2xl shadow-lg w-80">
-    <img src="https://img.freepik.com/free-photo/portrait-handsome-fashion-stylish-businessman-model-dressed-elegant-black-classic-suit-posing-metrosexual_158538-9181.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740" alt="Profile Image" className="w-24 h-24 rounded-full object-cover mb-4" />
-    <h2 className="text-xl font-semibold mb-2">Micheal</h2>
-    <p className="text-gray-600 text-center mb-4">
-      Yeh thoda description ya text hoga jo image ke neeche dikhayega.
-    </p>
-    <button className="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
-      More About It
-    </button>
-  </div>
-  <div className="flex flex-col items-center bg-white p-6 rounded-2xl shadow-lg w-80">
-    <img src="https://img.freepik.com/free-photo/person-job-male-college-men_1150-1779.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740" alt="Profile Image" className="w-24 h-24 rounded-full object-cover mb-4" />
-    <h2 className="text-xl font-semibold mb-2">John</h2>
-    <p className="text-gray-500 text-center mb-4">
-      Yeh thoda description ya text hoga jo image ke neeche dikhayega.
-    </p>
-    <button className="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
-      More About It
-    </button>
-  </div>
-  <div className="flex flex-col items-center bg-white p-6 rounded-2xl shadow-lg w-80">
-    <img src="https://img.freepik.com/free-photo/stylish-guy-jacket-office-simple-wooden-surface_78826-2378.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740" alt="Profile Image" className="w-24 h-24 rounded-full object-cover mb-4" />
-    <h2 className="text-xl font-semibold mb-2">Mitchel Star</h2>
-    <p className="text-gray-500 text-center mb-4">
-      Yeh thoda description ya text hoga jo image ke neeche dikhayega.
-    </p>
-    <button className="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
-      More About It
-    </button>
-  </div>
+      {/* Row 3 */}
+      <div className='w-full p-10'><h1 className='text-3xl flex justify-center'>Meet Our Team</h1>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16 mb-4 ">
+
+          <div className="col-span-4 md:col-span-4 mt-10 mb-10 flex flex-col md:flex-row justify-center gap-2 items-center">
+
+
+
+            <div className="flex flex-col items-center bg-white p-6 rounded-2xl shadow-lg w-80">
+              <img src="https://img.freepik.com/free-photo/portrait-handsome-fashion-stylish-businessman-model-dressed-elegant-black-classic-suit-posing-metrosexual_158538-9181.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740" alt="Profile Image" className="w-24 h-24 rounded-full object-cover mb-4" />
+              <h2 className="text-xl font-semibold mb-2">Micheal</h2>
+              <p className="text-gray-600 text-center mb-4">
+                Yeh thoda description ya text hoga jo image ke neeche dikhayega.
+              </p>
+              <button className="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
+                More About It
+              </button>
+            </div>
+            <div className="flex flex-col items-center bg-white p-6 rounded-2xl shadow-lg w-80">
+              <img src="https://img.freepik.com/free-photo/person-job-male-college-men_1150-1779.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740" alt="Profile Image" className="w-24 h-24 rounded-full object-cover mb-4" />
+              <h2 className="text-xl font-semibold mb-2">John</h2>
+              <p className="text-gray-500 text-center mb-4">
+                Yeh thoda description ya text hoga jo image ke neeche dikhayega.
+              </p>
+              <button className="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
+                More About It
+              </button>
+            </div>
+            <div className="flex flex-col items-center bg-white p-6 rounded-2xl shadow-lg w-80">
+              <img src="https://img.freepik.com/free-photo/stylish-guy-jacket-office-simple-wooden-surface_78826-2378.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740" alt="Profile Image" className="w-24 h-24 rounded-full object-cover mb-4" />
+              <h2 className="text-xl font-semibold mb-2">Mitchel Star</h2>
+              <p className="text-gray-500 text-center mb-4">
+                Yeh thoda description ya text hoga jo image ke neeche dikhayega.
+              </p>
+              <button className="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
+                More About It
+              </button>
+            </div>
           </div>
 
-      </div>
-      {/* Row 4 */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16 mb-4">
-        <div className="col-span-2 border-gray-50 rounded-md shadow-md border flex justify-center items-center">
-
-
-          <Image
-            src="https://img.freepik.com/free-photo/elegant-smartphone-composition_23-2149437134.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740"
-            alt="Landing page"
-            width={450}
-            height={400}
-
-          />
         </div>
+     
+      </div>
 
-        <div className="col-span-2 border border-gray-50 rounded-lg shadow-sm p-2 md:p-6">
-        <h1 className="sm:text-sm md:text-3xl pb-2 font-normal text-primary">What is Lorem Ipsum?</h1>
-          <p className="text-base text-gray-700 mb-6">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            It has survived not only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
-            desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          </p>
-          <button className="bg-secondary hover:bg-primary hover:text-white p-3 text-white font-semibold border border-red-300 rounded-md shadow-sm hover:shadow-lg transition">
-            Get a Ride
-          </button>
+         {/* Row 4 */}
+
+         <div className='w-full bg-gray-50 md:pt-16 md:pb-16'>
+
+<div className="grid grid-cols-1 md:grid-cols-5 gap-1 md:gap-2 mx-4 md:mx-16  mb-4 ">
+
+  <div className="col-span-2 order-2 md:order-1  border-gray-100 border-r  p-2 md:p-6">
+    <h1 className="text-base md:text-4xl pb-2 font-normal text-primary md:w-[500px]">Where can I get some?</h1>
+    <p className="text-base text-gray-500 mb-2">
+    There are many variations of passages of Lorem Ipsum available, but the majority have 
+    suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. 
+    If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. 
+    </p>
+    <ul className='flex flex-col justify-start items-start gap-3 mb-8 text-gray-700 text-sm italic'>
+      <li className="flex gap-2 items-start">
+        <Image src={icons.vector} alt="vector icon" width={20} height={20} className='' />
+        <div className='flex flex-col'><span className=''>It is a long established fact that</span>
+        <span className=''>over 2000 years old. Richard McClintoc It is a long established</span>
         </div>
+      </li>
+      <li className="flex gap-2 justify-center items-start text-gray-700 italic">
+        <Image src={icons.handsdot} alt="vector icon" width={25} height={25} className='mt-1' />
+        <div className='flex flex-col '><span className=''>It is a long established fact that</span>
+        <span className=''>over 2000 years old. Richard McClintoc It is a long established</span>
+        </div>
+      </li>
+      <li className="flex gap-2 justify-center items-start text-gray-700 italic">
+        <Image src={icons.handshake} alt="vector icon" width={25} height={25} className='mt-1' />
+        <div className='flex flex-col '><span className=''>It is a long established fact that</span>
+        <span className=''>over 2000 years old. Richard McClintoc It is a long established</span>
+        </div>
+      </li>
+      <li className="flex gap-2 items-start">
+        <Image src={icons.pie} alt="vector icon" width={20} height={20} className='' />
+        <div className='flex flex-col'><span className=''>It is a long established fact that</span>
+        <span className=''>over 2000 years old. Richard McClintoc It is a long established</span>
+        </div>
+      </li>
+    </ul>
+    <div className='flex text-base flex-col md:flex-row  justify-between items-center'>
+      <button className="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
+        More About It
+      </button>
+      <Link href="#" className='flex'><h2 className='font-normal text-primary hover:text-secondary md:text-[18px]'>Learn more about our app</h2><ArrowRight /></Link>
+    </div>
+  </div>
 
-      </div>
-      </div>
+  <div className="col-span-3 order-1 md:order-2 flex justify-center items-center">
+
+
+    <Image
+      src="https://img.freepik.com/free-photo/phone-16-pro-max_187299-46088.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740"
+      alt="Landing page"
+      width={550}
+      height={600}
+
+    />
+  </div>
+
+
+
+</div>
+</div>
+
 
     </>
   )
