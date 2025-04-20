@@ -1,4 +1,4 @@
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Camera, Clock, Mail } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -41,11 +41,16 @@ function Landing() {
      
       <div className="col-span-2 order-2 md:order-1  border-gray-100 border-r  p-2 md:p-6">
       <h1 className="text-base md:text-4xl pb-2 font-normal text-primary md:w-[500px]">Where does it come from standard?</h1>
-          <p className="text-base text-gray-500 mb-6">
+          <p className="text-base text-gray-500 mb-2">
           Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a 
           piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,
           </p>
-          <div className='flex text-base  justify-between items-center'>
+          <ul className='mb-2 flex flex-col justify-start items-start gap-3'>
+            <li className='flex gap-2 items-center justify-start text-gray-700 text-base italic'><Camera size={20} />over 2000 years old. Richard McClintoc</li>
+            <li className='flex gap-2 items-center justify-start text-gray-700 text-base italic'><Clock size={20} />Contrary to popular belief.</li>
+            <li className='flex gap-2 items-center justify-start text-gray-700 text-base italic mb-8'><Mail size={20} />classical Latin literature from 45 BC, making it.</li>
+          </ul>
+          <div className='flex text-base flex-col md:flex-row  justify-between items-center'>
           <button className="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
       More About It
     </button>
