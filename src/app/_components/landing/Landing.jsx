@@ -28,6 +28,7 @@ function Landing() {
     'siezer': `${domain}images/services/siezer.png`,
     'map': `${domain}images/services/map.png`,
     'usersearch': `${domain}images/services/usersearch.png`,
+    'like': `${domain}images/services/like.png`,
     
   }
 
@@ -58,7 +59,7 @@ function Landing() {
     },
     {
       title: 'Wordpress Developer',
-      image: servicesIcons.map,
+      image: servicesIcons.like,
       name: 'Custom Theme',
       description: 'Beautiful and functional designs that engage your audience.',
     },
@@ -70,8 +71,7 @@ function Landing() {
     <>
 
 
-      {/* Slider */}
-   
+      
       {/* Row 1 */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16 mb-10 ">
         <div className="col-span-2 rounded-md  flex justify-center items-center">
@@ -216,7 +216,7 @@ function Landing() {
 <div className="grid grid-cols-1 md:grid-cols-5 gap-1 md:gap-2 mx-4 md:mx-16  mb-4 ">
 
   <div className="col-span-2 order-2 md:order-1  border-gray-100 border-r flex justify-center flex-col items-center">
-    <h1 className="text-base md:text-4xl pb-2 font-normal text-primary md:w-[500px] mb-10">Where can I get some?</h1>
+    <h1 className="text-base md:text-4xl pb-2 font-normal text-primary md:w-[500px] mb-10"> Where can I get some?</h1>
     <p className="text-base text-gray-600 mb-2">
     There are many variations of passages of Lorem Ipsum available, but the majority have 
     suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. 
@@ -248,7 +248,7 @@ function Landing() {
         </div>
       </li>
     </ul>
-    <div className='flex text-base flex-col md:flex-row  justify-between items-center'>
+    <div className='flex text-base flex-col md:flex-row justify-between items-center w-full'>
       <button className="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
         More About It
       </button>
@@ -337,7 +337,7 @@ function Landing() {
 
 {/* Row 6 */}
 
-<div className='w-full p-10 bg-gray-50'>
+<div className='w-full p-10  bg-gray-50'>
 <div className='w-full flex flex-col'>
   <h1 className='mx-auto md:text-3xl font-semibold'>Our Services</h1>
   <h1 className='mx-auto md:text-lg'>Our Services</h1>
@@ -349,7 +349,104 @@ function Landing() {
 
        
       
-      </div>
+ </div>
+
+{/* Row 7 */}
+<div className="grid grid-cols-1 md:grid-cols-4 gap-1 pt-10 md:gap-2 mx-4 md:mx-16 mb-10 ">
+        <div className="col-span-2 rounded-md  flex justify-center items-center">
+
+
+          <Image
+            src="https://img.freepik.com/free-photo/arabic-mobiles-front-side_187299-38069.jpg?t=st=1745160534~exp=1745164134~hmac=681c47b88c51e0d121f194ab6508583c27bd6fd38c7a8db35e7388f195a60fba&w=996"
+            alt="Landing page"
+            width={450}
+            height={400}
+
+          />
+
+
+
+        </div>
+
+        <div className="col-span-2 border border-gray-50 rounded-lg shadow-sm p-2 md:p-6">
+          <h1 className="text-base md:text-3xl pb-2 font-normal text-primary">Why do we use it?</h1>
+          <p className="text-base text-gray-600 mb-6 md:mt-6 ">
+            It is a long established fact that a reader will be distracted by the readable content of a
+            page when looking at its layout.
+            The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters </p>
+          
+
+
+          <button className="px-4 float-right py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
+            Get a Ride
+          </button>
+
+        </div>
+
+</div>
+
+ {/* Row 8 */}
+<div className='w-full bg-gray-50 md:mt-12  md:pb-16 md:pt-16 '>
+
+<div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16  mb-4 ">
+<div className="col-span-2 order-2 md:order-2 flex justify-center items-center">
+
+
+<Image
+  src="https://img.freepik.com/free-photo/fresh-green-plant-twig-with-smartphone_23-2148104488.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740"
+  alt="Landing page"
+  width={450}
+  height={400}
+
+/>
+</div>
+<div className="col-span-2 order-1 md:order-1  border-gray-100 border-r  p-2 md:p-6">
+    <h1 className="text-base md:text-4xl pb-2 font-normal text-primary md:w-[500px]">Where does it come from standard?</h1>
+    <p className="text-base text-gray-600 mb-2">
+      Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
+      piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,
+    </p>
+    <ul className='flex flex-col justify-start items-start gap-3 mb-8 text-sm'>
+      <li className="flex gap-2 items-start text-gray-700 italic">
+        <Image src={icons.circlearrow} alt="vector icon" width={20} height={20} className='' />
+        <div className='flex flex-col'><span className=''>It is a long established fact that</span>
+        <span className=''>over 2000 years old. Richard McClintoc It is a long established</span>
+        </div>
+      </li>
+     
+      <li className="flex gap-2 items-start text-gray-700 italic">
+        <Image src={icons.graph} alt="vector icon" width={20} height={20} className='' />
+        <div className='flex flex-col'><span className=''>It is a long established fact that</span>
+        <span className=''>over 2000 years old. Richard McClintoc It is a long established</span>
+        </div>
+      </li>
+      <li className="flex gap-2 justify-center items-start text-gray-700 italic">
+        <Image src={icons.heart} alt="vector icon" width={25} height={25} className='mt-1' />
+        <div className='flex flex-col '><span className=''>Five centuries, but also the leap into </span>
+        <span className=''>Electronic typesetting</span>
+        </div>
+      </li>
+
+      
+  
+    </ul>
+    <div className='flex text-base flex-col md:flex-row  justify-between items-center'>
+      <button className="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
+        More About It
+      </button>
+      <Link href="#" className='flex'><h2 className='font-normal text-primary hover:text-secondary md:text-[18px]'>Learn more about our app</h2><ArrowRight /></Link>
+    </div>
+  </div>
+
+  
+
+ 
+
+
+
+</div>
+</div> 
+
 
     </>
   )

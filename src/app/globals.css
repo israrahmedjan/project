@@ -32,3 +32,15 @@ body {
 .animate-slidein {
   animation: slidein 0.5s ease-out;
 }
+/* Swipper slider */
+.swiper-button-next,
+.swiper-button-prev {
+
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: #0c0b31; /* 👈 Yahan apna color dalna hai */
+  font-size: 30px; /* 👈 Size bhi control yahan hota hai */
+}
+/* Swipper slider End */

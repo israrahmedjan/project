@@ -16,7 +16,7 @@ export default function Header() {
         <>
      
      {/* lg devices */}
-            <header className="fixed top-0 left-0 bg-white right-0 hidden md:flex border-gray-200 border h-auto justify-between px-16">
+            <header className="fixed top-0 left-0 bg-white right-0 hidden md:flex border-gray-200 border h-auto justify-between px-16 z-50">
                 <div className="flex justify-center pt-4"><Image src={`${process.env.NEXT_PUBLIC_FRONT_DOMAIN}/logo.svg`} alt="Some description"
                             width={100}
                             height={100}

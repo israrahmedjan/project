@@ -10,15 +10,15 @@ export default function ServiceSlider({ services }) {
   return (
     <div className="mx-4 md:mx-16 mb-4 mt-10">
       <Swiper
-        modules={[Navigation, Pagination, Autoplay]}
+        modules={[Navigation, Autoplay]}
         slidesPerView={1}
         spaceBetween={10}
         navigation
-        pagination={{ clickable: true }}
+        // pagination={{ clickable: true }}
         autoplay={{ delay: 3000 }}
         breakpoints={{
           768: {
-            slidesPerView: 2,
+            slidesPerView: 1,
           },
           1024: {
             slidesPerView: 4,
@@ -27,7 +27,7 @@ export default function ServiceSlider({ services }) {
       >
         {services.map((service, index) => (
           <SwiperSlide key={index}>
-            <div className="bg-white rounded-lg shadow-md text-center p-6 hover:shadow-lg transition it">
+            <div className="bg-white rounded-lg shadow-md text-center mb-4 p-6 hover:shadow-lg transition it">
               <h3 className="text-xl font-semibold mb-4 w-full mx-auto">{service.title}</h3>
 
               <img
