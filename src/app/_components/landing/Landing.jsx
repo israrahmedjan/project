@@ -6,7 +6,7 @@ import React from 'react'
 function Landing() {
   const domain = process.env.NEXT_PUBLIC_FRONT_DOMAIN;
   const icons = {
-    'vector': `${domain}images/Vector.png`
+    'vector': `${domain}images/icons/Vector.png`
   }
   return (
     <>
