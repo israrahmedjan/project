@@ -20,7 +20,7 @@ function Landing() {
           />
 
 <Image
-            src={`${process.env.NEXT_PUBLIC_FRONT_DOMAIN}/1.png`}
+            src={`${process.env.NEXT_PUBLIC_FRONT_DOMAIN}/images/zoom.jpg`}
             alt="Landing page 2"
             width={450}
             height={400}
