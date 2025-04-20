@@ -4,6 +4,10 @@ import Link from 'next/link'
 import React from 'react'
 
 function Landing() {
+  const domain = process.env.NEXT_PUBLIC_FRONT_DOMAIN;
+  const icons = {
+    'vector': `${domain}images/Vector.png`
+  }
   return (
     <>
 {/* Row 1 */}
@@ -19,17 +23,8 @@ function Landing() {
 
           />
 
-<Image
-            src={`${process.env.NEXT_PUBLIC_FRONT_DOMAIN}/images/zoom.jpg`}
-            alt="Landing page 2"
-            width={450}
-            height={400}
+       
 
-          />
-          {/* <Image src="https://project-plum-five.vercel.app/images/1.png" width={400} height={300}
-          alt="test image " /> */}
-
-          <p>Path: {process.env.NEXT_PUBLIC_FRONT_DOMAIN}</p>
         </div>
 
         <div className="col-span-2 border border-gray-50 rounded-lg shadow-sm p-2 md:p-6">
@@ -38,9 +33,18 @@ function Landing() {
           It is a long established fact that a reader will be distracted by the readable content of a 
           page when looking at its layout. 
           The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters </p>
+          <p>{icons.vector}</p>
+          
+          <Image
+            src={`${icons.vector}`}
+            alt="Landing page"
+            width={50}
+            height={50} />
+
           <button className="px-4 float-right py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
       Get a Ride
     </button>
+    
         </div>
 
       </div>
