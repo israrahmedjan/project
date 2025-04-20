@@ -20,12 +20,16 @@ function Landing() {
           />
 
 <Image
-            src={`${process.env.NEXT_PUBLIC_FRONT_DOMAIN}/images/1.png`}
+            src={`${process.env.NEXT_PUBLIC_FRONT_DOMAIN}/1.png`}
             alt="Landing page"
             width={450}
             height={400}
 
           />
+          {/* <Image src="https://project-plum-five.vercel.app/images/1.png" width={400} height={300}
+          alt="test image " /> */}
+
+          <p>Path: {process.env.NEXT_PUBLIC_FRONT_DOMAIN}</p>
         </div>
 
         <div className="col-span-2 border border-gray-50 rounded-lg shadow-sm p-2 md:p-6">
