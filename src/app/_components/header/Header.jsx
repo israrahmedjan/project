@@ -40,15 +40,15 @@ export default function Header() {
 
             </header>
 
-<section className='hidden md:block relative mt-[90px]'>
+{/* <section className='hidden md:block relative mt-[90px]'>
             <Ticker  />
-            </section>
+            </section> */}
             
     
 
 
   {/* small devices */}
-  <header className="fixed top-0 left-0 w-full md:hidden bg-white flex flex-col border-gray-200 border px-4">
+  <header className="fixed top-0 left-0 w-full md:hidden bg-white flex flex-col border-gray-200 border px-4 z-50">
       {/* Top Bar */}
       <div className="flex items-center justify-between h-20">
         {/* Logo */}

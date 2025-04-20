@@ -90,7 +90,7 @@ function Landing() {
         </div>
 
         <div className="col-span-2 border border-gray-50 rounded-lg shadow-sm p-2 md:p-6">
-          <h1 className="text-base md:text-3xl pb-2 font-normal text-primary">Why do we use it?</h1>
+          <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">Why do we use it?</h1>
           <p className="text-base text-gray-600 mb-6 md:mt-6 ">
             It is a long established fact that a reader will be distracted by the readable content of a
             page when looking at its layout.
@@ -98,7 +98,7 @@ function Landing() {
           
 
 
-          <button className="px-4 float-right py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
+          <button className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
             Get a Ride
           </button>
 
@@ -113,7 +113,7 @@ function Landing() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16  mb-4 ">
 
           <div className="col-span-2 order-2 md:order-1  border-gray-100 border-r  p-2 md:p-6">
-            <h1 className="text-base md:text-4xl pb-2 font-normal text-primary md:w-[500px]">Where does it come from standard?</h1>
+          <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">Where does it come from standard?</h1>
             <p className="text-base text-gray-600 mb-2">
               Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
               piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,
@@ -138,8 +138,8 @@ function Landing() {
                 </div>
               </li>
             </ul>
-            <div className='flex text-base flex-col md:flex-row  justify-between items-center'>
-              <button className="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
+            <div className='flex text-base flex-col md:flex-row  justify-between items-center gap-2'>
+              <button className="px-4 py-2 md:px-4 md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
                 More About It
               </button>
               <Link href="#" className='flex'><h2 className='font-normal text-primary hover:text-secondary md:text-[18px]'>Learn more about our app</h2><ArrowRight /></Link>
@@ -175,7 +175,7 @@ function Landing() {
 
             <div className="flex flex-col items-center bg-white p-6 rounded-2xl shadow-lg w-80">
               <img src="https://img.freepik.com/free-photo/portrait-handsome-fashion-stylish-businessman-model-dressed-elegant-black-classic-suit-posing-metrosexual_158538-9181.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740" alt="Profile Image" className="w-24 h-24 rounded-full object-cover mb-4" />
-              <h2 className="text-xl font-semibold mb-2">Micheal</h2>
+              <h2 className="text-lg font-medium mb-2">Micheal</h2>
               <p className="text-gray-600 text-center mb-4">
                 Yeh thoda description ya text hoga jo image ke neeche dikhayega.
               </p>
@@ -185,7 +185,7 @@ function Landing() {
             </div>
             <div className="flex flex-col items-center bg-white p-6 rounded-2xl shadow-lg w-80">
               <img src="https://img.freepik.com/free-photo/person-job-male-college-men_1150-1779.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740" alt="Profile Image" className="w-24 h-24 rounded-full object-cover mb-4" />
-              <h2 className="text-xl font-semibold mb-2">John</h2>
+              <h2 className="text-lg font-medium mb-2">John</h2>
               <p className="text-gray-600 text-center mb-4">
                 Yeh thoda description ya text hoga jo image ke neeche dikhayega.
               </p>
@@ -195,7 +195,7 @@ function Landing() {
             </div>
             <div className="flex flex-col items-center bg-white p-6 rounded-2xl shadow-lg w-80">
               <img src="https://img.freepik.com/free-photo/stylish-guy-jacket-office-simple-wooden-surface_78826-2378.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740" alt="Profile Image" className="w-24 h-24 rounded-full object-cover mb-4" />
-              <h2 className="text-xl font-semibold mb-2">Mitchel Star</h2>
+              <h2 className="text-lg font-medium mb-2">Mitchel Star</h2>
               <p className="text-gray-600 text-center mb-4">
                 Yeh thoda description ya text hoga jo image ke neeche dikhayega.
               </p>
@@ -215,8 +215,8 @@ function Landing() {
 
 <div className="grid grid-cols-1 md:grid-cols-5 gap-1 md:gap-2 mx-4 md:mx-16  mb-4 ">
 
-  <div className="col-span-2 order-2 md:order-1  border-gray-100 border-r flex justify-center flex-col items-center">
-    <h1 className="text-base md:text-4xl pb-2 font-normal text-primary md:w-[500px] mb-10"> Where can I get some?</h1>
+  <div className="col-span-2 order-2 md:order-1  border-gray-100 border-r md:mt-20 ">
+  <h1 className="text-xl md:text-3xl md:pb-2 mt-4 mb-2 font-normal text-primary"> Where can I get some?</h1>
     <p className="text-base text-gray-600 mb-2">
     There are many variations of passages of Lorem Ipsum available, but the majority have 
     suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. 
@@ -248,7 +248,7 @@ function Landing() {
         </div>
       </li>
     </ul>
-    <div className='flex text-base flex-col md:flex-row justify-between items-center w-full'>
+    <div className='flex text-base flex-col md:flex-row justify-between items-center gap-2 pb-3 w-full'>
       <button className="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
         More About It
       </button>
@@ -289,7 +289,7 @@ function Landing() {
 />
 </div>
 <div className="col-span-2 order-1 md:order-2  border-gray-100 border-r  p-2 md:p-6">
-    <h1 className="text-base md:text-4xl pb-2 font-normal text-primary md:w-[500px]">Where does it come from standard?</h1>
+<h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">Where does it come from standard?</h1>
     <p className="text-base text-gray-600 mb-2">
       Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
       piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,
@@ -318,7 +318,7 @@ function Landing() {
       
   
     </ul>
-    <div className='flex text-base flex-col md:flex-row  justify-between items-center'>
+    <div className='flex text-base flex-col md:flex-row  justify-between gap-4 mb-4 items-center'>
       <button className="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
         More About It
       </button>
@@ -339,7 +339,7 @@ function Landing() {
 
 <div className='w-full p-10  bg-gray-50'>
 <div className='w-full flex flex-col'>
-  <h1 className='mx-auto md:text-3xl font-semibold'>Our Services</h1>
+  <h1 className='text-2xl mx-auto md:text-3xl font-semibold'>Our Services</h1>
   <h1 className='mx-auto md:text-lg'>Our Services</h1>
   </div>
 
@@ -368,8 +368,8 @@ function Landing() {
 
         </div>
 
-        <div className="col-span-2 border border-gray-50 rounded-lg shadow-sm p-2 md:p-6">
-          <h1 className="text-base md:text-3xl pb-2 font-normal text-primary">Why do we use it?</h1>
+        <div className="col-span-2 border border-gray-50 rounded-lg shadow-sm mb-2 p-2 md:p-6">
+        <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">Why do we use it?</h1>
           <p className="text-base text-gray-600 mb-6 md:mt-6 ">
             It is a long established fact that a reader will be distracted by the readable content of a
             page when looking at its layout.
@@ -389,7 +389,7 @@ function Landing() {
 <div className='w-full bg-gray-50 md:mt-12  md:pb-16 md:pt-16 '>
 
 <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16  mb-4 ">
-<div className="col-span-2 order-2 md:order-2 flex justify-center items-center">
+<div className="col-span-2 order-1 md:order-2 flex justify-center items-center">
 
 
 <Image
@@ -400,8 +400,8 @@ function Landing() {
 
 />
 </div>
-<div className="col-span-2 order-1 md:order-1  border-gray-100 border-r  p-2 md:p-6">
-    <h1 className="text-base md:text-4xl pb-2 font-normal text-primary md:w-[500px]">Where does it come from standard?</h1>
+<div className="col-span-2 order-2 md:order-1  border-gray-100 border-r mt-4 p-2 md:p-6">
+<h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">Where does it come from standard?</h1>
     <p className="text-base text-gray-600 mb-2">
       Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
       piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,
@@ -430,7 +430,7 @@ function Landing() {
       
   
     </ul>
-    <div className='flex text-base flex-col md:flex-row  justify-between items-center'>
+    <div className='flex text-base flex-col md:flex-row  justify-between items-center gap-4'>
       <button className="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
         More About It
       </button>
