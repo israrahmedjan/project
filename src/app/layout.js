@@ -3,6 +3,7 @@ import "./globals.css";
 import { ProvidersCustomization } from "@/redux/Providers";
 import Header from "./_components/header/Header";
 import Footer from "./_components/footer/Footer";
+import { motion } from "framer-motion";
 
 
 const poppins = Poppins({
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
     <body className={`${poppins.variable} font-poppins`}>
+      
   <ProvidersCustomization>
         <Header />
         {children}

@@ -1,3 +1,4 @@
+'use client'
 import { ArrowRight, Camera, Clock, Mail } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -8,6 +9,8 @@ import ServiceSlider from '../ServiceSlider';
 // import "slick-carousel/slick/slick-theme.css";
 // //import Slider from 'react-slick';
 
+
+import { motion } from 'framer-motion';
 
 function Landing() {
 
@@ -73,6 +76,13 @@ function Landing() {
 
       
       {/* Row 1 */}
+      <motion.section
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.3 }}
+        className=""
+      >
       <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16 mb-10 animate-fade-in-down">
         <div className="col-span-2 rounded-md  flex justify-center items-center">
 
@@ -104,10 +114,16 @@ function Landing() {
 
         </div>
 
-      </div>
+      </div></motion.section>
 
       {/* Row 2 */}
-
+      <motion.section
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.3 }}
+        className=""
+      >
       <div className='w-full bg-gray-50 md:pt-16 md:pb-16 animate-fade-in-down'>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16  mb-4 ">
@@ -161,11 +177,17 @@ function Landing() {
 
 
         </div>
-      </div>
+      </div></motion.section>
 
-  
 
       {/* Row 3 */}
+      <motion.section
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.3 }}
+        className=""
+      >
       <div className='w-full p-10'><h1 className='text-3xl flex justify-center animate-fade-in-down'>Meet Our Team</h1>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16 mb-4 ">
 
@@ -207,10 +229,16 @@ function Landing() {
 
         </div>
      
-      </div>
+      </div></motion.section>
 
          {/* Row 4 */}
-
+         <motion.section
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.3 }}
+        className=""
+      >
          <div className='w-full bg-gray-50 md:pt-16 md:pb-16'>
 
 <div className="grid grid-cols-1 md:grid-cols-5 gap-1 md:gap-2 mx-4 md:mx-16  mb-4 ">
@@ -271,9 +299,16 @@ function Landing() {
 
 
 </div>
-</div>
+</div></motion.section>
 
 {/* Row 5 */}
+<motion.section
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.3 }}
+        className=""
+      >
 <div className='w-full bg-white md:mt-12  md:pb-16 '>
 
 <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16  mb-4 ">
@@ -333,10 +368,16 @@ function Landing() {
 
 
 </div>
-</div>
+</div></motion.section>
 
 {/* Row 6 */}
-
+<motion.section
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.3 }}
+        className=""
+      >
 <div className='w-full p-10  bg-gray-50'>
 <div className='w-full flex flex-col'>
   <h1 className='text-2xl mx-auto md:text-3xl font-semibold'>Our Services</h1>
@@ -350,8 +391,15 @@ function Landing() {
        
       
  </div>
-
+</motion.section>
 {/* Row 7 */}
+<motion.section
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.3 }}
+        className=""
+      >
 <div className="grid grid-cols-1 md:grid-cols-4 gap-1 pt-10 md:gap-2 mx-4 md:mx-16 mb-10 ">
         <div className="col-span-2 rounded-md  flex justify-center items-center">
 
@@ -381,8 +429,15 @@ function Landing() {
 
         </div>
 </div>
-
+</motion.section>
  {/* Row 8 */}
+ <motion.section
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.3 }}
+        className=""
+      >
 <div className='w-full bg-gray-50 md:mt-12  md:pb-16 md:pt-16 '>
 
 <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16  mb-4 ">
@@ -443,7 +498,7 @@ function Landing() {
 
 </div>
 </div> 
-
+</motion.section>
 
     </>
   )
