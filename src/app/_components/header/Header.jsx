@@ -4,10 +4,12 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { Menu, X } from 'lucide-react'; // Menu open/close icons
 import Ticker from '../Ticker';
+import Link from 'next/link';
 
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const hommeUrl = process.env.NEXT_PUBLIC_FRONT_DOMAIN;
 
     const toggleMenu = () => {
       setMenuOpen(!menuOpen);
@@ -17,22 +19,27 @@ export default function Header() {
      
      {/* lg devices */}
             <header className="fixed top-0 left-0 bg-white right-0 hidden md:flex border-gray-200 border h-auto justify-between px-16 z-50">
-                <div className="flex justify-center pt-4"><Image src={`${process.env.NEXT_PUBLIC_FRONT_DOMAIN}/logo.svg`} alt="Some description"
+                <div className="flex justify-center pt-4">
+                  <Link href={`${hommeUrl}`}><Image src={`${process.env.NEXT_PUBLIC_FRONT_DOMAIN}/logo.svg`} alt="Some description"
                             width={100}
                             height={100}
                              className="h-12 w-auto"
-                            /></div>
+                            /></Link>
+                            </div>
 
                 <nav className="flex items-center justify-center">
-                    <a href="#" className="text-primary text-lg font-semibold hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
-                        Drive
-                    </a>
-                    <a href="#" className="text-primary text-lg font-semibold hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
-                        Ride
-                    </a>
-                    <a href="#" className="text-primary text-lg font-semibold hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
-                        Business
-                    </a>
+                <Link href={`${hommeUrl}`} className="text-primary text-lg font-semibold hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
+                        Home
+                   </Link>
+                   <Link href={`${hommeUrl}user1`} className="text-primary text-lg font-semibold hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
+                        User 1
+                   </Link>    
+                    <Link href={`${hommeUrl}user2`} className="text-primary text-lg font-semibold hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
+                        User 2
+                   </Link>
+                     <Link href={`${hommeUrl}pamentModel`} className="text-primary text-lg font-semibold hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
+                        Payment Model
+                   </Link>
                     <a href="#" className="text-primary text-lg font-semibold hover:text-secondary h-20 flex items-center justify-center px-6">
                         About
                     </a>
