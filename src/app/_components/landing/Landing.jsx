@@ -73,7 +73,7 @@ function Landing() {
 
       
       {/* Row 1 */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16 mb-10 ">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16 mb-10 animate-fade-in-down">
         <div className="col-span-2 rounded-md  flex justify-center items-center">
 
 
@@ -108,7 +108,7 @@ function Landing() {
 
       {/* Row 2 */}
 
-      <div className='w-full bg-gray-50 md:pt-16 md:pb-16'>
+      <div className='w-full bg-gray-50 md:pt-16 md:pb-16 animate-fade-in-down'>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16  mb-4 ">
 
@@ -166,7 +166,7 @@ function Landing() {
   
 
       {/* Row 3 */}
-      <div className='w-full p-10'><h1 className='text-3xl flex justify-center'>Meet Our Team</h1>
+      <div className='w-full p-10'><h1 className='text-3xl flex justify-center animate-fade-in-down'>Meet Our Team</h1>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16 mb-4 ">
 
           <div className="col-span-4 md:col-span-4 mt-10 mb-10 flex flex-col md:flex-row justify-center gap-2 items-center">
@@ -364,8 +364,6 @@ function Landing() {
 
           />
 
-
-
         </div>
 
         <div className="col-span-2 border border-gray-50 rounded-lg shadow-sm mb-2 p-2 md:p-6">
@@ -382,7 +380,6 @@ function Landing() {
           </button>
 
         </div>
-
 </div>
 
  {/* Row 8 */}

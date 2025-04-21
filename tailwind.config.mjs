@@ -16,16 +16,15 @@ export default {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
       },
-      animation: {
-        'marquee-slow': 'marquee 40s linear infinite',
-        'marquee-fast': 'marquee 40s linear infinite',
-      },
       keyframes: {
-        marquee: {
-          '0%': { transform: 'translateX(100%)' },
-          '100%': { transform: 'translateX(-100%)' },
-        },
+        'fade-in-down': {
+          '0%': { opacity: 0, transform: 'translateY(-20px)' },
+          '100%': { opacity: 1, transform: 'translateY(0)' },
+        }
       },
+      animation: {
+        'fade-in-down': 'fade-in-down 0.5s ease-out forwards',
+      }
     
     },
   },
