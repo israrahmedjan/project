@@ -181,7 +181,13 @@ function User1() {
 
  {/* Mobiles and bg */}
 
-
+ <motion.section
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: false, amount: 0.3 }}
+                className=""
+            >
  <div className="hidden md:block  mt-40  mb-20 relative w-full h-[230px] overflow-visible bg-cover bg-center" style={{ backgroundImage: "url('https://img.freepik.com/free-photo/empty-floor-front-modern-building_1127-3117.jpg?t=st=1745260920~exp=1745264520~hmac=f9cc1b4e0bd2d51ddad90981f8d8ce24f6174525a92099aec0090fce28aeb05d&w=996')" }}>
                 <div className='flex justify-between items-center gap-6'>
                     <div></div>
@@ -195,7 +201,7 @@ function User1() {
                         />
                     </div>
                 </div>
-            </div>
+            </div></motion.section>
             {/* Row 3 */}
             <motion.section
                 initial={{ opacity: 0, y: 100 }}
