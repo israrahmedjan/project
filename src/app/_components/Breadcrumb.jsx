@@ -4,7 +4,7 @@ import { Home, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-function Breadcrumb() {
+function Breadcrumb({user,name}) {
     const hommeUrl = process.env.NEXT_PUBLIC_FRONT_DOMAIN;
   return (
     <>
@@ -20,7 +20,7 @@ function Breadcrumb() {
     <ChevronRight size={16} />
     <a href="/user1" className="flex items-center gap-1 hover:text-primary transition">
   
-      <span>User1</span>
+      <span>{user}</span>
     </a>
   </nav>
 
@@ -34,7 +34,7 @@ function Breadcrumb() {
       className="object-cover"
     />
   </div>
-  <span>Welcome, John!</span>
+  <span>Welcome, {name}!</span>
 </div>
 
 

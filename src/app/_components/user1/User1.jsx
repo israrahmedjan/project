@@ -73,7 +73,8 @@ function User1() {
   return (
     <>
   {/* Breadcrumbs */}
-<Breadcrumb />
+<Breadcrumb user="User1" name="John" />
+{/* Mobiles and */}
       {/* Row 1 */}
       <motion.section
         initial={{ opacity: 0, y: 100 }}
@@ -87,7 +88,7 @@ function User1() {
 
 
           <Image
-            src="https://res.cloudinary.com/detdjaspz/image/upload/v1745027433/1_umaiqt.png"
+            src="https://img.freepik.com/free-vector/smartphone-lock-screen-with-hot-air-balloon-landscape-background-mobile-phone-onboard-page-with-date-time-digital-cosmic-wallpapers-cellphone-device-cartoon-user-interface-design-set_107791-7874.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740"
             alt="Landing page"
             width={450}
             height={400}

@@ -28,21 +28,21 @@ export default function Header() {
                             </div>
 
                 <nav className="flex items-center justify-center">
-                <Link href={`${hommeUrl}`} className="text-primary text-lg font-semibold hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
+                <Link href={`${hommeUrl}`} className="text-primary text-lg font-medium hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
                         Home
                    </Link>
-                   <Link href={`${hommeUrl}user1`} className="text-primary text-lg font-semibold hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
+                   <Link href={`${hommeUrl}user1`} className="text-primary text-lg font-medium hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
                         User 1
                    </Link>    
-                    <Link href={`${hommeUrl}user2`} className="text-primary text-lg font-semibold hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
+                    <Link href={`${hommeUrl}user2`} className="text-primary text-lg font-medium hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
                         User 2
                    </Link>
-                     <Link href={`${hommeUrl}pamentModel`} className="text-primary text-lg font-semibold hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
+                     <Link href={`${hommeUrl}pamentModel`} className="text-primary text-lg font-medium hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
                         Payment Model
                    </Link>
-                    <a href="#" className="text-primary text-lg font-semibold hover:text-secondary h-20 flex items-center justify-center px-6">
+                   <Link href={`${hommeUrl}about`} className="text-primary text-lg font-medium hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
                         About
-                    </a>
+                   </Link>
                 </nav>
 
             </header>
