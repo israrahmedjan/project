@@ -73,7 +73,8 @@ function User2() {
   return (
     <>
   {/* Breadcrumbs */}
-<Breadcrumb user="User2" name="Michal Star" />
+<Breadcrumb user="User2" name="Mitchal Stark" />
+{/* Mobiles and */}
       {/* Row 1 */}
       <motion.section
         initial={{ opacity: 0, y: 100 }}
@@ -87,7 +88,7 @@ function User2() {
 
 
           <Image
-            src="https://img.freepik.com/free-photo/taking-photo-beach-memories_53876-13953.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740https://img.freepik.com/free-photo/relax-camera-journey-beautiful-holiday_1253-641.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740https://img.freepik.com/free-photo/expressive-young-woman-posing_344912-2481.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740"
+            src="https://img.freepik.com/free-photo/expressive-young-woman-posing_344912-2481.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740"
             alt="Landing page"
             width={450}
             height={400}

@@ -1,6 +1,6 @@
 
 import React from 'react'
-import User2 from '../_components/user2/user2'
+import User2 from '../_components/user2/User2'
 
 function page() {
   return (
