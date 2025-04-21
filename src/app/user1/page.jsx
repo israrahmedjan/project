@@ -4,9 +4,11 @@ import User1 from '../_components/user1/User1'
 
 function page() {
   return (
-    <div>
+    <>
+    <div className="mt-[80px]">
       <User1 />
     </div>
+    </>
   )
 }
 
