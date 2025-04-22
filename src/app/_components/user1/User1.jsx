@@ -228,7 +228,7 @@ function User1() {
 
 
 {/* Row 4 */}
-<div className='w-full bg-gray-200 md:mt-12  md:pb-16 '>
+<div className='w-full bg-gray-50 md:mt-12  md:pb-16 '>
 
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16  mb-4 ">
                         <div className="col-span-2 order-2 md:order-1 flex justify-center items-center">
