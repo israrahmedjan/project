@@ -179,7 +179,7 @@ function User1() {
                     </div>
                 </div></motion.section>
 
- {/* Mobiles and bg */}
+ {/* Mobiles and bg for medium devices */}
 
  <motion.section
                 initial={{ opacity: 0, y: 100 }}
@@ -188,142 +188,47 @@ function User1() {
                 viewport={{ once: false, amount: 0.3 }}
                 className=""
             >
- <div className="hidden md:block  mt-40  mb-20 relative w-full h-[230px] overflow-visible bg-cover bg-center" style={{ backgroundImage: "url('https://img.freepik.com/free-photo/empty-floor-front-modern-building_1127-3117.jpg?t=st=1745260920~exp=1745264520~hmac=f9cc1b4e0bd2d51ddad90981f8d8ce24f6174525a92099aec0090fce28aeb05d&w=996')" }}>
+ <div className="hidden md:block  mt-40  mb-20 relative w-full h-[230px] overflow-visible bg-cover bg-center" style={{ backgroundImage: "url('https://res.cloudinary.com/detdjaspz/image/upload/v1745327663/other_plugins_woovmw.jpg')" }}>
                 <div className='flex justify-between items-center gap-6'>
                     <div></div>
-                    <div className="absolute right-10 -bottom-24 ">
+                    <div className="absolute right-10 -bottom-16 ">
                         <Image
                             src={`${process.env.NEXT_PUBLIC_FRONT_DOMAIN}images/3dImage.png`}
                             alt="Mobile"
                             width={200}
-                            height={400}
+                            height={350}
                             className="drop-shadow-xl"
                         />
                     </div>
                 </div>
             </div></motion.section>
-            {/* Row 3 */}
-            <motion.section
+ {/* Mobiles and bg for small devices */}
+
+ <motion.section
                 initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: false, amount: 0.3 }}
                 className=""
             >
-                <div className='w-full p-10'><h1 className='text-3xl flex justify-center animate-fade-in-down'>Meet Our Team</h1>
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16 mb-4 ">
-
-                        <div className="col-span-4 md:col-span-4 mt-10 mb-10 flex flex-col md:flex-row justify-center gap-2 items-center">
-
-
-
-                            <div className="flex flex-col items-center bg-white p-6 rounded-2xl shadow-lg w-80">
-                                <img src="https://img.freepik.com/free-photo/portrait-handsome-fashion-stylish-businessman-model-dressed-elegant-black-classic-suit-posing-metrosexual_158538-9181.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740" alt="Profile Image" className="w-24 h-24 rounded-full object-cover mb-4" />
-                                <h2 className="text-lg font-medium mb-2">Micheal</h2>
-                                <p className="text-gray-600 text-center mb-4">
-                                    Yeh thoda description ya text hoga jo image ke neeche dikhayega.
-                                </p>
-                                <button className="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
-                                    More About It
-                                </button>
-                            </div>
-                            <div className="flex flex-col items-center bg-white p-6 rounded-2xl shadow-lg w-80">
-                                <img src="https://img.freepik.com/free-photo/person-job-male-college-men_1150-1779.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740" alt="Profile Image" className="w-24 h-24 rounded-full object-cover mb-4" />
-                                <h2 className="text-lg font-medium mb-2">John</h2>
-                                <p className="text-gray-600 text-center mb-4">
-                                    Yeh thoda description ya text hoga jo image ke neeche dikhayega.
-                                </p>
-                                <button className="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
-                                    More About It
-                                </button>
-                            </div>
-                            <div className="flex flex-col items-center bg-white p-6 rounded-2xl shadow-lg w-80">
-                                <img src="https://img.freepik.com/free-photo/stylish-guy-jacket-office-simple-wooden-surface_78826-2378.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740" alt="Profile Image" className="w-24 h-24 rounded-full object-cover mb-4" />
-                                <h2 className="text-lg font-medium mb-2">Mitchel Star</h2>
-                                <p className="text-gray-600 text-center mb-4">
-                                    Yeh thoda description ya text hoga jo image ke neeche dikhayega.
-                                </p>
-                                <button className="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
-                                    More About It
-                                </button>
-                            </div>
-                        </div>
-
+ <div className="md:hidden  mt-20  mb-10 relative w-full h-[130px] overflow-visible bg-cover bg-center" style={{ backgroundImage: "url('https://res.cloudinary.com/detdjaspz/image/upload/v1745327663/other_plugins_woovmw.jpg')" }}>
+                <div className='flex justify-between items-center gap-2'>
+                    <div></div>
+                    <div className="absolute  -top-14 right-7 ">
+                        <Image
+                            src={`${process.env.NEXT_PUBLIC_FRONT_DOMAIN}images/3dImage.png`}
+                            alt="Mobile"
+                            width={100}
+                            height={120}
+                            className=""
+                        />
                     </div>
-
-                </div></motion.section>
-                
-
-
-            {/* Row 4 */}
-            <motion.section
-                initial={{ opacity: 0, y: 100 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: false, amount: 0.3 }}
-                className=""
-            >
-                <div className='w-full bg-gray-50 md:pt-16 md:pb-16'>
-
-                    <div className="grid grid-cols-1 md:grid-cols-5 gap-1 md:gap-2 mx-4 md:mx-16  mb-4 ">
-
-                        <div className="col-span-2 order-2 md:order-1  border-gray-100 border-r md:mt-20 ">
-                            <h1 className="text-xl md:text-3xl md:pb-2 mt-4 mb-2 font-normal text-primary"> Where can I get some?</h1>
-                            <p className="text-base text-gray-600 mb-2">
-                                There are many variations of passages of Lorem Ipsum available, but the majority have
-                                suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-                                If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
-                            </p>
-                            <ul className='flex flex-col justify-start items-start gap-3 mb-8 text-gray-700 text-sm italic'>
-                                <li className="flex gap-2 items-start">
-                                    <Image src={icons.vector} alt="vector icon" width={20} height={20} className='' />
-                                    <div className='flex flex-col'><span className=''>It is a long established fact that</span>
-                                        <span className=''>over 2000 years old. Richard McClintoc It is a long established</span>
-                                    </div>
-                                </li>
-                                <li className="flex gap-2 justify-center items-start text-gray-700 italic">
-                                    <Image src={icons.handsdot} alt="vector icon" width={25} height={25} className='mt-1' />
-                                    <div className='flex flex-col '><span className=''>It is a long established fact that</span>
-                                        <span className=''>over 2000 years old. Richard McClintoc It is a long established</span>
-                                    </div>
-                                </li>
-                                <li className="flex gap-2 justify-center items-start text-gray-700 italic">
-                                    <Image src={icons.handshake} alt="vector icon" width={25} height={25} className='mt-1' />
-                                    <div className='flex flex-col '><span className=''>It is a long established fact that</span>
-                                        <span className=''>over 2000 years old. Richard McClintoc It is a long established</span>
-                                    </div>
-                                </li>
-                                <li className="flex gap-2 items-start">
-                                    <Image src={icons.pie} alt="vector icon" width={20} height={20} className='' />
-                                    <div className='flex flex-col'><span className=''>It is a long established fact that</span>
-                                        <span className=''>over 2000 years old. Richard McClintoc It is a long established</span>
-                                    </div>
-                                </li>
-                            </ul>
-                            <div className='flex text-base flex-col md:flex-row justify-between items-center gap-2 pb-3 w-full'>
-                                <button className="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
-                                    More About It
-                                </button>
-                                <Link href="#" className='flex'><h2 className='font-normal text-primary hover:text-secondary md:text-[18px]'>Learn more about our app</h2><ArrowRight /></Link>
-                            </div>
-                        </div>
-
-                        <div className="col-span-3 order-1 md:order-2 flex justify-center items-center ">
-
-
-                            <Image
-                                src="https://img.freepik.com/free-photo/smartphones-marble-table_23-2150837819.jpg?t=st=1745122512~exp=1745126112~hmac=623ac2fdbbed9e1c5ea3023e3d80af74debc7df27c520443237ece34e80f3c96&w=740"
-                                alt="Landing page"
-                                width={600}
-                                height={500}
-
-                            />
-                        </div>
+                </div>
+            </div></motion.section>
 
 
 
-                    </div>
-                </div></motion.section>
+        
 
             {/* Row 5 */}
             <motion.section
