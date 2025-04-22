@@ -74,15 +74,15 @@ function Footer() {
       
     </div>
       
-      <div className="w-full flex flex-row gap-4">
+      <div className="w-full flex flex-row gap-2">
 
   {/* Column 1 */}
   <div className="flex-1 flex flex-col gap-2">
     <h3 className="text-gray-800 font-semibold mb-3">Company</h3>
     <a href="#" className="text-gray-600 text-sm hover:text-gray-800">About Us</a>
     <a href="#" className="text-gray-600 text-sm hover:text-gray-800">Careers</a>
-    <a href="#" className="text-gray-600 text-sm hover:text-gray-800">Blog</a>
-    <a href="#" className="text-gray-600 text-sm hover:text-gray-800">Press</a>
+    <a href="#" className="text-gray-600 text-sm hover:text-gray-800">Latest Blog related to Sports</a>
+    <a href="#" className="text-gray-600 text-sm hover:text-gray-800">Press club</a>
   </div>
 
   {/* Column 2 */}
