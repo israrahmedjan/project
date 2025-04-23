@@ -84,9 +84,9 @@ const [homeData, sethomeData] = useState(null);
 <div>
   
   <pre>{JSON.stringify(homeData,null,2)}</pre></div>
-      
+  
       {/* Row 1 */}
-      <motion.section
+      {homeData && (<motion.section
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -98,7 +98,7 @@ const [homeData, sethomeData] = useState(null);
 
 
           <Image
-            src="https://res.cloudinary.com/detdjaspz/image/upload/v1745027433/1_umaiqt.png"
+            src={`${homeData.imageLilnk}`}
             alt="Landing page"
             width={450}
             height={400}
@@ -110,11 +110,9 @@ const [homeData, sethomeData] = useState(null);
         </div>
 
         <div className="col-span-2 border border-gray-50 rounded-lg shadow-sm p-2 md:p-6">
-          <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">Why do we use it?</h1>
+          <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">{homeData.heading}</h1>
           <p className="text-base text-gray-600 mb-6 md:mt-6 ">
-            It is a long established fact that a reader will be distracted by the readable content of a
-            page when looking at its layout.
-            The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters </p>
+          {homeData.content} </p>
           
 
 
@@ -124,7 +122,9 @@ const [homeData, sethomeData] = useState(null);
 
         </div>
 
-      </div></motion.section>
+      </div></motion.section>)}
+  
+  
 
       {/* Row 2 */}
       <motion.section

@@ -12,7 +12,7 @@ async function getHome() {
     try {
           const token = process.env.NEXT_PUBLIC_STRAPI_TOKEN;
           
-          const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_API_URL}api/about?populate=*`, {
+          const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_API_URL}api/homepage?populate=*`, {
             headers: {
               Authorization: `Bearer ${token}` // yahan token daalo
             },
@@ -20,7 +20,7 @@ async function getHome() {
           });
           const data = await res.json();
           //console.log("Response Data:", data);
-          return data;
+          return data.data.Section1;
         } catch (error) {
           console.error("Error:", error);
         }
