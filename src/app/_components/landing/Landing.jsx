@@ -2,15 +2,16 @@
 import { ArrowRight, Camera, Clock, Mail } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Ticker from '../Ticker';
 import ServiceSlider from '../ServiceSlider';
 
 
 import { motion } from 'framer-motion';
+import { getHome } from '@/helper/helper'
 
 function Landing() {
-
+const [homeData, sethomeData] = useState(null);
   const domain = process.env.NEXT_PUBLIC_FRONT_DOMAIN;
   const icons = {
     'vector': `${domain}images/icons/Vector.png`,
@@ -65,12 +66,24 @@ function Landing() {
     },
   ];
 
- 
+  const getData = async () => {
+    const data = await getHome();
+    console.log("Home Data 11", data);
+    sethomeData(data);
+    };
+  
+    useEffect(() => {
+      console.log("Url live:",process.env.NEXT_PUBLIC_STRAPI_API_URL)
+      getData();
+    }, []);
+
 
   return (
     <>
 
-
+<div>
+  
+  <pre>{JSON.stringify(homeData,null,2)}</pre></div>
       
       {/* Row 1 */}
       <motion.section

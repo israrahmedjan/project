@@ -7,6 +7,25 @@ import { addUserInfo, addWishListItems, loadOldData, loginAction, LoginModelBoxA
 import { addToWishlist } from './whislist';
 import { addcartItems } from '@/redux/slices/cartSlice';
 
+async function getHome() {
+ 
+    try {
+          const token = process.env.NEXT_PUBLIC_STRAPI_TOKEN;
+          
+          const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_API_URL}api/about?populate=*`, {
+            headers: {
+              Authorization: `Bearer ${token}` // yahan token daalo
+            },
+            
+          });
+          const data = await res.json();
+          //console.log("Response Data:", data);
+          return data;
+        } catch (error) {
+          console.error("Error:", error);
+        }
+}
+
 async function getCategoriesAPI(slug="") {
 
   const response = await axios.get('/api/categories',
@@ -115,4 +134,4 @@ const addOldUserData = (dispatch)=>
   
 }
 
-  export {getCategoriesAPI,productDetail,productByCategoryAPI,handleLoginFunc,UserLoginClose,addOldUserData}
+  export {getCategoriesAPI,productDetail,productByCategoryAPI,handleLoginFunc,UserLoginClose,addOldUserData,getHome}

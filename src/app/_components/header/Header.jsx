@@ -7,6 +7,7 @@ import Ticker from '../Ticker';
 import Link from 'next/link';
 
 
+
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
     const hommeUrl = process.env.NEXT_PUBLIC_FRONT_DOMAIN;
@@ -16,25 +17,7 @@ export default function Header() {
       setMenuOpen(!menuOpen);
     };
 
-    const getData = async () => {
-      try {
-        const token = process.env.NEXT_PUBLIC_STRAPI_TOKEN;
-        
-        const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_API_URL}api/articles`, {
-          headers: {
-            Authorization: `Bearer ${token}` // yahan token daalo
-          }
-        });
-        const data = await res.json();
-        console.log("Response Data:", data);
-      } catch (error) {
-        console.error("Error:", error);
-      }
-    };
-  
-    useEffect(() => {
-      getData();
-    }, []);
+    
     return (
         <>
      
