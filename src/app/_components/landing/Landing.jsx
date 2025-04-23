@@ -81,9 +81,9 @@ const [homeData, sethomeData] = useState(null);
   return (
     <>
 
-<div>
+{/* <div>
   
-  <pre>{JSON.stringify(homeData,null,2)}</pre></div>
+  <pre>{JSON.stringify(homeData,null,2)}</pre></div> */}
   
       {/* Row 1 */}
       {homeData && (<motion.section
