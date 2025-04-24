@@ -10,11 +10,11 @@ import { ChevronRight } from 'lucide-react'
 
 import { motion } from 'framer-motion';
 import Breadcrumb from '../Breadcrumb'
-import { getUser2 } from '@/helper/helper'
+import { getpaymentModel, getUser2 } from '@/helper/helper'
 import Loader from '@/components/Loader'
 import Loading from '../Loading'
 
-function User2() {
+function PaymentModel() {
     
 const [user2Data, setuser2Data] = useState(null);
   const domain = process.env.NEXT_PUBLIC_FRONT_DOMAIN;
@@ -72,7 +72,7 @@ const [user2Data, setuser2Data] = useState(null);
   ];
 
   const getData = async () => {
-    const data = await getUser2();
+    const data = await getpaymentModel();
     console.log("User 1 Data", data);
     setuser2Data(data.data);
     //setcompleteData(data.data.Section1);
@@ -522,4 +522,4 @@ const [user2Data, setuser2Data] = useState(null);
   )
 }
 
-export default User2
+export default PaymentModel

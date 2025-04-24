@@ -12,6 +12,7 @@ import { motion } from 'framer-motion';
 import Breadcrumb from '../Breadcrumb'
 import { getUser1 } from '@/helper/helper'
 import Loader from '@/components/Loader'
+import Loading from '../Loading'
 
 function User1() {
 
@@ -118,7 +119,7 @@ const getData = async () => {
                     <div className="col-span-2 border border-gray-50 rounded-lg shadow-sm p-2 md:p-6">
                         <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">{user1Data.Row1?.heading}</h1>
                         <p className="text-base text-gray-600 mb-6 md:mt-6 ">
-                        {user1Data.Row1?.heading}</p>
+                        {user1Data.Row1?.content}</p>
 
                         <button className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
                             Get a Ride
@@ -502,7 +503,7 @@ const getData = async () => {
                     </div>
                 </div>
             </motion.section>
-            </div>):<div><Loader /></div>}
+            </div>):<div><Loading /></div>}
         </>
     )
 }
