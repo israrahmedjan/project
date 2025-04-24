@@ -9,10 +9,11 @@ import ServiceSlider from '../ServiceSlider';
 
 import { motion } from 'framer-motion';
 import { getHome } from '@/helper/helper'
+import Loading from '../Loading'
 
 function Landing() {
 const [homeData, sethomeData] = useState(null);
-const [completeData, setcompleteData] = useState(null);
+
   const domain = process.env.NEXT_PUBLIC_FRONT_DOMAIN;
   const strapiDomain = process.env.NEXT_PUBLIC_STRAPI_API_URL;
   
@@ -72,7 +73,7 @@ const [completeData, setcompleteData] = useState(null);
   const getData = async () => {
     const data = await getHome();
     console.log("Home Data 11", data);
-    sethomeData(data.data.Section1);
+    sethomeData(data.data);
     //setcompleteData(data.data.Section1);
     };
   
@@ -87,15 +88,15 @@ const [completeData, setcompleteData] = useState(null);
 
 <div>
   
-  <pre>{JSON.stringify(homeData,null,2)}</pre>
-<div>{strapiDomain}{homeData?.image?.url}</div>
 
 
-=
   </div>
-  
+  {homeData ? (<div>
+
+     <pre>{JSON.stringify(homeData.Row2,null,2)}</pre>
+{/* <div>{strapiDomain}{homeData?.image?.url}</div> */}
       {/* Row 1 */}
-      {homeData && (<motion.section
+      {homeData.Row1 && (<motion.section
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -105,27 +106,26 @@ const [completeData, setcompleteData] = useState(null);
       <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16 mb-10 animate-fade-in-down">
         <div className="col-span-2 rounded-md  flex justify-center items-center">
 
-          <Image
-            src={`${strapiDomain}${homeData.image.url}`}
-            alt={`${strapiDomain}${homeData.image.url}`}
+           <Image
+            src={`${strapiDomain}${homeData.Row1.image.url}`}
+            alt={`${strapiDomain}${homeData.Row1.image.url}`}
             width={450}
             height={400}
 
-          />
-
+          /> 
 
 
         </div>
 
         <div className="col-span-2 border border-gray-50 rounded-lg shadow-sm p-2 md:p-6">
-          <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">tet -- {homeData.heading}</h1>
+          <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">{homeData.Row1?.heading}</h1>
           <p className="text-base text-gray-600 mb-6 md:mt-6 ">
-          {homeData.content} </p>
+          {homeData.Row1?.content} </p>
           
 
 
           <button className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
-            Get a Ride
+          {homeData.Row1?.btn} 
           </button>
 
         </div>
@@ -135,7 +135,7 @@ const [completeData, setcompleteData] = useState(null);
   
 
       {/* Row 2 */}
-      <motion.section
+      {homeData.Row2 && (<motion.section
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -147,10 +147,9 @@ const [completeData, setcompleteData] = useState(null);
         <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16  mb-4 ">
 
           <div className="col-span-2 order-2 md:order-1  border-gray-100 border-r  p-2 md:p-6">
-          <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">Where does it come from standard?</h1>
+          <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">{homeData.Row2?.heading}</h1>
             <p className="text-base text-gray-600 mb-2">
-              Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-              piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,
+            {homeData.Row2?.content}
             </p>
             <ul className='flex flex-col justify-start items-start gap-3 mb-8 text-sm'>
               <li className="flex gap-2 items-start text-gray-700 italic">
@@ -184,8 +183,8 @@ const [completeData, setcompleteData] = useState(null);
 
 
             <Image
-              src="https://img.freepik.com/free-photo/fresh-green-plant-twig-with-smartphone_23-2148104488.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740"
-              alt="Landing page"
+               src={`${strapiDomain}${homeData.Row2.image.url}`}
+               alt={`${strapiDomain}${homeData.Row2.image.url}`}
               width={450}
               height={400}
 
@@ -196,6 +195,7 @@ const [completeData, setcompleteData] = useState(null);
 
         </div>
       </div></motion.section>
+      )}
 
 
       {/* Row 3 */}
@@ -517,7 +517,7 @@ const [completeData, setcompleteData] = useState(null);
 </div>
 </div> 
 </motion.section>
-
+</div>):(<div><Loading /></div>)}
     </>
   )
 }

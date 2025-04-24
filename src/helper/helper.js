@@ -12,8 +12,14 @@ async function getHome() {
     try {
           const token = process.env.NEXT_PUBLIC_STRAPI_TOKEN;
          
+          const params = new URLSearchParams({
+            'populate[SEO][populate]': '*',
+            'populate[Row1][populate]': 'image',
+            'populate[Row2][populate]': 'image',
+          });
+          
           const res = await fetch(
-            `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/homepage?populate[Section1][populate]=image&populate[Row2][populate]=image`,
+            `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/homepage?${params.toString()}`,
             {
               headers: {
                 Authorization: `Bearer ${token}`,
