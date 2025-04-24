@@ -12,24 +12,27 @@ import { getHome } from '@/helper/helper'
 
 function Landing() {
 const [homeData, sethomeData] = useState(null);
+const [completeData, setcompleteData] = useState(null);
   const domain = process.env.NEXT_PUBLIC_FRONT_DOMAIN;
+  const strapiDomain = process.env.NEXT_PUBLIC_STRAPI_API_URL;
+  
   const icons = {
-    'vector': `${domain}images/icons/Vector.png`,
-    'vector2': `${domain}images/icons/Vector2.png`,
-    'camera': `${domain}images/icons/camera.png`,
-    'handsdot': `${domain}images/icons/handsdot.png`,
-    'handshake': `${domain}images/icons/handshake.png`,
-    'pie': `${domain}images/icons/pie.png`,
-    'circlearrow': `${domain}images/icons/circlearrow.png`,
-    'graph': `${domain}images/icons/graph.png`,
-    'heart': `${domain}images/icons/heart.png`,
+    'vector': `${domain}/images/icons/Vector.png`,
+    'vector2': `${domain}/images/icons/Vector2.png`,
+    'camera': `${domain}/images/icons/camera.png`,
+    'handsdot': `${domain}/images/icons/handsdot.png`,
+    'handshake': `${domain}/images/icons/handshake.png`,
+    'pie': `${domain}/images/icons/pie.png`,
+    'circlearrow': `${domain}/images/icons/circlearrow.png`,
+    'graph': `${domain}/images/icons/graph.png`,
+    'heart': `${domain}/images/icons/heart.png`,
   }
   const servicesIcons = {
-    'user': `${domain}images/services/user.png`,
-    'siezer': `${domain}images/services/siezer.png`,
-    'map': `${domain}images/services/map.png`,
-    'usersearch': `${domain}images/services/usersearch.png`,
-    'like': `${domain}images/services/like.png`,
+    'user': `${domain}/images/services/user.png`,
+    'siezer': `${domain}/images/services/siezer.png`,
+    'map': `${domain}/images/services/map.png`,
+    'usersearch': `${domain}/images/services/usersearch.png`,
+    'like': `${domain}/images/services/like.png`,
     
   }
 
@@ -69,7 +72,8 @@ const [homeData, sethomeData] = useState(null);
   const getData = async () => {
     const data = await getHome();
     console.log("Home Data 11", data);
-    sethomeData(data);
+    sethomeData(data.data.Section1);
+    //setcompleteData(data.data.Section1);
     };
   
     useEffect(() => {
@@ -81,9 +85,14 @@ const [homeData, sethomeData] = useState(null);
   return (
     <>
 
-{/* <div>
+<div>
   
-  <pre>{JSON.stringify(homeData,null,2)}</pre></div> */}
+  <pre>{JSON.stringify(homeData,null,2)}</pre>
+<div>{strapiDomain}{homeData?.image?.url}</div>
+
+
+=
+  </div>
   
       {/* Row 1 */}
       {homeData && (<motion.section
@@ -96,10 +105,9 @@ const [homeData, sethomeData] = useState(null);
       <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16 mb-10 animate-fade-in-down">
         <div className="col-span-2 rounded-md  flex justify-center items-center">
 
-
           <Image
-            src={`${homeData.imageLilnk}`}
-            alt="Landing page"
+            src={`${strapiDomain}${homeData.image.url}`}
+            alt={`${strapiDomain}${homeData.image.url}`}
             width={450}
             height={400}
 
@@ -110,7 +118,7 @@ const [homeData, sethomeData] = useState(null);
         </div>
 
         <div className="col-span-2 border border-gray-50 rounded-lg shadow-sm p-2 md:p-6">
-          <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">{homeData.heading}</h1>
+          <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">tet -- {homeData.heading}</h1>
           <p className="text-base text-gray-600 mb-6 md:mt-6 ">
           {homeData.content} </p>
           

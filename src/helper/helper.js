@@ -11,16 +11,18 @@ async function getHome() {
  
     try {
           const token = process.env.NEXT_PUBLIC_STRAPI_TOKEN;
-          
-          const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_API_URL}api/homepage?populate=*`, {
-            headers: {
-              Authorization: `Bearer ${token}` // yahan token daalo
-            },
-            
-          });
+         
+          const res = await fetch(
+            `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/homepage?populate[Section1][populate]=image&populate[Row2][populate]=image`,
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          );
           const data = await res.json();
           //console.log("Response Data:", data);
-          return data.data.Section1;
+          return data;
         } catch (error) {
           console.error("Error:", error);
         }

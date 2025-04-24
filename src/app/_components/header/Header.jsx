@@ -35,16 +35,16 @@ export default function Header() {
                 <Link href={`${hommeUrl}`} className="text-primary text-lg font-medium hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
                         Home
                    </Link>
-                   <Link href={`${hommeUrl}user1`} className="text-primary text-lg font-medium hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
+                   <Link href={`${hommeUrl}/user1`} className="text-primary text-lg font-medium hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
                         User 1
                    </Link>    
-                    <Link href={`${hommeUrl}user2`} className="text-primary text-lg font-medium hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
+                    <Link href={`${hommeUrl}/user2`} className="text-primary text-lg font-medium hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
                         User 2
                    </Link>
-                     <Link href={`${hommeUrl}pamentModel`} className="text-primary text-lg font-medium hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
+                     <Link href={`${hommeUrl}/pamentModel`} className="text-primary text-lg font-medium hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
                         Payment Model
                    </Link>
-                   <Link href={`${hommeUrl}about`} className="text-primary text-lg font-medium hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
+                   <Link href={`${hommeUrl}/about`} className="text-primary text-lg font-medium hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
                         About
                    </Link>
                 </nav>
