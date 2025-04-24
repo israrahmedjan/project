@@ -86,14 +86,9 @@ const [homeData, sethomeData] = useState(null);
   return (
     <>
 
-<div>
-  
-
-
-  </div>
   {homeData ? (<div>
 
-     <pre>{JSON.stringify(homeData.Row2,null,2)}</pre>
+     {/* <pre>{JSON.stringify(homeData.Row2,null,2)}</pre> */}
 {/* <div>{strapiDomain}{homeData?.image?.url}</div> */}
       {/* Row 1 */}
       {homeData.Row1 && (<motion.section
