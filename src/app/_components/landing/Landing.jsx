@@ -106,13 +106,24 @@ const [homeData, sethomeData] = useState(null);
       <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16 mb-10 animate-fade-in-down">
         <div className="col-span-2 rounded-md  flex justify-center items-center">
 
-           <Image
+           {/* <Image
             src={`${homeData.Row1.image.url}`}
             alt={`${homeData.Row1.image.url}`}
             width={450}
             height={400}
 
-          /> 
+          />  */}
+
+            <Image
+            src='https://sacred-desire-73598e89e2.media.strapiapp.com/Black_849c4e369a.jpg'
+            alt='https://sacred-desire-73598e89e2.media.strapiapp.com/Black_849c4e369a.jpg'
+            width={450}
+            height={400}
+
+          />
+
+          
+
 
 
         </div>
