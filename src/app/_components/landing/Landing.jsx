@@ -107,8 +107,8 @@ const [homeData, sethomeData] = useState(null);
         <div className="col-span-2 rounded-md  flex justify-center items-center">
 
            <Image
-            src={`${strapiDomain}${homeData.Row1.image.url}`}
-            alt={`${strapiDomain}${homeData.Row1.image.url}`}
+            src={`${homeData.Row1.image.url}`}
+            alt={`${homeData.Row1.image.url}`}
             width={450}
             height={400}
 
