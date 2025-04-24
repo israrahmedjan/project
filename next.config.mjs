@@ -8,6 +8,7 @@ const nextConfig = {
         'img.freepik.com',
         'localhost',
         'project-plum-five.vercel.app',
+        'sacred-desire-73598e89e2.media.strapiapp.com',
         'vercel.app'],
     },
   };
