@@ -34,6 +34,34 @@ async function getHome() {
         }
 }
 
+// Get User 1 Data
+async function getUser1() {
+ 
+  try {
+        const token = process.env.NEXT_PUBLIC_STRAPI_TOKEN;
+       
+        const params = new URLSearchParams({
+          'populate[SEO][populate]': '*',
+          'populate[Row1][populate]': 'image',
+          'populate[Row2][populate]': 'image',
+        });
+        
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/user1?${params.toString()}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        const data = await res.json();
+        //console.log("Response Data:", data);
+        return data;
+      } catch (error) {
+        console.error("Error:", error);
+      }
+}
+
 async function getCategoriesAPI(slug="") {
 
   const response = await axios.get('/api/categories',
@@ -142,4 +170,4 @@ const addOldUserData = (dispatch)=>
   
 }
 
-  export {getCategoriesAPI,productDetail,productByCategoryAPI,handleLoginFunc,UserLoginClose,addOldUserData,getHome}
+  export {getCategoriesAPI,productDetail,productByCategoryAPI,handleLoginFunc,UserLoginClose,addOldUserData,getHome,getUser1}

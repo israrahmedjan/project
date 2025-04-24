@@ -2,7 +2,7 @@
 import { ArrowRight, Camera, Clock, Mail } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Ticker from '../Ticker';
 import ServiceSlider from '../ServiceSlider';
 import { ChevronRight } from 'lucide-react'
@@ -10,28 +10,31 @@ import { ChevronRight } from 'lucide-react'
 
 import { motion } from 'framer-motion';
 import Breadcrumb from '../Breadcrumb'
+import { getUser1 } from '@/helper/helper'
+import Loader from '@/components/Loader'
 
 function User1() {
 
 
     const domain = process.env.NEXT_PUBLIC_FRONT_DOMAIN;
+    const [user1Data, setuser1Data] = useState(null);
     const icons = {
-        'vector': `${domain}images/icons/Vector.png`,
-        'vector2': `${domain}images/icons/Vector2.png`,
-        'camera': `${domain}images/icons/camera.png`,
-        'handsdot': `${domain}images/icons/handsdot.png`,
-        'handshake': `${domain}images/icons/handshake.png`,
-        'pie': `${domain}images/icons/pie.png`,
-        'circlearrow': `${domain}images/icons/circlearrow.png`,
-        'graph': `${domain}images/icons/graph.png`,
-        'heart': `${domain}images/icons/heart.png`,
+        'vector': `${domain}/images/icons/Vector.png`,
+        'vector2': `${domain}/images/icons/Vector2.png`,
+        'camera': `${domain}/images/icons/camera.png`,
+        'handsdot': `${domain}/images/icons/handsdot.png`,
+        'handshake': `${domain}/images/icons/handshake.png`,
+        'pie': `${domain}/images/icons/pie.png`,
+        'circlearrow': `${domain}/images/icons/circlearrow.png`,
+        'graph': `${domain}/images/icons/graph.png`,
+        'heart': `${domain}/images/icons/heart.png`,
     }
     const servicesIcons = {
-        'user': `${domain}images/services/user.png`,
-        'siezer': `${domain}images/services/siezer.png`,
-        'map': `${domain}images/services/map.png`,
-        'usersearch': `${domain}images/services/usersearch.png`,
-        'like': `${domain}images/services/like.png`,
+        'user': `${domain}/images/services/user.png`,
+        'siezer': `${domain}/images/services/siezer.png`,
+        'map': `${domain}/images/services/map.png`,
+        'usersearch': `${domain}/images/services/usersearch.png`,
+        'like': `${domain}/images/services/like.png`,
 
     }
 
@@ -68,15 +71,26 @@ function User1() {
         },
     ];
 
+const getData = async () => {
+    const data = await getUser1();
+    console.log("User 1 Data", data);
+    setuser1Data(data.data);
+    //setcompleteData(data.data.Section1);
+    };
+  
+    useEffect(() => {
+      console.log("Url live:",process.env.NEXT_PUBLIC_STRAPI_API_URL)
+      getData();
+    }, []);
 
 
     return (
         <>
             {/* Breadcrumbs */}
             <Breadcrumb user="User1" name="John" />
-           
+            {user1Data ? (<div>
             {/* Row 1 */}
-            <motion.section
+            {user1Data.Row1 && (<motion.section
                 initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
@@ -87,26 +101,24 @@ function User1() {
                     <div className="col-span-2 rounded-md  flex justify-center items-center">
 
 
-                        <Image
-                            src="https://img.freepik.com/free-vector/smartphone-lock-screen-with-hot-air-balloon-landscape-background-mobile-phone-onboard-page-with-date-time-digital-cosmic-wallpapers-cellphone-device-cartoon-user-interface-design-set_107791-7874.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740"
-                            alt="Landing page"
-                            width={450}
-                            height={400}
-
-                        />
+                     {user1Data.Row1?.image?.url && (<Image
+                                 src={`${user1Data.Row1?.image.url}`}
+                                 alt={`${user1Data.Row1?.image.url}`}
+                                 width={450}
+                                 height={400}
+                     
+                               /> 
+                             )}
+                     
 
 
 
                     </div>
 
                     <div className="col-span-2 border border-gray-50 rounded-lg shadow-sm p-2 md:p-6">
-                        <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">Why do we use it?</h1>
+                        <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">{user1Data.Row1?.heading}</h1>
                         <p className="text-base text-gray-600 mb-6 md:mt-6 ">
-                            It is a long established fact that a reader will be distracted by the readable content of a
-                            page when looking at its layout.
-                            The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters </p>
-
-
+                        {user1Data.Row1?.heading}</p>
 
                         <button className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
                             Get a Ride
@@ -115,6 +127,7 @@ function User1() {
                     </div>
 
                 </div></motion.section>
+                )}
 
             {/* Row 2 */}
             <motion.section
@@ -193,7 +206,7 @@ function User1() {
                     <div></div>
                     <div className="absolute right-10 -bottom-16 ">
                         <Image
-                            src={`${process.env.NEXT_PUBLIC_FRONT_DOMAIN}images/3dImage.png`}
+                            src={`${process.env.NEXT_PUBLIC_FRONT_DOMAIN}/images/3dImage.png`}
                             alt="Mobile"
                             width={200}
                             height={350}
@@ -216,7 +229,7 @@ function User1() {
                     <div></div>
                     <div className="absolute  -top-14 right-7 ">
                         <Image
-                            src={`${process.env.NEXT_PUBLIC_FRONT_DOMAIN}images/3dImage.png`}
+                            src={`${process.env.NEXT_PUBLIC_FRONT_DOMAIN}/images/3dImage.png`}
                             alt="Mobile"
                             width={100}
                             height={120}
@@ -489,7 +502,7 @@ function User1() {
                     </div>
                 </div>
             </motion.section>
-
+            </div>):<div><Loader /></div>}
         </>
     )
 }

@@ -16,22 +16,22 @@ function User2() {
 
   const domain = process.env.NEXT_PUBLIC_FRONT_DOMAIN;
   const icons = {
-    'vector': `${domain}images/icons/Vector.png`,
-    'vector2': `${domain}images/icons/Vector2.png`,
-    'camera': `${domain}images/icons/camera.png`,
-    'handsdot': `${domain}images/icons/handsdot.png`,
-    'handshake': `${domain}images/icons/handshake.png`,
-    'pie': `${domain}images/icons/pie.png`,
-    'circlearrow': `${domain}images/icons/circlearrow.png`,
-    'graph': `${domain}images/icons/graph.png`,
-    'heart': `${domain}images/icons/heart.png`,
+    'vector': `${domain}/images/icons/Vector.png`,
+    'vector2': `${domain}/images/icons/Vector2.png`,
+    'camera': `${domain}/images/icons/camera.png`,
+    'handsdot': `${domain}/images/icons/handsdot.png`,
+    'handshake': `${domain}/images/icons/handshake.png`,
+    'pie': `${domain}/images/icons/pie.png`,
+    'circlearrow': `${domain}/images/icons/circlearrow.png`,
+    'graph': `${domain}/images/icons/graph.png`,
+    'heart': `${domain}/images/icons/heart.png`,
   }
   const servicesIcons = {
-    'user': `${domain}images/services/user.png`,
-    'siezer': `${domain}images/services/siezer.png`,
-    'map': `${domain}images/services/map.png`,
-    'usersearch': `${domain}images/services/usersearch.png`,
-    'like': `${domain}images/services/like.png`,
+    'user': `${domain}/images/services/user.png`,
+    'siezer': `${domain}/images/services/siezer.png`,
+    'map': `${domain}/images/services/map.png`,
+    'usersearch': `${domain}/images/services/usersearch.png`,
+    'like': `${domain}/images/services/like.png`,
     
   }
 
