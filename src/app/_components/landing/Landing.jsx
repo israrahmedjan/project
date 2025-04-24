@@ -106,21 +106,21 @@ const [homeData, sethomeData] = useState(null);
       <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16 mb-10 animate-fade-in-down">
         <div className="col-span-2 rounded-md  flex justify-center items-center">
 
-           {/* <Image
+           <Image
             src={`${homeData.Row1.image.url}`}
             alt={`${homeData.Row1.image.url}`}
             width={450}
             height={400}
 
-          />  */}
+          /> 
 
-            <Image
+            {/* <Image
             src='https://sacred-desire-73598e89e2.media.strapiapp.com/Black_849c4e369a.jpg'
             alt='https://sacred-desire-73598e89e2.media.strapiapp.com/Black_849c4e369a.jpg'
             width={450}
             height={400}
 
-          />
+          /> */}
 
           
 
@@ -129,7 +129,9 @@ const [homeData, sethomeData] = useState(null);
         </div>
 
         <div className="col-span-2 border border-gray-50 rounded-lg shadow-sm p-2 md:p-6">
-          <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">{homeData.Row1?.heading}</h1>
+          <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">
+          {homeData.Row1.image.url}
+            {homeData.Row1?.heading}</h1>
           <p className="text-base text-gray-600 mb-6 md:mt-6 ">
           {homeData.Row1?.content} </p>
           
