@@ -11,7 +11,6 @@ import { ChevronRight } from 'lucide-react'
 import { motion } from 'framer-motion';
 import Breadcrumb from '../Breadcrumb'
 import { getUser1 } from '@/helper/helper'
-import Loader from '@/components/Loader'
 import Loading from '../Loading'
 
 function User1() {

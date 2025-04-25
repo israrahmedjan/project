@@ -41,8 +41,11 @@ export default function Header() {
                     <Link href={`${hommeUrl}/user2`} className="text-primary text-lg font-medium hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
                         User 2
                    </Link>
-                     <Link href={`${hommeUrl}/pamentModel`} className="text-primary text-lg font-medium hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
+                     <Link href={`${hommeUrl}/paymentModel`} className="text-primary text-lg font-medium hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
                         Payment Model
+                   </Link>
+                   <Link href={`${hommeUrl}/careers`} className="text-primary text-lg font-medium hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
+                        Careers
                    </Link>
                    <Link href={`${hommeUrl}/about`} className="text-primary text-lg font-medium hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
                         About
@@ -89,11 +92,11 @@ export default function Header() {
       <div
       key="dropdown" // yeh important hai
       className="flex flex-col bg-white rounded-md animate-slidein">
-        <a href="#" className="px-4 py-2 text-primary hover:bg-gray-100 border-gray-100 border-b">Home</a>
-          <a href="#" className="px-4 py-2 text-primary hover:bg-gray-100 border-gray-100 border-b ">Drive</a>
-          <a href="#" className="px-4 py-2 text-primary hover:bg-gray-100 border-gray-100 border-b">Ride</a>
-          <a href="#" className="px-4 py-2 text-primary hover:bg-gray-100 border-gray-100 border-b">Business</a>
-          <a href="#" className="px-4 py-2 text-primary hover:bg-gray-100 border-gray-100 border-b">About</a>
+       <Link href={`${hommeUrl}`}  className="px-4 py-2 text-primary hover:bg-gray-100 border-gray-100 border-b">Home</Link>
+       <Link href={`${hommeUrl}/user1`} className="px-4 py-2 text-primary hover:bg-gray-100 border-gray-100 border-b ">User1</Link>
+       <Link href={`${hommeUrl}/user2`}  className="px-4 py-2 text-primary hover:bg-gray-100 border-gray-100 border-b">User2</Link>
+       <Link href={`${hommeUrl}/paymentModel`}  className="px-4 py-2 text-primary hover:bg-gray-100 border-gray-100 border-b">Payment Model</Link>
+       <Link href={`${hommeUrl}/careers`}  className="px-4 py-2 text-primary hover:bg-gray-100 border-gray-100 border-b">Careers</Link>
         </div>
       )}
     </header>

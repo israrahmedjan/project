@@ -10,13 +10,13 @@ import { ChevronRight } from 'lucide-react'
 
 import { motion } from 'framer-motion';
 import Breadcrumb from '../Breadcrumb'
-import { getpaymentModel, getUser2 } from '@/helper/helper'
-import Loader from '@/components/Loader'
+import { getUser2 } from '@/helper/helper'
 import Loading from '../Loading'
 
 function PaymentModel() {
     
 const [user2Data, setuser2Data] = useState(null);
+const [showLightbox, setShowLightbox] = useState(false);
   const domain = process.env.NEXT_PUBLIC_FRONT_DOMAIN;
   const icons = {
     'vector': `${domain}/images/icons/Vector.png`,
@@ -38,41 +38,9 @@ const [user2Data, setuser2Data] = useState(null);
     
   }
 
-  const services = [
-    {
-      title: 'Web Development',
-      image: servicesIcons.user, // apni image path daalna
-      name: 'Custom Websites',
-      description: 'Building responsive and modern websites tailored to your needs.',
-    },
-    {
-      title: 'Mobile Apps',
-      image: servicesIcons.siezer,
-      name: 'iOS & Android Apps',
-      description: 'High-performance apps with great user experience.',
-    },
-    {
-      title: 'UI/UX Design',
-      image: servicesIcons.map,
-      name: 'Creative Designs',
-      description: 'Beautiful and functional designs that engage your audience.',
-    },
-    {
-      title: 'SEO Services',
-      image: servicesIcons.usersearch,
-      name: 'Boost Ranking',
-      description: 'Improve your site ranking and visibility on search engines.',
-    },
-    {
-      title: 'Wordpress Developer',
-      image: servicesIcons.like,
-      name: 'Custom Theme',
-      description: 'Beautiful and functional designs that engage your audience.',
-    },
-  ];
-
+  
   const getData = async () => {
-    const data = await getpaymentModel();
+    const data = await getUser2();
     console.log("User 1 Data", data);
     setuser2Data(data.data);
     //setcompleteData(data.data.Section1);
@@ -82,13 +50,33 @@ const [user2Data, setuser2Data] = useState(null);
       console.log("Url live:",process.env.NEXT_PUBLIC_STRAPI_API_URL)
       getData();
     }, []);
+    useEffect(() => {
+      setShowLightbox(true); // page load pe modal open ho
+    }, []);
 
 
   return (
     <>
   {/* Breadcrumbs */}
-<Breadcrumb user="User2" name="Mitchal Stark" />
-{/* Mobiles and */}
+<Breadcrumb user="Payment Model" name="Mitchal Stark" />
+
+{/* Light Box */}
+{showLightbox && (
+  <div className="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50">
+    <div className="bg-white p-6 rounded-lg shadow-lg w-[90%] md:w-[400px] relative">
+      <button
+        className="absolute top-2 right-2 text-black"
+        onClick={() => setShowLightbox(false)}
+      >
+        ✕
+      </button>
+      <h2 className="text-2xl font-bold mb-4">Gift Page Page Model Box is under Constructed.!</h2>
+      <p>Commint Soon...</p>
+      
+    </div>
+  </div>
+)}
+
       {/* Row 1 */}
       {user2Data ? (<div>
 
@@ -389,28 +377,7 @@ const [user2Data, setuser2Data] = useState(null);
 </div></motion.section>
 
 {/* Row 6 */}
-<motion.section
-        initial={{ opacity: 0, y: 100 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: false, amount: 0.3 }}
-        className=""
-      >
-<div className='w-full p-10  bg-gray-50'>
-<div className='w-full flex flex-col'>
-  <h1 className='text-2xl mx-auto md:text-3xl font-semibold'>Our Services</h1>
-  <h1 className='mx-auto md:text-lg'>Our Services</h1>
-  </div>
 
-          {(services.length != 0) && (
-      <ServiceSlider services={services} />
-      )}
-
-       
-      
- </div>
-</motion.section>
-{/* Row 7 */}
 <motion.section
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}

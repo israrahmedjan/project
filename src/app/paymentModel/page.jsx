@@ -1,12 +1,13 @@
 
 import React from 'react'
-import User2 from '../_components/user2/User2'
+
+import PaymentModel from '../_components/paymentModel/PaymentModel'
 
 function page() {
   return (
     <>
     <div className="mt-[80px]">
-      <User2 />
+      <PaymentModel />
     </div>
     </>
   )

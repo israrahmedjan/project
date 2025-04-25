@@ -119,112 +119,36 @@ async function getpaymentModel() {
       }
 }
 
-async function getCategoriesAPI(slug="") {
+// Get Careers
 
-  const response = await axios.get('/api/categories',
-    
-  );
-  return response.data.data;
-}
-
-
-async function productDetail(categorySlug="",productSlug="") {
-//console.log("My slug",productSlug);
-  const response = await axios.get('/api/productsDetail', {
-    params: {
-      productSlug: productSlug,
-      categorySlug: categorySlug
-    },
-  });
-  return response.data.data;
-}
-
-async function productByCategoryAPI(categorySlugs = "", minPrice=10,maxPrice=500, limit="", sort={}) {
-  try {
-    //console.log("No my slugs is that:", sort);
-
-    const response = await axios.get('/api/category', {
-      params: {
-        categorySlugs: categorySlugs,
-        minPrice:minPrice,
-        maxPrice:maxPrice,
-        limit: 6,
-        sort: JSON.stringify(sort), // Include sort if needed
-      },
-    });
-
-    //console.log("Response in Help:", response.data);
-    return response.data.data;
-  } catch (error) {
-    console.error("Error fetching products:", error);
-    return null; // Return null or an empty array if there's an error
-  }
-}
-
-const handleLoginFunc = (dispatch,item) => {
-  const token = document.cookie.includes('auth_token'); // Check if token exists
-  
+async function getCareers() {
  
-   if (!token) {
- dispatch(LoginModelBoxAction(true))   
-  } else {
-   
-    dispatch(addWishListItems(item))
-    dispatch(LoginModelBoxAction(false))
+  try {
+    const token = process.env.NEXT_PUBLIC_STRAPI_TOKEN;
   
-    addToWishlist(item);
-
-
+    const params = new URLSearchParams({
+      'populate': '*', // populate all fields (you can be more specific if needed)
+      'pagination[pageSize]': '100', // optional: adjust as needed
+      'sort': 'publishedAt:desc',   // optional: sort by published date
+    });
+  
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/careers?${params.toString()}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+  
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching careers:", error);
   }
-};
-
-
-const isUserLogin = (dispatch) => {
-   const token = document.cookie.includes('auth_token'); // Check if token exists
-   
-  
-    if (!token) {
-          return false;
-     } else {
-      return true;
-     }
- };
-
-const UserLoginClose = (dispatch)=>
-{
-  dispatch(LoginModelBoxAction(false))
 }
 
-const addOldUserData = (dispatch)=>
-{
-  const user = JSON.parse(localStorage.getItem("user"));
-  //console.log("user data",user);
-  if(user){
-    dispatch(addUserInfo(user))
-  }
-  const isUserLogin = JSON.parse(localStorage.getItem("isUserLogin"));
-  //console.log("is user login",isUserLogin);
-  if(isUserLogin){
-    dispatch(loginAction(isUserLogin))
-  }
-  const wishlistItems = JSON.parse(localStorage.getItem("wishlist"));
-  //dispatch(addWishListItems(wishlistItems));
 
-  if (Array.isArray(wishlistItems)) {
-    wishlistItems.forEach(item => {
-      dispatch(addWishListItems(item));
-    });
-  }
 
-  const cartItems = JSON.parse(localStorage.getItem("Cart"));
-  console.log("Cart ITems !")
-  if (Array.isArray(cartItems)) {
-    cartItems.forEach(item => {
-      dispatch((addcartItems(item)));
-    });
-  }
 
-  
-}
-
-  export {getHome,getUser1,getUser2,getpaymentModel}
+  export {getHome,getUser1,getUser2,getCareers}
