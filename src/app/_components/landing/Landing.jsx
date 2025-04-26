@@ -88,7 +88,7 @@ function Landing() {
 
       {homeData ? (<div>
 
-        <pre>{JSON.stringify(homeData.Row4, null, 2)}</pre>
+        <pre>{JSON.stringify(homeData.Row5, null, 2)}</pre>
         {/* <div>{strapiDomain}{homeData?.image?.url}</div> */}
         {/* Row 1 */}
         {homeData.Row1 && (<motion.section
@@ -357,7 +357,7 @@ function Landing() {
           <div className='w-full bg-white md:mt-12  md:pb-16 '>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16  mb-4 ">
               <div className="col-span-2 order-2 md:order-1 flex justify-center items-center">
-
+test5
 
                   {homeData.Row5?.image?.url ? (<Image
                   src={`${homeData.Row5?.image.url}`}
