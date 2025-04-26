@@ -444,7 +444,7 @@ function Landing() {
             </div>
 
             {(homeData.Row6Listing.length != 0) && (
-              <ServiceSlider services={homeData.Row5Listing} />
+              <ServiceSlider services={homeData.Row6Listing} />
             )}
 
 
