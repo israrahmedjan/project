@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
     <div className="mt-[130px]">
-    <Landing />
+    {/* <Landing /> */}
     </div>
     
      
