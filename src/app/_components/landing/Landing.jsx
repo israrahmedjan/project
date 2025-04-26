@@ -88,7 +88,7 @@ function Landing() {
 
       {homeData ? (<div>
 
-        <pre>{JSON.stringify(homeData.Row3, null, 2)}</pre>
+        <pre>{JSON.stringify(homeData.Row3listing, null, 2)}</pre>
         {/* <div>{strapiDomain}{homeData?.image?.url}</div> */}
         {/* Row 1 */}
         {homeData.Row1 && (<motion.section
@@ -234,13 +234,16 @@ function Landing() {
                           width={100}
                           height={100} />)}
                  
-                  <h2 className="text-lg font-medium mb-2">Micheal</h2>
+                  <h2 className="text-lg font-medium mb-2">{row3listing?.heading}</h2>
                   <p className="text-gray-600 text-center mb-4">
-                    Yeh thoda description ya text hoga jo image ke neeche dikhayega.
+                  {row3listing?.content}
                   </p>
-                  <button className="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
-                    More About It
-                  </button>
+                 
+              <Link href={row3listing?.btnAction || "/goSite"} >
+                <button className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
+                  {row3listing?.btnlabel || "See More"}
+                </button>
+              </Link>
                 </div>
                 </div>
               ))}
