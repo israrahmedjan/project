@@ -27,7 +27,7 @@ async function getHome() {
            'populate[Row6Listing][populate]': '*',
            'populate[Row7][populate]': '*',
            'populate[Row8][populate]': '*',
-          //  'populate[Row7Listing][populate]': '*',
+           'populate[Row8Listing][populate]': '*',
           //  'populate[Row8][populate]': '*',
           //  'populate[Row8Listing][populate]': '*',
           });
