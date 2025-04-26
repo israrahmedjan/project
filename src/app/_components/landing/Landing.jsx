@@ -452,7 +452,7 @@ function Landing() {
           </div>
         </motion.section>)}
         {/* Row 7 */}
-        <motion.section
+        {homeData.Row7 && (<motion.section
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -463,32 +463,37 @@ function Landing() {
             <div className="col-span-2 rounded-md  flex justify-center items-center">
 
 
-              <Image
-                src="https://img.freepik.com/free-photo/arabic-mobiles-front-side_187299-38069.jpg?t=st=1745160534~exp=1745164134~hmac=681c47b88c51e0d121f194ab6508583c27bd6fd38c7a8db35e7388f195a60fba&w=996"
-                alt="Landing page"
+            {homeData.Row7?.image?.url ? (<Image
+                src={`${homeData.Row7?.image.url}`}
+                alt={`${homeData.Row7?.image.url}`}
                 width={450}
                 height={400}
 
               />
+              ) : (<Image
+                src={`${domain}/images/noimage.jpg`}
+                alt={`No Image`}
+                width={450}
+                height={400} />)}
 
             </div>
 
             <div className="col-span-2 border border-gray-50 rounded-lg shadow-sm mb-2 p-2 md:p-6">
-              <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">Why do we use it?</h1>
+              <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary"> {homeData.Row7?.heading}</h1>
               <p className="text-base text-gray-600 mb-6 md:mt-6 ">
-                It is a long established fact that a reader will be distracted by the readable content of a
-                page when looking at its layout.
-                The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters </p>
+              {homeData.Row7?.content} </p>
 
 
 
-              <button className="px-4 float-right py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
-                Get a Ride
-              </button>
+              <Link href={homeData?.Row7?.btnAction || "/nopathset"} >
+                <button className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
+                  {homeData?.Row7?.btnlabel || "See More"}
+                </button>
+              </Link>
 
             </div>
           </div>
-        </motion.section>
+        </motion.section>)}
         {/* Row 8 */}
         <motion.section
           initial={{ opacity: 0, y: 100 }}
