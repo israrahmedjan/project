@@ -100,14 +100,14 @@ function Landing() {
         >
           <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16 mb-10 animate-fade-in-down">
             <div className="col-span-2 rounded-md  flex justify-center items-center">
-              {/* {homeData.Row1?.image?.url && (<Image
+              {homeData.Row1?.image?.url && (<Image
                 src={`${homeData.Row1?.image.url}`}
                 alt={homeData.Row1.image.url || 'Image'}
                 width={450}
                 height={400}
 
               />
-              )} */}
+              )}
             </div>
 
             <div className="col-span-2 border border-gray-50 rounded-lg shadow-sm p-2 md:p-6">
