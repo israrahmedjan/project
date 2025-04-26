@@ -317,12 +317,13 @@ function Landing() {
                 <div className='flex text-base flex-col md:flex-row  justify-between items-center gap-2'>
                   <button className="px-4 py-2 md:px-4 md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
                     {homeData?.Row4.btnLabel || "Get it More"}
+                    ${homeData.Row4?.image.url}
                    
                   </button>
                   <Link href= {homeData?.Row4.btnAction || "/gosite"} className='flex'><h2 className='font-normal text-primary hover:text-secondary md:text-[18px]'>Learn more about our app</h2><ArrowRight /></Link>
                 </div>
               </div>
-
+              
               <div className="col-span-2 order-1 md:order-2 flex justify-center items-center">
                 {homeData.Row4?.image?.url ? (<Image
                   src={`${homeData.Row4?.image.url}`}
