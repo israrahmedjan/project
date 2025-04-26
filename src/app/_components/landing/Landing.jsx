@@ -118,11 +118,11 @@ function Landing() {
                 {homeData.Row1?.content} </p>
 
 
-              <Link href={homeData?.Row1?.btnAction} >
+              {/* <Link href={homeData?.Row1?.btnAction} >
                 <button className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
                   {homeData?.Row1?.btnlabel}
                 </button>
-              </Link>
+              </Link> */}
 
             </div>
 
