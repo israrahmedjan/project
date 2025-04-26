@@ -182,9 +182,9 @@ function Landing() {
               </div>
 
               <div className="col-span-2 order-1 md:order-2 flex justify-center items-center">
-                {homeData.listing?.image?.url ? (<Image
-                  src={`${homeData.listing?.image.url}`}
-                  alt={`${homeData.listing?.image.url}`}
+                {homeData.Row2?.image?.url ? (<Image
+                  src={`${homeData.Row2?.image.url}`}
+                  alt={`${homeData.Row2?.image.url}`}
                   width={450}
                   height={400}
 
