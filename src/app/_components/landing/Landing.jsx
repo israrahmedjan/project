@@ -88,7 +88,7 @@ function Landing() {
 
       {homeData ? (<div>
 
-        <pre>{JSON.stringify(homeData.Row3listing, null, 2)}</pre>
+        <pre>{JSON.stringify(homeData.Row4, null, 2)}</pre>
         {/* <div>{strapiDomain}{homeData?.image?.url}</div> */}
         {/* Row 1 */}
         {homeData.Row1 && (<motion.section
@@ -276,74 +276,73 @@ function Landing() {
           </div></motion.section>)}
 
         {/* Row 4 */}
-        <motion.section
+        {homeData.Row4 && (<motion.section
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: false, amount: 0.3 }}
           className=""
         >
-          <div className='w-full bg-gray-50 md:pt-16 md:pb-16'>
+          <div className='w-full bg-gray-50 md:pt-16 md:pb-16 animate-fade-in-down'>
 
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-1 md:gap-2 mx-4 md:mx-16  mb-4 ">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16  mb-4 ">
 
-              <div className="col-span-2 order-2 md:order-1  border-gray-100 border-r md:mt-20 ">
-                <h1 className="text-xl md:text-3xl md:pb-2 mt-4 mb-2 font-normal text-primary"> Where can I get some?</h1>
+              <div className="col-span-2 order-2 md:order-1  border-gray-100 border-r  p-2 md:p-6">
+                <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">{homeData?.Row4?.heading}</h1>
                 <p className="text-base text-gray-600 mb-2">
-                  There are many variations of passages of Lorem Ipsum available, but the majority have
-                  suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-                  If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
+                  {homeData.Row4?.content}
                 </p>
-                <ul className='flex flex-col justify-start items-start gap-3 mb-8 text-gray-700 text-sm italic'>
-                  <li className="flex gap-2 items-start">
-                    <Image src={icons.vector} alt="vector icon" width={20} height={20} className='' />
-                    <div className='flex flex-col'><span className=''>It is a long established fact that</span>
-                      <span className=''>over 2000 years old. Richard McClintoc It is a long established</span>
-                    </div>
-                  </li>
-                  <li className="flex gap-2 justify-center items-start text-gray-700 italic">
-                    <Image src={icons.handsdot} alt="vector icon" width={25} height={25} className='mt-1' />
-                    <div className='flex flex-col '><span className=''>It is a long established fact that</span>
-                      <span className=''>over 2000 years old. Richard McClintoc It is a long established</span>
-                    </div>
-                  </li>
-                  <li className="flex gap-2 justify-center items-start text-gray-700 italic">
-                    <Image src={icons.handshake} alt="vector icon" width={25} height={25} className='mt-1' />
-                    <div className='flex flex-col '><span className=''>It is a long established fact that</span>
-                      <span className=''>over 2000 years old. Richard McClintoc It is a long established</span>
-                    </div>
-                  </li>
-                  <li className="flex gap-2 items-start">
-                    <Image src={icons.pie} alt="vector icon" width={20} height={20} className='' />
-                    <div className='flex flex-col'><span className=''>It is a long established fact that</span>
-                      <span className=''>over 2000 years old. Richard McClintoc It is a long established</span>
-                    </div>
-                  </li>
-                </ul>
-                <div className='flex text-base flex-col md:flex-row justify-between items-center gap-2 pb-3 w-full'>
-                  <button className="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
-                    More About It
+                {homeData.Row4Listing && (
+                  <ul className='flex flex-col justify-start items-start gap-3 mb-8 text-sm'>
+                    {homeData.Row4Listing.map((listing, index) => (
+                      <div key={index}>  <li className="flex gap-2 items-start text-gray-700 italic">
+                        {listing?.image?.url ? (<Image
+                          src={`${listing?.image.url}`}
+                          alt={`${listing?.image.url}`}
+                          width={20}
+                          height={20}
+
+                        />
+                        ) : (<ArrowRight size={30} />)}
+                        <div className='flex flex-col'><p>{listing?.content}</p>
+                        </div>
+                      </li>
+                                           </div>
+                    ))}
+
+
+                  </ul>
+                )}
+
+                <div className='flex text-base flex-col md:flex-row  justify-between items-center gap-2'>
+                  <button className="px-4 py-2 md:px-4 md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
+                    {homeData?.Row4listing.btnLabel || "Get it More"}
                   </button>
-                  <Link href="#" className='flex'><h2 className='font-normal text-primary hover:text-secondary md:text-[18px]'>Learn more about our app</h2><ArrowRight /></Link>
+                  <Link href= {homeData?.Row4listing.btnAction || "/gosite"} className='flex'><h2 className='font-normal text-primary hover:text-secondary md:text-[18px]'>Learn more about our app</h2><ArrowRight /></Link>
                 </div>
               </div>
 
-              <div className="col-span-3 order-1 md:order-2 flex justify-center items-center ">
-
-
-                <Image
-                  src="https://img.freepik.com/free-photo/smartphones-marble-table_23-2150837819.jpg?t=st=1745122512~exp=1745126112~hmac=623ac2fdbbed9e1c5ea3023e3d80af74debc7df27c520443237ece34e80f3c96&w=740"
-                  alt="Landing page"
-                  width={600}
-                  height={500}
+              <div className="col-span-2 order-1 md:order-2 flex justify-center items-center">
+                {homeData.listing?.image?.url ? (<Image
+                  src={`${homeData.Row4listing?.image.url}`}
+                  alt={`${homeData.Row4listing?.image.url}`}
+                  width={450}
+                  height={400}
 
                 />
+                ) : (<Image
+                  src={`${domain}/images/noimage.jpg`}
+                  alt={`No Image`}
+                  width={450}
+                  height={400} />)}
               </div>
 
 
 
             </div>
           </div></motion.section>
+        )}
+
 
         {/* Row 5 */}
         <motion.section
