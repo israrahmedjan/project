@@ -14,8 +14,21 @@ async function getHome() {
          
           const params = new URLSearchParams({
             'populate[SEO][populate]': '*',
-            'populate[Row1][populate]': 'image',
-            'populate[Row2][populate]': 'image',
+            'populate[Row1][populate]': '*',
+            'populate[Row2][populate]': '*',
+           'populate[Row2Listing][populate]': '*',
+           'populate[Row3][populate]': '*',
+           'populate[Row3Listing][populate]': '*',
+           'populate[Row4][populate]': '*',
+           'populate[Row4Listing][populate]': '*',
+           'populate[Row5][populate]': '*',
+           'populate[Row5Listing][populate]': '*',
+           'populate[Row6][populate]': '*',
+           'populate[Row6Listing][populate]': '*',
+           'populate[Row7][populate]': '*',
+           'populate[Row7Listing][populate]': '*',
+           'populate[Row8][populate]': '*',
+           'populate[Row8Listing][populate]': '*',
           });
           
           const res = await fetch(
@@ -30,7 +43,7 @@ async function getHome() {
           //console.log("Response Data:", data);
           return data;
         } catch (error) {
-          console.error("Error:", error);
+          console.error("Error:", error.name);
         }
 }
 
@@ -42,8 +55,11 @@ async function getUser1() {
        
         const params = new URLSearchParams({
           'populate[SEO][populate]': '*',
-          'populate[Row1][populate]': 'image',
-          'populate[Row2][populate]': 'image',
+          'populate[Row1][populate]': '*',
+          'populate[Row2][populate]': '*',
+          'populate[Row3][populate]': '*',
+          'populate[Row2Listing][populate]': '*',
+          
         });
         
         const res = await fetch(
@@ -58,7 +74,7 @@ async function getUser1() {
         //console.log("Response Data:", data);
         return data;
       } catch (error) {
-        console.error("Error:", error);
+        console.error("Error:", error.name);
       }
 }
 // User12 data

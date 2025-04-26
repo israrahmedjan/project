@@ -46,7 +46,7 @@ const getData = async () => {
            {careersData.map((career,index)=>
           (<div key={index}>           <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16 mb-10 animate-fade-in-down">
             <div className="md:col-span-4 bg-white rounded-xl shadow p-6 space-y-4">
-              <h2 className="text-2xl font-semibold text-gray-800">{career.title}</h2>
+              <h2 className="text-2xl font-semibold text-gray-800">{career.title    }</h2>
               <div className="flex flex-wrap text-sm text-gray-500 gap-4">
                 <span><strong>Department:</strong> Design</span>
                 <span><strong>Location:</strong> Lahore, Pakistan</span>
