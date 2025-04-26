@@ -137,7 +137,7 @@ const getData = async () => {
 
 
         {/* Row 2 */}
-        {user1Data.Row2 && (<motion.section
+        {user1Data.Row2Listing&& (<motion.section
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -149,9 +149,9 @@ const getData = async () => {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16  mb-4 ">
 
               <div className="col-span-2 order-2 md:order-1  border-gray-100 border-r  p-2 md:p-6">
-                <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">{user1Data?.Row2?.heading}</h1>
+                <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">{user1Data?.Row2Listing?.heading}</h1>
                 <p className="text-base text-gray-600 mb-2">
-                  {user1Data.Row2?.content}
+                  {user1Data.Row2Listing?.content}
                 </p>
                 {user1Data.Row2Listing && (
                   <ul className='flex flex-col justify-start items-start gap-3 mb-8 text-sm'>
