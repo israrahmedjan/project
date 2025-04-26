@@ -100,14 +100,18 @@ function Landing() {
         >
           <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16 mb-10 animate-fade-in-down">
             <div className="col-span-2 rounded-md  flex justify-center items-center">
-              {homeData.Row1?.image?.url && (<Image
+             {homeData.Row1?.image?.url ? (<Image
                 src={`${homeData.Row1?.image.url}`}
-                alt={homeData.Row1.image.url || 'Image'}
+                alt={`${homeData.Row1?.image.url}`}
                 width={450}
                 height={400}
 
               />
-              )}
+              ) : (<Image
+                src={`${domain}/images/noimage.jpg`}
+                alt={`No Image`}
+                width={450}
+                height={400} />)}
             </div>
 
             <div className="col-span-2 border border-gray-50 rounded-lg shadow-sm p-2 md:p-6">
@@ -115,12 +119,12 @@ function Landing() {
 
                 {homeData.Row1?.heading}</h1>
               <p className="text-base text-gray-600 mb-6 md:mt-6 ">
-                {homeData.Row1?.content} </p>
+                {homeData.Row1?.content || "Content Not Avaliable"} </p>
 
 
                <Link href="#" >
                 <button className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
-                  {homeData?.Row1?.btnlabel}
+                  {homeData?.Row1?.btnlabel || "Get a ride"}
                 </button>
               </Link> 
 
