@@ -117,14 +117,14 @@ function Landing() {
             <div className="col-span-2 border border-gray-50 rounded-lg shadow-sm p-2 md:p-6">
               <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">
 
-                {homeData.Row1?.heading}</h1>
+                {homeData.Row1.heading}</h1>
               <p className="text-base text-gray-600 mb-6 md:mt-6 ">
-                {homeData.Row1?.content} </p>
+                {homeData.Row1.content} </p>
 
 
-              <Link href={homeData?.Row1?.btnAction} >
+              <Link href={homeData.Row1.btnAction} >
                 <button className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
-                  {homeData?.Row1?.btnlabel}
+                  {homeData.Row1.btnlabel}
                 </button>
               </Link>
 
