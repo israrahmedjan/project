@@ -122,11 +122,11 @@ function Landing() {
                 {homeData.Row1?.content} </p>
 
 
-              {/* <Link href={homeData?.Row1?.btnAction || "Get a ride"} >
+              <Link href="#" >
                 <button className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
                   {homeData?.Row1?.btnlabel || "Get a rride"}
                 </button>
-              </Link> */}
+              </Link>
 
             </div>
 
@@ -155,14 +155,14 @@ function Landing() {
                   <ul className='flex flex-col justify-start items-start gap-3 mb-8 text-sm'>
                     {homeData.Row2Listing.map((listing, index) => (
                       <div key={index}>  <li className="flex gap-2 items-start text-gray-700 italic">
-                        {/* {listing?.image?.url ? (<Image
+                        {listing?.image?.url ? (<Image
                           src={`${listing?.image.url}`}
                           alt={`${listing?.image.url}`}
                           width={20}
                           height={20}
 
                         />
-                        ) : (<ArrowRight />)} */}
+                        ) : (<ArrowRight />)}
                         <div className='flex flex-col'><p>{listing?.content}</p>
                         </div>
                       </li>
@@ -186,9 +186,9 @@ function Landing() {
                 )}
 
                 <div className='flex text-base flex-col md:flex-row  justify-between items-center gap-2'>
-                  {/* <button className="px-4 py-2 md:px-4 md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
-                    {homeData?.Row2.btnLabel}
-                  </button> */}
+                  <button className="px-4 py-2 md:px-4 md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
+                    {homeData?.Row2.btnLabel || "Get it More"}
+                  </button>
                   <Link href="#" className='flex'><h2 className='font-normal text-primary hover:text-secondary md:text-[18px]'>Learn more about our app</h2><ArrowRight /></Link>
                 </div>
               </div>
