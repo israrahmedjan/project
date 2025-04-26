@@ -317,7 +317,7 @@ function Landing() {
                 <div className='flex text-base flex-col md:flex-row  justify-between items-center gap-2'>
                   <button className="px-4 py-2 md:px-4 md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
                     {homeData?.Row4.btnLabel || "Get it More"}
-                    ${homeData.Row4?.image.url}
+                   
                    
                   </button>
                   <Link href= {homeData?.Row4.btnAction || "/gosite"} className='flex'><h2 className='font-normal text-primary hover:text-secondary md:text-[18px]'>Learn more about our app</h2><ArrowRight /></Link>
@@ -347,7 +347,7 @@ function Landing() {
 
 
         {/* Row 5 */}
-        <motion.section
+        {homeData.Row5 && (<motion.section
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -355,49 +355,61 @@ function Landing() {
           className=""
         >
           <div className='w-full bg-white md:mt-12  md:pb-16 '>
-
             <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16  mb-4 ">
               <div className="col-span-2 order-2 md:order-1 flex justify-center items-center">
 
 
-                <Image
-                  src="https://img.freepik.com/free-photo/fresh-green-plant-twig-with-smartphone_23-2148104488.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740"
-                  alt="Landing page"
+                  {homeData.Row5?.image?.url ? (<Image
+                  src={`${homeData.Row5?.image.url}`}
+                  alt={`${homeData.Row5?.image.url}`}
                   width={450}
                   height={400}
 
                 />
+                ) : (<Image
+                  src={`${domain}/images/noimage.jpg`}
+                  alt={`No Image`}
+                  width={450}
+                  height={400} />)}
               </div>
               <div className="col-span-2 order-1 md:order-2  border-gray-100 border-r  p-2 md:p-6">
-                <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">Where does it come from standard?</h1>
+                <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">{homeData?.Row5?.heading}?</h1>
                 <p className="text-base text-gray-600 mb-2">
-                  Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                  piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,
+                {homeData.Row5?.content}
                 </p>
-                <ul className='flex flex-col justify-start items-start gap-3 mb-8 text-sm'>
-                  <li className="flex gap-2 items-start text-gray-700 italic">
-                    <Image src={icons.circlearrow} alt="vector icon" width={20} height={20} className='' />
-                    <div className='flex flex-col'><span className=''>It is a long established fact that</span>
-                      <span className=''>over 2000 years old. Richard McClintoc It is a long established</span>
-                    </div>
-                  </li>
+                {homeData.Row5Listing && (
+                  <ul className='flex flex-col justify-start items-start gap-3 mb-8 text-sm'>
+                    {homeData.Row5Listing.map((listing, index) => (
+                      <div key={index}>  <li className="flex gap-2 items-start text-gray-700 italic">
+                        {listing?.image?.url ? (<Image
+                          src={`${listing?.image.url}`}
+                          alt={`${listing?.image.url}`}
+                          width={20}
+                          height={20}
 
-                  <li className="flex gap-2 items-start text-gray-700 italic">
-                    <Image src={icons.graph} alt="vector icon" width={20} height={20} className='' />
-                    <div className='flex flex-col'><span className=''>It is a long established fact that</span>
-                      <span className=''>over 2000 years old. Richard McClintoc It is a long established</span>
-                    </div>
-                  </li>
-                  <li className="flex gap-2 justify-center items-start text-gray-700 italic">
-                    <Image src={icons.heart} alt="vector icon" width={25} height={25} className='mt-1' />
-                    <div className='flex flex-col '><span className=''>Five centuries, but also the leap into </span>
-                      <span className=''>Electronic typesetting</span>
-                    </div>
-                  </li>
+                        />
+                        ) : (<ArrowRight />)}
+                        <div className='flex flex-col'><p>{listing?.content}</p>
+                        </div>
+                      </li>
+                        {/* <li className="flex gap-2 items-start text-gray-700 italic">
+               <Clock size={20} className='mt-1' />
+                <div className='flex flex-col'><span className=''>The point of using Lorem Ipsum is that  normal  using</span>
+                <span className=''>distribution of letters, as opposed to</span>
+                </div>
+              </li>
+              <li className="flex gap-2 justify-center items-start text-gray-700 italic">
+                <Image src={icons.camera} alt="vector icon" width={25} height={25} className='mt-1' />
+                <div className='flex flex-col '><span className=''>It is a long established fact that</span>
+                <span className=''>over 2000 years old. Richard McClintoc It is a long established</span>
+                </div>
+              </li> */}
+                      </div>
+                    ))}
 
 
-
-                </ul>
+                  </ul>
+                )}
                 <div className='flex text-base flex-col md:flex-row  justify-between gap-4 mb-4 items-center'>
                   <button className="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
                     More About It
@@ -413,7 +425,9 @@ function Landing() {
 
 
             </div>
-          </div></motion.section>
+          </div>
+          </motion.section>)}
+          
 
         {/* Row 6 */}
         <motion.section
