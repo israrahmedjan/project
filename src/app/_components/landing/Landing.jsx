@@ -357,7 +357,7 @@ function Landing() {
           <div className='w-full bg-white md:mt-12  md:pb-16 '>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16  mb-4 ">
               <div className="col-span-2 order-2 md:order-1 flex justify-center items-center">
-test5
+
 
                   {homeData.Row5?.image?.url ? (<Image
                   src={`${homeData.Row5?.image.url}`}
@@ -430,7 +430,7 @@ test5
           
 
         {/* Row 6 */}
-        <motion.section
+        {homeData.Row5 && ( <motion.section
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -439,18 +439,18 @@ test5
         >
           <div className='w-full p-10  bg-gray-50'>
             <div className='w-full flex flex-col'>
-              <h1 className='text-2xl mx-auto md:text-3xl font-semibold'>Our Services</h1>
-              <h1 className='mx-auto md:text-lg'>Our Services</h1>
+              <h1 className='text-2xl mx-auto md:text-3xl font-semibold'>{homeData.Row5?.heading}</h1>
+              <h1 className='mx-auto md:text-lg'>{homeData.Row5?.headingSmall}</h1>
             </div>
 
-            {(services.length != 0) && (
-              <ServiceSlider services={services} />
+            {(homeData.Row5Listing.length != 0) && (
+              <ServiceSlider services={homeData.Row5Listing} />
             )}
 
 
 
           </div>
-        </motion.section>
+        </motion.section>)}
         {/* Row 7 */}
         <motion.section
           initial={{ opacity: 0, y: 100 }}
