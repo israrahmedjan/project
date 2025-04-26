@@ -1,5 +1,5 @@
 'use client'
-import { ArrowRight, Camera, Clock, Mail } from 'lucide-react'
+import { ArrowRight, Camera, Clock, Mail, User } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
@@ -88,7 +88,7 @@ function Landing() {
 
       {homeData ? (<div>
 
-        <pre>{JSON.stringify(homeData.Row2, null, 2)}</pre>
+        <pre>{JSON.stringify(homeData.Row3, null, 2)}</pre>
         {/* <div>{strapiDomain}{homeData?.image?.url}</div> */}
         {/* Row 1 */}
         {homeData.Row1 && (<motion.section
@@ -162,23 +162,11 @@ function Landing() {
                           height={20}
 
                         />
-                        ) : (<ArrowRight />)}
+                        ) : (<ArrowRight size={22} />)}
                         <div className='flex flex-col'><p>{listing?.content}</p>
                         </div>
                       </li>
-                        {/* <li className="flex gap-2 items-start text-gray-700 italic">
-               <Clock size={20} className='mt-1' />
-                <div className='flex flex-col'><span className=''>The point of using Lorem Ipsum is that  normal  using</span>
-                <span className=''>distribution of letters, as opposed to</span>
-                </div>
-              </li>
-              <li className="flex gap-2 justify-center items-start text-gray-700 italic">
-                <Image src={icons.camera} alt="vector icon" width={25} height={25} className='mt-1' />
-                <div className='flex flex-col '><span className=''>It is a long established fact that</span>
-                <span className=''>over 2000 years old. Richard McClintoc It is a long established</span>
-                </div>
-              </li> */}
-                      </div>
+                                           </div>
                     ))}
 
 
@@ -216,22 +204,36 @@ function Landing() {
 
 
         {/* Row 3 */}
-        <motion.section
+        {homeData.Row3 && (<motion.section
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: false, amount: 0.3 }}
           className=""
         >
-          <div className='w-full p-10'><h1 className='text-3xl flex justify-center animate-fade-in-down'>Meet Our Team</h1>
+          <div className='w-full p-10'><h1 className='text-3xl flex justify-center animate-fade-in-down'>{homeData.Row3.heading}</h1>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16 mb-4 ">
 
               <div className="col-span-4 md:col-span-4 mt-10 mb-10 flex flex-col md:flex-row justify-center gap-2 items-center">
 
+              {homeData.Row3Listing.map((row3listing, index) => (
+                <div key={index}>
+                   <div className="flex flex-col items-center bg-white p-6 rounded-2xl shadow-lg w-80">
+                  {/* <img src="https://img.freepik.com/free-photo/portrait-handsome-fashion-stylish-businessman-model-dressed-elegant-black-classic-suit-posing-metrosexual_158538-9181.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740" alt="Profile Image" className="w-24 h-24 rounded-full object-cover mb-4" /> */}
+                 {row3listing?.image?.url ? (<Image
+                          src={`${row3listing?.image.url}`}
+                          alt={`${row3listing?.image.url}`}
+                          width={20}
+                          height={20}
+                          className="w-24 h-24 rounded-full object-cover mb-4"
 
-
-                <div className="flex flex-col items-center bg-white p-6 rounded-2xl shadow-lg w-80">
-                  <img src="https://img.freepik.com/free-photo/portrait-handsome-fashion-stylish-businessman-model-dressed-elegant-black-classic-suit-posing-metrosexual_158538-9181.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740" alt="Profile Image" className="w-24 h-24 rounded-full object-cover mb-4" />
+                        />
+                        ) : (<Image
+                          src={`${domain}/images/noimage.jpg`}
+                          alt={`No Image`}
+                          width={100}
+                          height={100} />)}
+                 
                   <h2 className="text-lg font-medium mb-2">Micheal</h2>
                   <p className="text-gray-600 text-center mb-4">
                     Yeh thoda description ya text hoga jo image ke neeche dikhayega.
@@ -240,7 +242,11 @@ function Landing() {
                     More About It
                   </button>
                 </div>
-                <div className="flex flex-col items-center bg-white p-6 rounded-2xl shadow-lg w-80">
+                </div>
+              ))}
+
+               
+                {/* <div className="flex flex-col items-center bg-white p-6 rounded-2xl shadow-lg w-80">
                   <img src="https://img.freepik.com/free-photo/person-job-male-college-men_1150-1779.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740" alt="Profile Image" className="w-24 h-24 rounded-full object-cover mb-4" />
                   <h2 className="text-lg font-medium mb-2">John</h2>
                   <p className="text-gray-600 text-center mb-4">
@@ -259,12 +265,12 @@ function Landing() {
                   <button className="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
                     More About It
                   </button>
-                </div>
+                </div> */}
               </div>
 
             </div>
 
-          </div></motion.section>
+          </div></motion.section>)}
 
         {/* Row 4 */}
         <motion.section
