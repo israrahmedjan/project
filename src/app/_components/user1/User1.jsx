@@ -205,7 +205,7 @@ const getData = async () => {
         )}
 
  {/* Row 3 Mobiles and bg for medium devices */}
-
+ {user1Data.Row3 && (
  <motion.section
                 initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -217,16 +217,29 @@ const getData = async () => {
                 <div className='flex justify-between items-center gap-6'>
                     <div></div>
                     <div className="absolute right-10 -bottom-16 ">
-                        <Image
+                        {/* <Image
                             src={`${process.env.NEXT_PUBLIC_FRONT_DOMAIN}/images/3dImage.png`}
                             alt="Mobile"
                             width={200}
                             height={350}
                             className="drop-shadow-xl"
-                        />
+                        /> */}
+
+{user1Data.Row3?.image?.url ? (<Image
+                src={`${user1Data.Row3?.image.url}`}
+                alt={`${user1Data.Row3?.image.url}`}
+                width={200}
+                height={350}
+
+              />
+              ) : (<Image
+                src={`${process.env.NEXT_PUBLIC_FRONT_DOMAIN}/images/3dImage.png`}
+                alt={`No Image`}
+                width={200}
+                height={350} />)}
                     </div>
                 </div>
-            </div></motion.section>
+            </div></motion.section>)}
  {/* Row 3 Mobiles and bg for small devices */}
 
  <motion.section
@@ -253,67 +266,86 @@ const getData = async () => {
 
 
 {/* Row 4 */}
-<div className='w-full bg-gray-50 md:mt-12  md:pb-16 '>
+{user1Data.Row4 && (<motion.section
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: false, amount: 0.3 }}
+          className=""
+        >
+          <div className='w-full bg-white md:mt-12  md:pb-16 '>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16  mb-4 ">
+              <div className="col-span-2 order-2 md:order-1 flex justify-center items-center">
 
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16  mb-4 ">
-                        <div className="col-span-2 order-2 md:order-1 flex justify-center items-center">
+test4
+                  {user1Data.Row4?.image?.url ? (<Image
+                  src={`${user1Data.Row4?.image.url}`}
+                  alt={`${user1Data.Row4?.image.url}`}
+                  width={450}
+                  height={400}
 
+                />
+                ) : (<Image
+                  src={`${domain}/images/noimage.jpg`}
+                  alt={`No Image`}
+                  width={450}
+                  height={400} />)}
+              </div>
+              <div className="col-span-2 order-1 md:order-2  border-gray-100 border-r  p-2 md:p-6">
+                <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">{user1Data?.Row4?.heading}?</h1>
+                <p className="text-base text-gray-600 mb-2">
+                {user1Data.Row4?.content}
+                </p>
+                {user1Data.Row4Listing && (
+                  <ul className='flex flex-col justify-start items-start gap-3 mb-8 text-sm'>
+                    {user1Data.Row4Listing.map((listing, index) => (
+                      <div key={index}>  <li className="flex gap-2 items-start text-gray-700 italic">
+                        {listing?.image?.url ? (<Image
+                          src={`${listing?.image.url}`}
+                          alt={`${listing?.image.url}`}
+                          width={20}
+                          height={20}
 
-                            <Image
-                                src="https://img.freepik.com/free-photo/fresh-green-plant-twig-with-smartphone_23-2148104488.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740"
-                                alt="Landing page"
-                                width={450}
-                                height={400}
-
-                            />
+                        />
+                        ) : (<ArrowRight />)}
+                        <div className='flex flex-col'><p>{listing?.content}</p>
                         </div>
-                        <div className="col-span-2 order-1 md:order-2  border-gray-100 border-r  p-2 md:p-6">
-                            <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">Where does it come from standard?</h1>
-                            <p className="text-base text-gray-600 mb-2">
-                                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                                piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,
-                            </p>
-                            <ul className='flex flex-col justify-start items-start gap-3 mb-8 text-sm'>
-                                <li className="flex gap-2 items-start text-gray-700 italic">
-                                    <Image src={icons.circlearrow} alt="vector icon" width={20} height={20} className='' />
-                                    <div className='flex flex-col'><span className=''>It is a long established fact that</span>
-                                        <span className=''>over 2000 years old. Richard McClintoc It is a long established</span>
-                                    </div>
-                                </li>
-
-                                <li className="flex gap-2 items-start text-gray-700 italic">
-                                    <Image src={icons.graph} alt="vector icon" width={20} height={20} className='' />
-                                    <div className='flex flex-col'><span className=''>It is a long established fact that</span>
-                                        <span className=''>over 2000 years old. Richard McClintoc It is a long established</span>
-                                    </div>
-                                </li>
-                                <li className="flex gap-2 justify-center items-start text-gray-700 italic">
-                                    <Image src={icons.heart} alt="vector icon" width={25} height={25} className='mt-1' />
-                                    <div className='flex flex-col '><span className=''>Five centuries, but also the leap into </span>
-                                        <span className=''>Electronic typesetting</span>
-                                    </div>
-                                </li>
-
-
-
-                            </ul>
-                            <div className='flex text-base flex-col md:flex-row  justify-between gap-4 mb-4 items-center'>
-                                <button className="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
-                                    More About It
-                                </button>
-                                <Link href="#" className='flex'><h2 className='font-normal text-primary hover:text-secondary md:text-[18px]'>Learn more about our app</h2><ArrowRight /></Link>
-                            </div>
-                        </div>
-
-
-
-
-
-
-
-                    </div>
+                      </li>
+                        {/* <li className="flex gap-2 items-start text-gray-700 italic">
+               <Clock size={20} className='mt-1' />
+                <div className='flex flex-col'><span className=''>The point of using Lorem Ipsum is that  normal  using</span>
+                <span className=''>distribution of letters, as opposed to</span>
                 </div>
+              </li>
+              <li className="flex gap-2 justify-center items-start text-gray-700 italic">
+                <Image src={icons.camera} alt="vector icon" width={25} height={25} className='mt-1' />
+                <div className='flex flex-col '><span className=''>It is a long established fact that</span>
+                <span className=''>over 2000 years old. Richard McClintoc It is a long established</span>
+                </div>
+              </li> */}
+                      </div>
+                    ))}
 
+
+                  </ul>
+                )}
+                <div className='flex text-base flex-col md:flex-row  justify-between gap-4 mb-4 items-center'>
+                  <button className="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
+                    More About It
+                  </button>
+                  <Link href="#" className='flex'><h2 className='font-normal text-primary hover:text-secondary md:text-[18px]'>Learn more about our app</h2><ArrowRight /></Link>
+                </div>
+              </div>
+
+
+
+
+
+
+
+            </div>
+          </div>
+          </motion.section>)}
         
 
             {/* Row 5 */}
