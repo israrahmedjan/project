@@ -88,7 +88,7 @@ function Landing() {
 
       {homeData ? (<div>
 
-        <pre>{JSON.stringify(homeData.Row5, null, 2)}</pre>
+        <pre>{JSON.stringify(homeData.Row6Listing, null, 2)}</pre>
         {/* <div>{strapiDomain}{homeData?.image?.url}</div> */}
         {/* Row 1 */}
         {homeData.Row1 && (<motion.section
@@ -430,7 +430,7 @@ function Landing() {
           
 
         {/* Row 6 */}
-        {homeData.Row5 && ( <motion.section
+        {homeData.Row6 && ( <motion.section
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -443,7 +443,7 @@ function Landing() {
               <h1 className='mx-auto md:text-lg'>{homeData.Row5?.headingSmall}</h1>
             </div>
 
-            {(homeData.Row5Listing.length != 0) && (
+            {(homeData.Row6Listing.length != 0) && (
               <ServiceSlider services={homeData.Row5Listing} />
             )}
 
