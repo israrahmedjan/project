@@ -100,7 +100,7 @@ function Landing() {
         >
           <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16 mb-10 animate-fade-in-down">
             <div className="col-span-2 rounded-md  flex justify-center items-center">
-              {homeData.Row1?.image?.url ? (<Image
+              {/* {homeData.Row1?.image?.url ? (<Image
                 src={`${homeData.Row1?.image.url}`}
                 alt={`${homeData.Row1?.image.url}`}
                 width={450}
@@ -111,7 +111,7 @@ function Landing() {
                 src={`${domain}/images/noimage.jpg`}
                 alt={`No Image`}
                 width={450}
-                height={400} />)}
+                height={400} />)} */}
             </div>
 
             <div className="col-span-2 border border-gray-50 rounded-lg shadow-sm p-2 md:p-6">
@@ -155,14 +155,14 @@ function Landing() {
                   <ul className='flex flex-col justify-start items-start gap-3 mb-8 text-sm'>
                     {homeData.Row2Listing.map((listing, index) => (
                       <div key={index}>  <li className="flex gap-2 items-start text-gray-700 italic">
-                        {listing?.image?.url ? (<Image
+                        {/* {listing?.image?.url ? (<Image
                           src={`${listing?.image.url}`}
                           alt={`${listing?.image.url}`}
                           width={20}
                           height={20}
 
                         />
-                        ) : (<ArrowRight />)}
+                        ) : (<ArrowRight />)} */}
                         <div className='flex flex-col'><p>{listing?.content}</p>
                         </div>
                       </li>
@@ -194,7 +194,7 @@ function Landing() {
               </div>
 
               <div className="col-span-2 order-1 md:order-2 flex justify-center items-center">
-                {homeData.listing?.image?.url ? (<Image
+                {/* {homeData.listing?.image?.url ? (<Image
                   src={`${homeData.listing?.image.url}`}
                   alt={`${homeData.listing?.image.url}`}
                   width={450}
@@ -205,7 +205,7 @@ function Landing() {
                   src={`${domain}/images/noimage.jpg`}
                   alt={`No Image`}
                   width={450}
-                  height={400} />)}
+                  height={400} />)} */}
               </div>
 
 
