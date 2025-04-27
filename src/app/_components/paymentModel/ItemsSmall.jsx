@@ -3,7 +3,7 @@ import Image from 'next/image';
 import React from 'react'
 import { MapPin } from "lucide-react"; // Location icon lucide-react se
 
-function Items() {
+function ItemsSmall() {
     const domain = process.env.NEXT_PUBLIC_FRONT_DOMAIN;
   return (
     <>
@@ -26,7 +26,7 @@ function Items() {
       <div className="flex items-center gap-2 border-red-500 border text-center">
         <div className='w-full mx-auto'>
             <span className='mx-4'>$250</span>
-            <button className="px-3 py-1 bg-primary hover:bg-secondary text-white rounded-full ">-</button>
+        <button className="px-3 py-1 bg-primary hover:bg-secondary text-white rounded-full ">-</button>
         <span className="text-lg font-semibold items-center mx-4">1</span> {/* Quantity */}
         <button className="px-3 py-1 bg-primary hover:bg-secondary text-white rounded-full">+</button>
         </div>
@@ -39,7 +39,7 @@ function Items() {
           placeholder="Enter Location"
           className="w-full border pl-10 pr-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
         />
-        <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 w-5 h-5" />
+        <MapPin className="absolute left-3 top-5 transform -translate-y-1/2 text-gray-500 w-5 h-5" />
         <p className='text-sm '>Lorem Ipsum is not simply random.</p>
       </div>
 
@@ -71,4 +71,4 @@ function Items() {
   )
 }
 
-export default Items
+export default ItemsSmall
