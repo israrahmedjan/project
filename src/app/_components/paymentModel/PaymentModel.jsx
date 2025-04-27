@@ -60,18 +60,22 @@ const [showLightbox, setShowLightbox] = useState(false);
   {/* Breadcrumbs */}
 <Breadcrumb user="Payment Model" name="Mitchal Stark" />
 
-{/* Light Box */}
+{/* Light Box Gift Items */}
 {showLightbox && (
   <div className="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50">
-    <div className="bg-white p-6 rounded-lg shadow-lg w-[90%] md:w-[400px] relative">
-      <button
-        className="absolute top-2 right-2 text-black"
-        onClick={() => setShowLightbox(false)}
-      >
-        ✕
-      </button>
-      <h2 className="text-2xl font-bold mb-4">Gift Page Page Model Box is under Constructed.!</h2>
-      <p>Commint Soon...</p>
+    <div className="bg-white p-6 rounded-lg shadow-lg w-[90%] md:w-[600px] relative">
+<div className='mx-auto border-red-400 border flex flex-col items-center'>
+  <div><Image
+                src={`${domain}/images/gift/gift.png`}
+                alt="No Image"
+                width={100}
+                height={100}
+
+              /></div>
+  <div><h3 className='text-base md:text-lg pt-4  font-semibold'>The Gift Shop</h3></div>
+  <div><p className='text-center text-sm mt-2'>Get that hardworking man the best gift, a night out with his future forever buddy!</p></div>
+</div>
+<div>Row2</div>
       
     </div>
   </div>
