@@ -65,16 +65,61 @@ function PaymentModel() {
       <Breadcrumb user="Payment Model" name="Mitchal Stark" />
 
 
-      {/* Row 1 */}
+    
       {paymentData ? (<div>
-<div></div>
-{/* Row2 */}
+
+{/* Row 1 */}
+{paymentData.Row1 && (<motion.section
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: false, amount: 0.3 }}
+          className=""
+        >
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16 mb-10 animate-fade-in-down">
+            <div className="col-span-2 rounded-md  flex justify-center items-center">
+              {paymentData.Row1?.image?.url ? (<Image
+                src={`${paymentData.Row1?.image.url}`}
+                alt={`${paymentData.Row1?.image.url}`}
+                width={450}
+                height={400}
+
+              />
+              ) : (<Image
+                src={`${domain}/images/noimage.jpg`}
+                alt={`No Image`}
+                width={450}
+                height={400} />)}
+            </div>
+
+            <div className="col-span-2 border border-gray-50 rounded-lg shadow-sm p-2 md:p-6">
+              <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">
+
+                {paymentData.Row1?.heading}</h1>
+              <p className="text-base text-gray-600 mb-6 md:mt-6 ">
+                {paymentData.Row1?.content} </p>
+
+
+              <Link href={paymentData?.Row1?.btnAction || "/gosite"} >
+                <button className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
+                  {paymentData?.Row1?.btnLabel || "Get a ride"}
+                </button>
+              </Link>
+
+            </div>
+
+          </div></motion.section>)}
+
+
+
+
+{/* Row3 */}
       {/* Light Box Gift Items */}
       {/* Medium and large devices */}
       {paymentData.Row3 && (<div>{showLightbox && (<div><div className="hidden md:flex fixed inset-0 bg-black bg-opacity-60  justify-center items-center z-50 text-gray-600">
 
 <div className="bg-white p-6 rounded-lg shadow-lg w-[90%] md:w-[800px]  relative">
-  <div className='mx-auto border-red-400 border flex flex-col items-center'>
+  <div className='mx-auto flex flex-col items-center'>
     <div>
       {/* <Image
       src={`${domain}/images/gift/gift.png`}
@@ -102,7 +147,7 @@ function PaymentModel() {
     <div><p className='text-center text-sm mt-2'>Get that hardworking man the best gift, a night out with his future forever buddy!</p></div>
   </div>
   <div className='flex justify-center flex-col md:flex-row items-center mt-5'>
-    <div className='border-red-400 border'><PhoneContact /></div>
+    <div className=''><PhoneContact /></div>
     <Items data= {paymentData.Row3} dataArray= {paymentData.Row3Listing} />
   </div>
   <div className='flex justify-center border-gray-100 border-t pt-5 items-center gap-10 mt-6'>
@@ -122,7 +167,7 @@ function PaymentModel() {
            <div className="md:hidden fixed inset-0 bg-black bg-opacity-60  justify-center items-center z-50 text-gray-600">
 
            <div className="bg-white p-2 rounded-lg shadow-lg w-[90%] md:w-[800px] mx-auto relative">
-             <div className='mx-auto order-2 border-red-400 border flex flex-col items-center'>
+             <div className='mx-auto order-2 flex flex-col items-center'>
                <div><Image
                  src={`${domain}/images/gift/gift.png`}
                  alt="No Image"
@@ -136,7 +181,7 @@ function PaymentModel() {
              <div className='flex order-1 justify-center flex-col items-center mt-1'>
               
                <ItemsSmall />
-               <div className='border-red-400 border'><PhoneContactSmall /></div>
+               <div className=''><PhoneContactSmall /></div>
              </div>
              <div className='flex justify-center border-gray-100 border-t pt-5 items-center gap-10 mt-6'>
                <div>  <button onClick={() => setShowLightbox(false)} className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
@@ -152,50 +197,8 @@ function PaymentModel() {
       )}
 
 
-        {paymentData.Row1 && (
-          <motion.section
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: false, amount: 0.3 }}
-            className=""
-          >
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16 mb-10 animate-fade-in-down">
-              <div className="col-span-2 rounded-md  flex justify-center items-center">
-
-
-                {paymentData.Row1?.image?.url && (<Image
-                  src={`${paymentData.Row1?.image.url}`}
-                  alt={`${paymentData.Row1?.image.url}`}
-                  width={450}
-                  height={400}
-
-                />
-                )}
-
-
-
-              </div>
-
-              <div className="col-span-2 border border-gray-50 rounded-lg shadow-sm p-2 md:p-6">
-                <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">{paymentData.Row1?.heading}</h1>
-                <p className="text-base text-gray-600 mb-6 md:mt-6 ">
-                  {paymentData.Row1?.content}
-                </p>
-
-
-
-                <button className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
-                  Get a Ride
-                </button>
-
-              </div>
-
-            </div></motion.section>
-        )}
-
-        {/* Row 3 */}
-        <motion.section
+      {/* Row 2 */}
+      {paymentData.Row2 && (<motion.section
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -207,58 +210,105 @@ function PaymentModel() {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16  mb-4 ">
 
               <div className="col-span-2 order-2 md:order-1  border-gray-100 border-r  p-2 md:p-6">
-                <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">Where does it come from standard?</h1>
+                <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">{paymentData?.Row2?.heading}</h1>
                 <p className="text-base text-gray-600 mb-2">
-                  Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                  piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,
+                  {paymentData.Row2?.content}
                 </p>
-                <ul className='flex flex-col justify-start items-start gap-3 mb-8 text-sm'>
-                  <li className="flex gap-2 items-start text-gray-700 italic">
-                    <Image src={icons.vector} alt="vector icon" width={20} height={20} className='' />
-                    <div className='flex flex-col'><span className=''>It is a long established fact that</span>
-                      <span className=''>over 2000 years old. Richard McClintoc It is a long established</span>
-                    </div>
-                  </li>
-                  <li className="flex gap-2 items-start text-gray-700 italic">
-                    <Clock size={20} className='mt-1' />
-                    <div className='flex flex-col'><span className=''>The point of using Lorem Ipsum is that  normal  using</span>
-                      <span className=''>distribution of letters, as opposed to</span>
-                    </div>
-                  </li>
-                  <li className="flex gap-2 justify-center items-start text-gray-700 italic">
-                    <Image src={icons.camera} alt="vector icon" width={25} height={25} className='mt-1' />
-                    <div className='flex flex-col '><span className=''>It is a long established fact that</span>
-                      <span className=''>over 2000 years old. Richard McClintoc It is a long established</span>
-                    </div>
-                  </li>
-                </ul>
+                {paymentData.Row2Listing && (
+                  <ul className='flex flex-col justify-start items-start gap-3 mb-8 text-sm'>
+                    {paymentData.Row2Listing.map((listing, index) => (
+                      <div key={index}>  <li className="flex gap-2 items-start text-gray-700 italic">
+                        {listing?.image?.url ? (<Image
+                          src={`${listing?.image.url}`}
+                          alt={`${listing?.image.url}`}
+                          width={20}
+                          height={20}
+
+                        />
+                        ) : (<ArrowRight size={22} />)}
+                        <div className='flex flex-col'><p>{listing?.content}</p>
+                        </div>
+                      </li>
+                                           </div>
+                    ))}
+
+
+                  </ul>
+                )}
+
                 <div className='flex text-base flex-col md:flex-row  justify-between items-center gap-2'>
                   <button className="px-4 py-2 md:px-4 md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
-                    More About It
+                    {paymentData?.Row2.btnLabel || "Get it More"}
                   </button>
-                  <Link href="#" className='flex'><h2 className='font-normal text-primary hover:text-secondary md:text-[18px]'>Learn more about our app</h2><ArrowRight /></Link>
+                  <Link href= {paymentData?.Row2.btnAction || "/gosite"} className='flex'><h2 className='font-normal text-primary hover:text-secondary md:text-[18px]'>Learn more about our app</h2><ArrowRight /></Link>
                 </div>
               </div>
 
               <div className="col-span-2 order-1 md:order-2 flex justify-center items-center">
-
-
-                <Image
-                  src="https://img.freepik.com/free-photo/fresh-green-plant-twig-with-smartphone_23-2148104488.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740"
-                  alt="Landing page"
+                {paymentData.Row2?.image?.url ? (<Image
+                  src={`${paymentData.Row2?.image.url}`}
+                  alt={`${paymentData.Row2?.image.url}`}
                   width={450}
                   height={400}
 
                 />
+                ) : (<Image
+                  src={`${domain}/images/noimage.jpg`}
+                  alt={`No Image`}
+                  width={450}
+                  height={400} />)}
               </div>
 
 
 
             </div>
           </div></motion.section>
+        )}
+
+        {/* Row 8 */}
+        {paymentData.Row8 && (
+ <motion.section
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: false, amount: 0.3 }}
+                className=""
+            >
+ <div className="hidden md:block  mt-40  mb-40 relative w-full h-[230px] overflow-visible bg-cover bg-center" style={{ backgroundImage: "url('https://res.cloudinary.com/detdjaspz/image/upload/v1745327663/other_plugins_woovmw.jpg')" }}>
+                <div className='flex justify-between items-center gap-6'>
+                 
+                    <div className="absolute right-1/3 -bottom-16 ">
+                   
+{paymentData.Row8?.image?.url ? (<Image
+                src={`${paymentData.Row8?.image.url}`}
+                alt={`${paymentData.Row8?.image.url}`}
+                width={200}
+                height={350}
+
+              />
+              ) : (<Image
+                src={`${process.env.NEXT_PUBLIC_FRONT_DOMAIN}/images/3dImage.png`}
+                alt={`No Image`}
+                width={200}
+                height={350} />)}
+                    </div>
+                    <div className="absolute left-0 -bottom-44   w-[100%] shadow-md z-0  ">
+                    <div className='flex justify-between'>
+                      <div className='text-gray-600 mx-10 w-1/2'>
+                      <h2 className='text-2xl text-primary pt-3 pb-3'>{paymentData.Row8.headingSmall}</h2>
+                      <p className='pb-6'>{paymentData.Row8?.content}</p>
+                      </div>
+                      <div><h3 className='mx-16 text-3xl'>{paymentData.Row8.heading}</h3></div>
+                    </div>
+                      </div>
+                </div>
+            </div>
+            
+            
+            </motion.section>)}
 
 
-        {/* Row 4 */}
+        {/* Row 5 */}
         <motion.section
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -309,7 +359,7 @@ function PaymentModel() {
 
           </div></motion.section>
 
-        {/* Row 4 */}
+        {/* Row 6 */}
         <motion.section
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}

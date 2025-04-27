@@ -213,18 +213,11 @@ const getData = async () => {
                 viewport={{ once: false, amount: 0.3 }}
                 className=""
             >
- <div className="hidden md:block  mt-40  mb-20 relative w-full h-[230px] overflow-visible bg-cover bg-center" style={{ backgroundImage: "url('https://res.cloudinary.com/detdjaspz/image/upload/v1745327663/other_plugins_woovmw.jpg')" }}>
+ <div className="hidden md:block  mt-40  mb-40 relative w-full h-[230px] overflow-visible bg-cover bg-center" style={{ backgroundImage: "url('https://res.cloudinary.com/detdjaspz/image/upload/v1745327663/other_plugins_woovmw.jpg')" }}>
                 <div className='flex justify-between items-center gap-6'>
-                    <div></div>
-                    <div className="absolute right-10 -bottom-16 ">
-                        {/* <Image
-                            src={`${process.env.NEXT_PUBLIC_FRONT_DOMAIN}/images/3dImage.png`}
-                            alt="Mobile"
-                            width={200}
-                            height={350}
-                            className="drop-shadow-xl"
-                        /> */}
-
+                 
+                    <div className="absolute right-1/3 -bottom-16 ">
+                   
 {user1Data.Row3?.image?.url ? (<Image
                 src={`${user1Data.Row3?.image.url}`}
                 alt={`${user1Data.Row3?.image.url}`}
@@ -238,8 +231,20 @@ const getData = async () => {
                 width={200}
                 height={350} />)}
                     </div>
+                    <div className="absolute left-0 -bottom-44   w-[100%] shadow-md z-0  ">
+                    <div className='flex justify-between'>
+                      <div className='text-gray-600 mx-10 w-1/2'>
+                      <h2 className='text-2xl text-primary pt-3 pb-3'>{user1Data.Row3.headingSmall}</h2>
+                      <p className='pb-6'>{user1Data.Row3?.content}</p>
+                      </div>
+                      <div><h3 className='mx-16 text-3xl'>{user1Data.Row3.heading}</h3></div>
+                    </div>
+                      </div>
                 </div>
-            </div></motion.section>)}
+            </div>
+            
+            
+            </motion.section>)}
  {/* Row 3 Mobiles and bg for small devices */}
 
  <motion.section

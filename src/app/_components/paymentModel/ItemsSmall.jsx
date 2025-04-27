@@ -7,7 +7,7 @@ function ItemsSmall() {
     const domain = process.env.NEXT_PUBLIC_FRONT_DOMAIN;
   return (
     <>
-     <div className='border-green-600 border flex flex-col justify-between items-center gap-2'>
+     <div className='flex flex-col justify-between items-center gap-2'>
     <div className='flex flex-col items-center gap-2'>
         <div><h3 className='text-base font-semibold'>Item Name</h3></div>
         <div>
@@ -35,7 +35,7 @@ function ItemsSmall() {
         <span className='text-sm '>Lorem Ipsum is not simply random.</span>
       </div>
           {/* Item fields increment/decrement */}
-          <div className="flex flex-col items-center gap-2 border-red-800 border text-center">
+          <div className="flex flex-col items-center gap-2 text-center">
         <div className='w-full mx-auto'>
             <span className='mx-4'>$250</span>
         <button className="px-1 py-1 bg-primary hover:bg-secondary text-white rounded-full ">-</button>
@@ -45,15 +45,15 @@ function ItemsSmall() {
       </div>
 
       {/* Listing like ul text */}
-      <div className=' border-red-900'>
+      <div className=' '>
         <div><h3 className='text-base'>The places you could go...</h3></div>
        
-        <ul className=" list-inside border-green-950 border  text-gray-700 flex flex-wrap items-center justify-start gap-2 text-sm">
-  <li className="border-red-400 border flex gap-2 items-center justify-start">
+        <ul className=" list-inside   text-gray-700 flex flex-wrap items-center justify-start gap-2 text-sm">
+  <li className=" border flex gap-2 items-center justify-start">
     <Image src={`${domain}/images/gift/place1.jpg`} alt="no image" width={25} height={25} />
     <span>Place</span>
   </li>
-  <li className="border-red-400 border flex gap-2 items-center justify-start">
+  <li className="flex gap-2 items-center justify-start">
     <Image src={`${domain}/images/gift/place1.jpg`} alt="no image" width={25} height={25} />
     <span>Tempale</span>
   </li>

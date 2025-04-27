@@ -4,7 +4,7 @@ import { Phone, Mail } from "lucide-react"; // Lucide se icons import karna hai
 
 export default function PhoneContactSmall() {
   return (
-    <div className="border-red-400 border p-1 rounded-md w-full max-w-md mx-auto mt-10">
+    <div className="p-1 rounded-md w-full max-w-md mx-auto mt-10">
     
       {/* Phone Number Field */}
       <div className="relative mb-1">
