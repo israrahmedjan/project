@@ -88,7 +88,7 @@ function Landing() {
 
       {homeData ? (<div>
 
-        <pre>{JSON.stringify(homeData.Row7, null, 2)}</pre>
+        {/* <pre>{JSON.stringify(homeData.Row7, null, 2)}</pre> */}
         {/* <div>{strapiDomain}{homeData?.image?.url}</div> */}
         {/* Row 1 */}
         {homeData.Row1 && (<motion.section
