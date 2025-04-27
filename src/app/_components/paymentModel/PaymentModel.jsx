@@ -10,7 +10,7 @@ import { ChevronRight } from 'lucide-react'
 
 import { motion } from 'framer-motion';
 import Breadcrumb from '../Breadcrumb'
-import { getUser2 } from '@/helper/helper'
+import { getpaymentModel, getUser2 } from '@/helper/helper'
 import Loading from '../Loading'
 import PhoneContact from './PhoneContact'
 import Items from './Items'
@@ -19,7 +19,7 @@ import ItemsSmall from './ItemsSmall'
 
 function PaymentModel() {
 
-  const [user2Data, setuser2Data] = useState(null);
+  const [paymentData, setpaymentData] = useState(null);
   const [showLightbox, setShowLightbox] = useState(false);
   const domain = process.env.NEXT_PUBLIC_FRONT_DOMAIN;
   const icons = {
@@ -44,9 +44,9 @@ function PaymentModel() {
 
 
   const getData = async () => {
-    const data = await getUser2();
+    const data = await getpaymentModel();
     console.log("User 1 Data", data);
-    setuser2Data(data.data);
+    setpaymentData(data.data);
     //setcompleteData(data.data.Section1);
   };
 
@@ -64,39 +64,59 @@ function PaymentModel() {
       {/* Breadcrumbs */}
       <Breadcrumb user="Payment Model" name="Mitchal Stark" />
 
+
+      {/* Row 1 */}
+      {paymentData ? (<div>
+<div></div>
+{/* Row2 */}
       {/* Light Box Gift Items */}
       {/* Medium and large devices */}
-      {showLightbox && (
-       <div className="hidden md:flex fixed inset-0 bg-black bg-opacity-60  justify-center items-center z-50 text-gray-600">
+      {paymentData.Row3 && (<div>{showLightbox && (<div><div className="hidden md:flex fixed inset-0 bg-black bg-opacity-60  justify-center items-center z-50 text-gray-600">
 
-          <div className="bg-white p-6 rounded-lg shadow-lg w-[90%] md:w-[800px]  relative">
-            <div className='mx-auto border-red-400 border flex flex-col items-center'>
-              <div><Image
-                src={`${domain}/images/gift/gift.png`}
-                alt="No Image"
+<div className="bg-white p-6 rounded-lg shadow-lg w-[90%] md:w-[800px]  relative">
+  <div className='mx-auto border-red-400 border flex flex-col items-center'>
+    <div>
+      {/* <Image
+      src={`${domain}/images/gift/gift.png`}
+      alt="No Image"
+      width={100}
+      height={100}
+    /> */}
+
+ {paymentData.Row3?.image?.url ? (<Image
+                src={`${paymentData.Row3?.image.url}`}
+                alt={`No Image`}
                 width={100}
                 height={100}
 
-              /></div>
-              <div><h3 className='text-base md:text-lg pt-4  font-semibold'>The Gift Shop</h3></div>
-              <div><p className='text-center text-sm mt-2'>Get that hardworking man the best gift, a night out with his future forever buddy!</p></div>
-            </div>
-            <div className='flex justify-center flex-col md:flex-row items-center mt-5'>
-              <div className='border-red-400 border'><PhoneContact /></div>
-              <Items />
-            </div>
-            <div className='flex justify-center border-gray-100 border-t pt-5 items-center gap-10 mt-6'>
-              <div>  <button onClick={() => setShowLightbox(false)} className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
-                Cancel
-              </button></div>
-              <div><button className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
-                Pay $250
-              </button></div>
-            </div>
-          </div>
+              />
+              ) : (<Image
+                src={`${domain}/images/noimage.jpg`}
+                alt={`No Image`}
+                width={100}
+                height={100} />)} 
 
-        </div>
-      )}
+    
+    </div>
+    <div><h3 className='text-base md:text-lg pt-4  font-semibold'>The Gift Shop</h3></div>
+    <div><p className='text-center text-sm mt-2'>Get that hardworking man the best gift, a night out with his future forever buddy!</p></div>
+  </div>
+  <div className='flex justify-center flex-col md:flex-row items-center mt-5'>
+    <div className='border-red-400 border'><PhoneContact /></div>
+    <Items data= {paymentData.Row3} dataArray= {paymentData.Row3Listing} />
+  </div>
+  <div className='flex justify-center border-gray-100 border-t pt-5 items-center gap-10 mt-6'>
+    <div>  <button onClick={() => setShowLightbox(false)} className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
+      Cancel
+    </button></div>
+    <div><button className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
+      Pay $250
+    </button></div>
+  </div>
+</div>
+
+</div></div>)}</div>)}
+  
 {/* Small devices */}
 {showLightbox && (
            <div className="md:hidden fixed inset-0 bg-black bg-opacity-60  justify-center items-center z-50 text-gray-600">
@@ -131,10 +151,8 @@ function PaymentModel() {
          </div>
       )}
 
-      {/* Row 1 */}
-      {user2Data ? (<div>
 
-        {user2Data.Row1 && (
+        {paymentData.Row1 && (
           <motion.section
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -146,9 +164,9 @@ function PaymentModel() {
               <div className="col-span-2 rounded-md  flex justify-center items-center">
 
 
-                {user2Data.Row1?.image?.url && (<Image
-                  src={`${user2Data.Row1?.image.url}`}
-                  alt={`${user2Data.Row1?.image.url}`}
+                {paymentData.Row1?.image?.url && (<Image
+                  src={`${paymentData.Row1?.image.url}`}
+                  alt={`${paymentData.Row1?.image.url}`}
                   width={450}
                   height={400}
 
@@ -160,9 +178,9 @@ function PaymentModel() {
               </div>
 
               <div className="col-span-2 border border-gray-50 rounded-lg shadow-sm p-2 md:p-6">
-                <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">{user2Data.Row1?.heading}</h1>
+                <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">{paymentData.Row1?.heading}</h1>
                 <p className="text-base text-gray-600 mb-6 md:mt-6 ">
-                  {user2Data.Row1?.content}
+                  {paymentData.Row1?.content}
                 </p>
 
 
@@ -176,7 +194,7 @@ function PaymentModel() {
             </div></motion.section>
         )}
 
-        {/* Row 2 */}
+        {/* Row 3 */}
         <motion.section
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -240,7 +258,7 @@ function PaymentModel() {
           </div></motion.section>
 
 
-        {/* Row 3 */}
+        {/* Row 4 */}
         <motion.section
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -128,9 +128,27 @@ async function getpaymentModel() {
        
         const params = new URLSearchParams({
           'populate[SEO][populate]': '*',
-          'populate[Row1][populate]': 'image',
-          'populate[Row2][populate]': 'image',
+          'populate[Row1][populate]': '*',
+          'populate[Row2][populate]': '*',
+         'populate[Row2Listing][populate]': '*',
+         'populate[Row3][populate]': '*',
+         'populate[Row3Listing][populate]': '*',
+        //    'populate[Row8][populate]': '*',
+        //  'populate[Row8Listing][populate]': '*',
+        // 'populate[Row4][populate]': '*',
+        // 'populate[Row4Listing][populate]': '*',
+        // //  'populate[Row3Listing][populate]': '*',
+        //  'populate[Row5][populate]': '*',
+        //  'populate[Row5Listing][populate]': '*',
+        //  'populate[Row6][populate]': '*',
+        //  'populate[Row6Listing][populate]': '*',
+        //  'populate[Row7][populate]': '*',
+        // //  'populate[Row8][populate]': '*',
+        // //  'populate[Row8Listing][populate]': '*',
+        // //  'populate[Row8][populate]': '*',
+        // //  'populate[Row8Listing][populate]': '*',
         });
+    
         
         const res = await fetch(
           `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/payment-model?${params.toString()}`,
@@ -180,4 +198,4 @@ async function getCareers() {
 
 
 
-  export {getHome,getUser1,getUser2,getCareers}
+  export {getHome,getUser1,getUser2,getCareers,getpaymentModel}
