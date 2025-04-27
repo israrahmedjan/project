@@ -149,9 +149,9 @@ const getData = async () => {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16  mb-4 ">
 
               <div className="col-span-2 order-2 md:order-1  border-gray-100 border-r  p-2 md:p-6">
-                <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">{user1Data?.Row2Listing?.heading}</h1>
+                <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">{user1Data?.Row2?.heading}</h1>
                 <p className="text-base text-gray-600 mb-2">
-                  {user1Data.Row2Listing?.content}
+                  {user1Data.Row2?.content}
                 </p>
                 {user1Data.Row2Listing && (
                   <ul className='flex flex-col justify-start items-start gap-3 mb-8 text-sm'>
@@ -344,7 +344,7 @@ const getData = async () => {
                 viewport={{ once: false, amount: 0.3 }}
                 className=""
             >
-                <div className='w-full p-10  bg-gray-50'>
+                <div className='w-full p-10  bg-white'>
                     <div className='w-full flex flex-col'>
                         <h1 className='text-2xl mx-auto md:text-3xl font-semibold'>Our Services</h1>
                         <h1 className='mx-auto md:text-lg'>Our Services</h1>
@@ -368,7 +368,8 @@ const getData = async () => {
           viewport={{ once: false, amount: 0.3 }}
           className=""
         >
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16 mb-10 animate-fade-in-down">
+            <div className='w-full bg-gray-50'>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 md:pt-14  mx-4 md:mx-16 mb-10 mt-20 animate-fade-in-down">
             <div className="col-span-2 rounded-md  flex justify-center items-center">
             
               {user1Data.Row5?.image?.url ? (<Image
@@ -404,59 +405,31 @@ const getData = async () => {
 
             </div>
 
-          </div></motion.section>)}
+          </div></div></motion.section>)}
 
             
-            {/* Row 7 */}
-            {user1Data.Row7 && (<motion.section
-                initial={{ opacity: 0, y: 100 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: false, amount: 0.3 }}
-                className=""
-            >
-
-
-
-
-
-
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-1 pt-10 md:gap-2 mx-4 md:mx-16 mb-10 ">
-                    <div className="col-span-2 rounded-md  flex justify-center items-center">
-
-
-                    {user1Data.Row7?.image?.url ? (<Image
-                  src={`${user1Data.Row7?.image.url}`}
-                  alt={`${user1Data.Row7?.image.url}`}
-                  width={450}
-                  height={400}
-
-                />
-                ) : (<Image
-                  src={`${domain}/images/noimage.jpg`}
-                  alt={`No Image`}
-                  width={450}
-                  height={400} />)}
-
-                    </div>
-
-                    <div className="col-span-2 border border-gray-50 rounded-lg shadow-sm mb-2 p-2 md:p-6">
-                        <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">Why do we use it?</h1>
-                        <p className="text-base text-gray-600 mb-6 md:mt-6 ">
-                            It is a long established fact that a reader will be distracted by the readable content of a
-                            page when looking at its layout.
-                            The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters </p>
-
-
-
-                        <button className="px-4 float-right py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
-                            Get a Ride
-                        </button>
-
-                    </div>
-                </div>
-            </motion.section>)}
+       
+     {/* Row 7 bg - image */}
      
+     {user1Data.Row7 && (<motion.section
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: false, amount: 0.3 }}
+          className=""
+        >    <div
+        className="w-full mx-auto h-64 md:h-80 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('https://img.freepik.com/free-photo/beautiful-shot-amazing-cityscape-sunset_181624-45857.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740')" }}
+      >
+        <div className="col-span-2 flex justify-center  items-center h-full">
+      
+          <div className="text-white text-base p-10 md:p-28">
+              <h3 className='text-3xl'>{user1Data.Row7.heading} </h3>
+              <p>{user1Data.Row7.content}</p></div>
+        </div>
+      </div></motion.section>)}
+
+ 
             </div>):<div><Loading /></div>}
         </>
     )
