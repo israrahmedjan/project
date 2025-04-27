@@ -82,7 +82,7 @@ const [showLightbox, setShowLightbox] = useState(false);
  <Items />
 </div>
 <div className='flex justify-center items-center gap-10 mt-6'>
-  <div>  <button className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
+  <div>  <button  onClick={() => setShowLightbox(false)} className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
                 Cancel
                 </button></div>
   <div><button className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
