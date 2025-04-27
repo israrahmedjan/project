@@ -12,6 +12,8 @@ import { motion } from 'framer-motion';
 import Breadcrumb from '../Breadcrumb'
 import { getUser2 } from '@/helper/helper'
 import Loading from '../Loading'
+import PhoneContact from './PhoneContact'
+import Items from './Items'
 
 function PaymentModel() {
     
@@ -63,7 +65,7 @@ const [showLightbox, setShowLightbox] = useState(false);
 {/* Light Box Gift Items */}
 {showLightbox && (
   <div className="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50">
-    <div className="bg-white p-6 rounded-lg shadow-lg w-[90%] md:w-[600px] relative">
+    <div className="bg-white p-6 rounded-lg shadow-lg w-[90%] md:w-[800px] relative">
 <div className='mx-auto border-red-400 border flex flex-col items-center'>
   <div><Image
                 src={`${domain}/images/gift/gift.png`}
@@ -75,9 +77,20 @@ const [showLightbox, setShowLightbox] = useState(false);
   <div><h3 className='text-base md:text-lg pt-4  font-semibold'>The Gift Shop</h3></div>
   <div><p className='text-center text-sm mt-2'>Get that hardworking man the best gift, a night out with his future forever buddy!</p></div>
 </div>
-<div>Row2</div>
-      
+<div className='flex justify-center flex-row items-center mt-5'>
+  <div className='border-red-400 border'><PhoneContact /></div>
+ <Items />
+</div>
+<div className='flex justify-center items-center gap-10 mt-6'>
+  <div>  <button className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
+                Cancel
+                </button></div>
+  <div><button className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
+                Pay $250
+                </button></div>
+  </div>  
     </div>
+   
   </div>
 )}
 
