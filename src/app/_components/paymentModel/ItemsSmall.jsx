@@ -7,30 +7,22 @@ function ItemsSmall() {
     const domain = process.env.NEXT_PUBLIC_FRONT_DOMAIN;
   return (
     <>
-     <div className='border-green-600 border flex flex-row justify-between items-center gap-2'>
+     <div className='border-green-600 border flex flex-col justify-between items-center gap-2'>
     <div className='flex flex-col items-center gap-2'>
         <div><h3 className='text-base font-semibold'>Item Name</h3></div>
         <div>
         <Image
                 src={`${domain}/images/gift/location.png`}
                 alt="no image"
-                width={250}
-                height={150}
+                width={200}
+                height={100}
 
               />
         </div>
     </div>
-    <div className="space-y-6 p-6 border rounded-md w-full max-w-md mx-auto mt-10">
+    <div className="space-y-6 p-6 border rounded-md w-full max-w-md mx-auto mt-2">
       
-      {/* Item fields increment/decrement */}
-      <div className="flex items-center gap-2 border-red-500 border text-center">
-        <div className='w-full mx-auto'>
-            <span className='mx-4'>$250</span>
-        <button className="px-3 py-1 bg-primary hover:bg-secondary text-white rounded-full ">-</button>
-        <span className="text-lg font-semibold items-center mx-4">1</span> {/* Quantity */}
-        <button className="px-3 py-1 bg-primary hover:bg-secondary text-white rounded-full">+</button>
-        </div>
-      </div>
+  
 
       {/* Text field for location with icon */}
       <div className="relative">
@@ -40,7 +32,16 @@ function ItemsSmall() {
           className="w-full border pl-10 pr-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
         />
         <MapPin className="absolute left-3 top-5 transform -translate-y-1/2 text-gray-500 w-5 h-5" />
-        <p className='text-sm '>Lorem Ipsum is not simply random.</p>
+        <span className='text-sm '>Lorem Ipsum is not simply random.</span>
+      </div>
+          {/* Item fields increment/decrement */}
+          <div className="flex flex-col items-center gap-2 border-red-800 border text-center">
+        <div className='w-full mx-auto'>
+            <span className='mx-4'>$250</span>
+        <button className="px-1 py-1 bg-primary hover:bg-secondary text-white rounded-full ">-</button>
+        <span className="text-lg font-semibold items-center mx-2">1</span> {/* Quantity */}
+        <button className="px-1 py-1 bg-primary hover:bg-secondary text-white rounded-full">+</button>
+        </div>
       </div>
 
       {/* Listing like ul text */}
