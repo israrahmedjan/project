@@ -273,28 +273,14 @@ const getData = async () => {
           viewport={{ once: false, amount: 0.3 }}
           className=""
         >
-          <div className='w-full bg-white md:mt-12  md:pb-16 '>
+          <div className='w-full bg-gray-50 md:pt-16 md:pb-16 animate-fade-in-down'>
+
             <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16  mb-4 ">
-              <div className="col-span-2 order-2 md:order-1 flex justify-center items-center">
 
-
-                  {user1Data.Row4?.image?.url ? (<Image
-                  src={`${user1Data.Row4?.image.url}`}
-                  alt={`${user1Data.Row4?.image.url}`}
-                  width={450}
-                  height={400}
-
-                />
-                ) : (<Image
-                  src={`${domain}/images/noimage.jpg`}
-                  alt={`No Image`}
-                  width={450}
-                  height={400} />)}
-              </div>
-              <div className="col-span-2 order-1 md:order-2  border-gray-100 border-r  p-2 md:p-6">
-                <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">{user1Data?.Row4?.heading}?</h1>
+              <div className="col-span-2 order-2 md:order-2  border-gray-100 border-r  p-2 md:p-6">
+                <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">{user1Data?.Row4?.heading}</h1>
                 <p className="text-base text-gray-600 mb-2">
-                {user1Data.Row4?.content}
+                  {user1Data.Row4?.content}
                 </p>
                 {user1Data.Row4Listing && (
                   <ul className='flex flex-col justify-start items-start gap-3 mb-8 text-sm'>
@@ -307,115 +293,48 @@ const getData = async () => {
                           height={20}
 
                         />
-                        ) : (<ArrowRight />)}
+                        ) : (<ArrowRight size={22} />)}
                         <div className='flex flex-col'><p>{listing?.content}</p>
                         </div>
                       </li>
-                        {/* <li className="flex gap-2 items-start text-gray-700 italic">
-               <Clock size={20} className='mt-1' />
-                <div className='flex flex-col'><span className=''>The point of using Lorem Ipsum is that  normal  using</span>
-                <span className=''>distribution of letters, as opposed to</span>
-                </div>
-              </li>
-              <li className="flex gap-2 justify-center items-start text-gray-700 italic">
-                <Image src={icons.camera} alt="vector icon" width={25} height={25} className='mt-1' />
-                <div className='flex flex-col '><span className=''>It is a long established fact that</span>
-                <span className=''>over 2000 years old. Richard McClintoc It is a long established</span>
-                </div>
-              </li> */}
-                      </div>
+                                           </div>
                     ))}
 
 
                   </ul>
                 )}
-                <div className='flex text-base flex-col md:flex-row  justify-between gap-4 mb-4 items-center'>
-                  <button className="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
-                    More About It
+
+                <div className='flex text-base flex-col md:flex-row  justify-between items-center gap-2'>
+                  <button className="px-4 py-2 md:px-4 md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
+                    {user1Data?.Row4.btnLabel || "Get it More"}
                   </button>
-                  <Link href="#" className='flex'><h2 className='font-normal text-primary hover:text-secondary md:text-[18px]'>Learn more about our app</h2><ArrowRight /></Link>
+                  <Link href= {user1Data?.Row4.btnAction || "/gosite"} className='flex'><h2 className='font-normal text-primary hover:text-secondary md:text-[18px]'>Learn more about our app</h2><ArrowRight /></Link>
                 </div>
+              </div>
+
+              <div className="col-span-2 order-1 md:order-1 flex justify-center items-center">
+                {user1Data.Row4?.image?.url ? (<Image
+                  src={`${user1Data.Row4?.image.url}`}
+                  alt={`${user1Data.Row4?.image.url}`}
+                  width={450}
+                  height={400}
+
+                />
+                ) : (<Image
+                  src={`${domain}/images/noimage.jpg`}
+                  alt={`No Image`}
+                  width={450}
+                  height={400} />)}
               </div>
 
 
 
-
-
-
-
             </div>
-          </div>
-          </motion.section>)}
+          </div></motion.section>
+        )}
+
         
 
-            {/* Row 5 layout little bettle difference */}
-            {user1Data.Row5 && (<motion.section
-                initial={{ opacity: 0, y: 100 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: false, amount: 0.3 }}
-                className=""
-            >
-                <div className='w-full bg-white md:mt-12  md:pb-16 '>
-
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16  mb-4 ">
-                        <div className="col-span-2 order-2 md:order-1 flex justify-center items-center">
-
-
-                            <Image
-                                src="https://img.freepik.com/free-photo/fresh-green-plant-twig-with-smartphone_23-2148104488.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740"
-                                alt="Landing page"
-                                width={450}
-                                height={400}
-
-                            />
-                        </div>
-                        <div className="col-span-2 order-1 md:order-2  border-gray-100 border-r  p-2 md:p-6">
-                            <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">Where does it come from standard?</h1>
-                            <p className="text-base text-gray-600 mb-2">
-                                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                                piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,
-                            </p>
-                            <ul className='flex flex-col justify-start items-start gap-3 mb-8 text-sm'>
-                                <li className="flex gap-2 items-start text-gray-700 italic">
-                                    <Image src={icons.circlearrow} alt="vector icon" width={20} height={20} className='' />
-                                    <div className='flex flex-col'><span className=''>It is a long established fact that</span>
-                                        <span className=''>over 2000 years old. Richard McClintoc It is a long established</span>
-                                    </div>
-                                </li>
-
-                                <li className="flex gap-2 items-start text-gray-700 italic">
-                                    <Image src={icons.graph} alt="vector icon" width={20} height={20} className='' />
-                                    <div className='flex flex-col'><span className=''>It is a long established fact that</span>
-                                        <span className=''>over 2000 years old. Richard McClintoc It is a long established</span>
-                                    </div>
-                                </li>
-                                <li className="flex gap-2 justify-center items-start text-gray-700 italic">
-                                    <Image src={icons.heart} alt="vector icon" width={25} height={25} className='mt-1' />
-                                    <div className='flex flex-col '><span className=''>Five centuries, but also the leap into </span>
-                                        <span className=''>Electronic typesetting</span>
-                                    </div>
-                                </li>
-
-
-
-                            </ul>
-                            <div className='flex text-base flex-col md:flex-row  justify-between gap-4 mb-4 items-center'>
-                                <button className="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
-                                    More About It
-                                </button>
-                                <Link href="#" className='flex'><h2 className='font-normal text-primary hover:text-secondary md:text-[18px]'>Learn more about our app</h2><ArrowRight /></Link>
-                            </div>
-                        </div>
-
-
-
-
-
-
-
-                    </div>
-                </div></motion.section>)}
 
             {/* Row 6 */}
             <motion.section
@@ -430,35 +349,94 @@ const getData = async () => {
                         <h1 className='text-2xl mx-auto md:text-3xl font-semibold'>Our Services</h1>
                         <h1 className='mx-auto md:text-lg'>Our Services</h1>
                     </div>
-
-                  
+                   
+                    
                               {(user1Data.Row6Listing.length != 0) && (
                                 <ServiceSlider services={user1Data.Row6Listing} />
+                               
                               )}
                   
 
 
                 </div>
             </motion.section>
+{/* Row 5 */}
+{user1Data.Row5 && (<motion.section
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: false, amount: 0.3 }}
+          className=""
+        >
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16 mb-10 animate-fade-in-down">
+            <div className="col-span-2 rounded-md  flex justify-center items-center">
+            
+              {user1Data.Row5?.image?.url ? (<Image
+                src={`${user1Data.Row5?.image.url}`}
+                alt={`${user1Data.Row5?.image.url}`}
+                width={450}
+                height={400}
+
+              />
+              ) : (<Image
+                src={`${domain}/images/noimage.jpg`}
+                alt={`No Image`}
+                width={450}
+                height={400} />)}
+
+
+
+            </div>
+
+            <div className="col-span-2 border border-gray-50 rounded-lg shadow-sm p-2 md:p-6">
+              <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">
+
+                {user1Data.Row5?.heading}</h1>
+              <p className="text-base text-gray-600 mb-6 md:mt-6 ">
+                {user1Data.Row5?.content} </p>
+
+
+              <Link href={user1Data?.Row5?.btnAction || "/gosite"} >
+                <button className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
+                  {user1Data?.Row5?.btnLabel || "Get a ride"}
+                </button>
+              </Link>
+
+            </div>
+
+          </div></motion.section>)}
+
+            
             {/* Row 7 */}
-            <motion.section
+            {user1Data.Row7 && (<motion.section
                 initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: false, amount: 0.3 }}
                 className=""
             >
+
+
+
+
+
+
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-1 pt-10 md:gap-2 mx-4 md:mx-16 mb-10 ">
                     <div className="col-span-2 rounded-md  flex justify-center items-center">
 
 
-                        <Image
-                            src="https://img.freepik.com/free-photo/arabic-mobiles-front-side_187299-38069.jpg?t=st=1745160534~exp=1745164134~hmac=681c47b88c51e0d121f194ab6508583c27bd6fd38c7a8db35e7388f195a60fba&w=996"
-                            alt="Landing page"
-                            width={450}
-                            height={400}
+                    {user1Data.Row7?.image?.url ? (<Image
+                  src={`${user1Data.Row7?.image.url}`}
+                  alt={`${user1Data.Row7?.image.url}`}
+                  width={450}
+                  height={400}
 
-                        />
+                />
+                ) : (<Image
+                  src={`${domain}/images/noimage.jpg`}
+                  alt={`No Image`}
+                  width={450}
+                  height={400} />)}
 
                     </div>
 
@@ -477,76 +455,8 @@ const getData = async () => {
 
                     </div>
                 </div>
-            </motion.section>
-            {/* Row 8 */}
-            <motion.section
-                initial={{ opacity: 0, y: 100 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: false, amount: 0.3 }}
-                className=""
-            >
-                <div className='w-full bg-gray-50 md:mt-12  md:pb-16 md:pt-16 '>
-
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16  mb-4 ">
-                        <div className="col-span-2 order-1 md:order-2 flex justify-center items-center">
-
-
-                            <Image
-                                src="https://img.freepik.com/free-photo/fresh-green-plant-twig-with-smartphone_23-2148104488.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740"
-                                alt="Landing page"
-                                width={450}
-                                height={400}
-
-                            />
-                        </div>
-                        <div className="col-span-2 order-2 md:order-1  border-gray-100 border-r mt-4 p-2 md:p-6">
-                            <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">Where does it come from standard?</h1>
-                            <p className="text-base text-gray-600 mb-2">
-                                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                                piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,
-                            </p>
-                            <ul className='flex flex-col justify-start items-start gap-3 mb-8 text-sm'>
-                                <li className="flex gap-2 items-start text-gray-700 italic">
-                                    <Image src={icons.circlearrow} alt="vector icon" width={20} height={20} className='' />
-                                    <div className='flex flex-col'><span className=''>It is a long established fact that</span>
-                                        <span className=''>over 2000 years old. Richard McClintoc It is a long established</span>
-                                    </div>
-                                </li>
-
-                                <li className="flex gap-2 items-start text-gray-700 italic">
-                                    <Image src={icons.graph} alt="vector icon" width={20} height={20} className='' />
-                                    <div className='flex flex-col'><span className=''>It is a long established fact that</span>
-                                        <span className=''>over 2000 years old. Richard McClintoc It is a long established</span>
-                                    </div>
-                                </li>
-                                <li className="flex gap-2 justify-center items-start text-gray-700 italic">
-                                    <Image src={icons.heart} alt="vector icon" width={25} height={25} className='mt-1' />
-                                    <div className='flex flex-col '><span className=''>Five centuries, but also the leap into </span>
-                                        <span className=''>Electronic typesetting</span>
-                                    </div>
-                                </li>
-
-
-
-                            </ul>
-                            <div className='flex text-base flex-col md:flex-row  justify-between items-center gap-4'>
-                                <button className="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
-                                    More About It
-                                </button>
-                                <Link href="#" className='flex'><h2 className='font-normal text-primary hover:text-secondary md:text-[18px]'>Learn more about our app</h2><ArrowRight /></Link>
-                            </div>
-                        </div>
-
-
-
-
-
-
-
-                    </div>
-                </div>
-            </motion.section>
+            </motion.section>)}
+     
             </div>):<div><Loading /></div>}
         </>
     )

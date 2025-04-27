@@ -67,7 +67,7 @@ async function getUser1() {
          'populate[Row5Listing][populate]': '*',
          'populate[Row6][populate]': '*',
          'populate[Row6Listing][populate]': '*',
-        //  'populate[Row7][populate]': '*',
+         'populate[Row7][populate]': '*',
         //  'populate[Row8][populate]': '*',
         //  'populate[Row8Listing][populate]': '*',
         //  'populate[Row8][populate]': '*',
