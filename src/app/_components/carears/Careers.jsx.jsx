@@ -36,7 +36,7 @@ const getData = async () => {
     return (
         <>
             {/* Breadcrumbs */}
-            <Breadcrumb user="Careers" name="John" />
+            {/* <Breadcrumb user="Careers" name="John" /> */}
 
             {/* Careers page */}
 

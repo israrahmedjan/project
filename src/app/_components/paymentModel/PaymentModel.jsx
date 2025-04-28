@@ -119,7 +119,7 @@ function PaymentModel() {
       {/* Medium and large devices */}
       {paymentData.Row3 && (<div>{showLightbox && (<div><div className="hidden md:flex fixed inset-0 bg-black bg-opacity-60  justify-center items-center z-50 text-gray-600">
 
-<div className="bg-white p-2 rounded-lg shadow-lg w-[90%] md:w-[800px] relative">
+<div className="bg-white p-2 rounded-lg shadow-lg w-[90%] md:w-[800px]  h-[630px]">
   <div className='mx-auto flex flex-col items-center border-gray-100 border-b-2 border'>
     <div>
 
@@ -145,7 +145,7 @@ function PaymentModel() {
     <div><PhoneContact /></div>
     <Items data= {paymentData.Row3} dataArray= {paymentData.Row3Listing}  />
   </div>
-  <div className='flex justify-center border-gray-100 border-t-[1px] pt-2 items-center  gap-10 mt-0'>
+  <div className='flex justify-between mx-20 border-gray-100 border-t-[1px] h-[10px] pt-2 items-center  gap-10 mt-0'>
     <div>  <button onClick={() => setShowLightbox(false)} className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
       Cancel
     </button></div>

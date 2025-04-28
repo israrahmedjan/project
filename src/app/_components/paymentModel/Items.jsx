@@ -27,18 +27,21 @@ function Items({data,dataArray}) {
                 height={150}
 
               /> */}
+<div className="flex justify-center">
+  <div className="w-[200px] h-[200px]">
+    <iframe
+      title="Google Maps"
+      width="200"
+      height="250"
+      style={{ border: 0 }}
+      loading="lazy"
+      allowFullScreen
+      src={mapSrc}
+      className="w-full h-full"
+    ></iframe>
+  </div>
+</div>
 
-<div className="w-full flex justify-center">
-        <iframe
-          title="Google Maps"
-          width="200"
-          height="250"
-          style={{ border: 0 }}
-          loading="lazy"
-          allowFullScreen
-          src={mapSrc}
-        ></iframe>
-      </div>
         </div>
     </div>
     <div className="space-y-6 p-6 rounded-md w-full max-w-md mx-auto mt-10">
