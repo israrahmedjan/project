@@ -12,6 +12,7 @@ import { getHome } from '@/helper/helper'
 import Loading from '../Loading'
 import { useSearchParams } from 'next/navigation'
 import Breadcrumb from '../Breadcrumb'
+import MapWithSearch from '../MapWithSearch'
 
 function Landing() {
   const [homeData, sethomeData] = useState(null);
@@ -110,6 +111,8 @@ const searchParams = useSearchParams();
 
   return (
     <>
+
+<MapWithSearch />
 
       {homeData ? (<div>
 
