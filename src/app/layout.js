@@ -4,6 +4,7 @@ import { ProvidersCustomization } from "@/redux/Providers";
 import Header from "./_components/header/Header";
 import Footer from "./_components/footer/Footer";
 import { motion } from "framer-motion";
+import { ClerkProvider } from '@clerk/nextjs';
 
 
 const poppins = Poppins({
@@ -21,9 +22,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
+    <ClerkProvider>
     <html lang="en">
     <body className={`${poppins.variable} font-poppins`}>
-      
+   
   <ProvidersCustomization>
         <Header />
         {children}
@@ -43,8 +45,9 @@ export default function RootLayout({ children }) {
 </script>
       <Footer />
       </ProvidersCustomization>
+      
       </body>
-    </html>
+    </html></ClerkProvider>
   );
   
 }

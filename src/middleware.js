@@ -1,25 +1,15 @@
-import { NextResponse } from 'next/server';
+import { clerkMiddleware } from '@clerk/nextjs/server';
 
-export function middleware(req) {
-  const token = req.cookies.get('auth_token'); // Check for the token in cookies
+const middleware = clerkMiddleware();
 
-  // Protect routes starting with `/dashboard` or any other path you want to secure
-  if (req.nextUrl.pathname.startsWith('/dashboard') && !token) {
-    return NextResponse.redirect(new URL('/login', req.url)); // Redirect to login if no token
-  }
-  //  // Protect routes starting with `/dashboard` or any other path you want to secure
-  //  if (req.nextUrl.pathname.startsWith('/') && !token) {
-  //   return NextResponse.redirect(new URL('/login', req.url)); // Redirect to login if no token
-  // }
+export default middleware;
 
- // Allow access if token is present or not a protected route
-  return NextResponse.next();
-}
-
-// Define routes that should run the middleware
 export const config = {
   matcher: [
-    '/dashboard/:path*',
-    '/', 
-  ], // Apply middleware to `/dashboard` and its subpaths
+    // Ignore Next.js internals and static files
+    '/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
+    
+    // Always run for API routes
+    '/(api|trpc)(.*)',
+  ],
 };

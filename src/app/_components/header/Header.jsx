@@ -6,6 +6,11 @@ import { Menu, X } from 'lucide-react'; // Menu open/close icons
 import Ticker from '../Ticker';
 import Link from 'next/link';
 
+import { useRouter } from 'next/router';
+import { UserButton } from '@clerk/nextjs';
+
+
+
 
 
 export default function Header() {
@@ -16,8 +21,6 @@ export default function Header() {
     const toggleMenu = () => {
       setMenuOpen(!menuOpen);
     };
-
-    
     return (
         <>
      
@@ -50,6 +53,14 @@ export default function Header() {
                    <Link href={`${hommeUrl}/about`} className="text-primary text-lg font-medium hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
                         About
                    </Link>
+                   <Link href={`${hommeUrl}/SignIn`} className="text-primary text-lg font-medium hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
+                        SignIn
+                   </Link>
+                   <Link href={`${hommeUrl}/SignUp`} className="text-primary text-lg font-medium hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
+                        SignUp
+                   </Link>
+<div>   <UserButton /></div>
+        
                 </nav>
 
             </header>
