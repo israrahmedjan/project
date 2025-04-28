@@ -1,23 +1,43 @@
 'use client'
 import Image from 'next/image';
-import React from 'react'
+import React, { useState } from 'react'
 import { MapPin } from "lucide-react"; // Location icon lucide-react se
 
 function ItemsSmall() {
     const domain = process.env.NEXT_PUBLIC_FRONT_DOMAIN;
+     const [location, setLocation] = useState("New York");
+        const mapSrc = `https://maps.google.com/maps?q=${encodeURIComponent(location)}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
+      
+      
+        const handleChange = (e) => {
+          setLocation(e.target.value);
+        };
   return (
     <>
      <div className='flex flex-col justify-between items-center gap-2'>
     <div className='flex flex-col items-center gap-2'>
         <div><h3 className='text-base font-semibold'>Item Name</h3></div>
         <div>
-        <Image
+        {/* <Image
                 src={`${domain}/images/gift/location.png`}
                 alt="no image"
-                width={200}
-                height={100}
+                width={50}
+                height={50}
 
-              />
+              /> */}
+
+<div className="w-full flex justify-center">
+        <iframe
+          title="Google Maps"
+          width="150"
+          height="75"
+          style={{ border: 0 }}
+          loading="lazy"
+          allowFullScreen
+          src={mapSrc}
+        ></iframe>
+      </div>
+
         </div>
     </div>
     <div className="space-y-6 p-6 border rounded-md w-full max-w-md mx-auto mt-2">
@@ -29,6 +49,8 @@ function ItemsSmall() {
         <input
           type="text"
           placeholder="Enter Location"
+          value={location}
+        onChange={handleChange}
           className="w-full border pl-10 pr-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
         />
         <MapPin className="absolute left-3 top-5 transform -translate-y-1/2 text-gray-500 w-5 h-5" />

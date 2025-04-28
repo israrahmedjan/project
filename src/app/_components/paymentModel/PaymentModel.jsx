@@ -22,6 +22,7 @@ function PaymentModel() {
   const [paymentData, setpaymentData] = useState(null);
   const [showLightbox, setShowLightbox] = useState(false);
   const domain = process.env.NEXT_PUBLIC_FRONT_DOMAIN;
+
   const icons = {
     'vector': `${domain}/images/icons/Vector.png`,
     'vector2': `${domain}/images/icons/Vector2.png`,
@@ -76,8 +77,8 @@ function PaymentModel() {
           viewport={{ once: false, amount: 0.3 }}
           className=""
         >
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16 mb-10 animate-fade-in-down">
-            <div className="col-span-2 rounded-md  flex justify-center items-center">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-1  md:gap-2 mx-4 md:mx-16 mb-10 animate-fade-in-down">
+            <div className="col-span-2 rounded-md  flex justify-center items-center ">
               {paymentData.Row1?.image?.url ? (<Image
                 src={`${paymentData.Row1?.image.url}`}
                 alt={`${paymentData.Row1?.image.url}`}
@@ -118,15 +119,10 @@ function PaymentModel() {
       {/* Medium and large devices */}
       {paymentData.Row3 && (<div>{showLightbox && (<div><div className="hidden md:flex fixed inset-0 bg-black bg-opacity-60  justify-center items-center z-50 text-gray-600">
 
-<div className="bg-white p-6 rounded-lg shadow-lg w-[90%] md:w-[800px]  relative">
-  <div className='mx-auto flex flex-col items-center'>
+<div className="bg-white p-2 rounded-lg shadow-lg w-[90%] md:w-[800px] relative">
+  <div className='mx-auto flex flex-col items-center border-gray-100 border-b-2 border'>
     <div>
-      {/* <Image
-      src={`${domain}/images/gift/gift.png`}
-      alt="No Image"
-      width={100}
-      height={100}
-    /> */}
+
 
  {paymentData.Row3?.image?.url ? (<Image
                 src={`${paymentData.Row3?.image.url}`}
@@ -141,16 +137,15 @@ function PaymentModel() {
                 width={100}
                 height={100} />)} 
 
-    
     </div>
-    <div><h3 className='text-base md:text-lg pt-4  font-semibold'>The Gift Shop</h3></div>
-    <div><p className='text-center text-sm mt-2'>Get that hardworking man the best gift, a night out with his future forever buddy!</p></div>
+    <div><h3 className='text-base md:text-lg mt-2 font-semibold'>The Gift Shop</h3></div>
+    <div><p className='text-center text-sm mb-2'>Get that hardworking man the best gift, a night out with his future forever buddy!</p></div>
   </div>
-  <div className='flex justify-center flex-col md:flex-row items-center mt-5'>
-    <div className=''><PhoneContact /></div>
-    <Items data= {paymentData.Row3} dataArray= {paymentData.Row3Listing} />
+  <div className='flex justify-center flex-col md:flex-row items-center mt-0 gap-2'>
+    <div><PhoneContact /></div>
+    <Items data= {paymentData.Row3} dataArray= {paymentData.Row3Listing}  />
   </div>
-  <div className='flex justify-center border-gray-100 border-t pt-5 items-center gap-10 mt-6'>
+  <div className='flex justify-center border-gray-100 border-t-[1px] pt-2 items-center  gap-10 mt-0'>
     <div>  <button onClick={() => setShowLightbox(false)} className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
       Cancel
     </button></div>
@@ -164,15 +159,15 @@ function PaymentModel() {
   
 {/* Small devices */}
 {showLightbox && (
-           <div className="md:hidden fixed inset-0 bg-black bg-opacity-60  justify-center items-center z-50 text-gray-600">
+           <div className="md:hidden fixed inset-0 bg-black bg-opacity-60 justify-center items-center z-50 text-gray-600">
 
-           <div className="bg-white p-2 rounded-lg shadow-lg w-[90%] md:w-[800px] mx-auto relative">
+           <div className="bg-white p-2 rounded-lg shadow-lg w-[90%] md:w-[800px] border-red-400 border h-[660px] mx-auto relative">
              <div className='mx-auto order-2 flex flex-col items-center'>
-               <div><Image
+               <div className=''><Image
                  src={`${domain}/images/gift/gift.png`}
                  alt="No Image"
                  width={50}
-                 height={10}
+                 height={50}
  
                /></div>
                <div><h3 className='text-base pt-2  font-semibold'>The Gift Shop</h3></div>
@@ -183,7 +178,7 @@ function PaymentModel() {
                <ItemsSmall />
                <div className=''><PhoneContactSmall /></div>
              </div>
-             <div className='flex justify-center border-gray-100 border-t pt-5 items-center gap-10 mt-6'>
+             <div className='flex justify-center border-gray-100 border-t pt-0 items-center gap-0 mt-0'>
                <div>  <button onClick={() => setShowLightbox(false)} className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
                  Cancel
                </button></div>
@@ -192,7 +187,7 @@ function PaymentModel() {
                </button></div>
              </div>
            </div>
- 
+     
          </div>
       )}
 
