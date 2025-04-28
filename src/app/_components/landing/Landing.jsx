@@ -10,7 +10,6 @@ import ServiceSlider from '../ServiceSlider';
 import { motion } from 'framer-motion';
 import { getHome } from '@/helper/helper'
 import Loading from '../Loading'
-import { useSearchParams } from 'next/navigation'
 import Breadcrumb from '../Breadcrumb'
 import MapWithSearch from '../MapWithSearch'
 
@@ -87,24 +86,7 @@ function Landing() {
   }, []);
 
 
-// Sign in message success
-const searchParams = useSearchParams();
-  const sign = searchParams.get('sign');
-  const [showMessage, setShowMessage] = useState(false);
 
-  useEffect(() => {
-    if (sign === "true") {
-      setShowMessage(true);
-
-      // 3 second ke baad message hide karne ka kaam
-      const timer = setTimeout(() => {
-        setShowMessage(false);
-      }, 9000); // 3000 milliseconds = 3 seconds
-
-      // Clean up timer jab component destroy ho
-      return () => clearTimeout(timer);
-    }
-  }, [sign]);
 
   // End Sign end message
 
@@ -117,14 +99,7 @@ const searchParams = useSearchParams();
       {homeData ? (<div>
 
 
-        {/* Clerk ka SignIn component */}
-        {showMessage && (
-        <div className="flex justify-end items-center gap-3 bg-gray-100 text-gray-600 px-6 py-4 mb-4 rounded-lg shadow-md animate-fade-in-out transition-opacity duration-500">
-          <CheckCircle className="w-6 h-6 text-gray-600" />
-          <span className="font-semibold">Welcome back! You've successfully signed in!</span>
-        </div>
-      )}
-      
+     
      
 
    
