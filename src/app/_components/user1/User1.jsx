@@ -86,8 +86,7 @@ const getData = async () => {
 
     return (
         <>
-            {/* Breadcrumbs */}
-            <Breadcrumb user="User1" name="John" />
+       
             {user1Data ? (<div>
                {/* Row 1 */}
                {user1Data.Row1 && (<motion.section

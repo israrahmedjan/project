@@ -148,13 +148,14 @@
 // }
 
 // export default Page;
-
+'use client'
 import { SignUp } from "@clerk/nextjs";
 
 export default function SignInPage() {
   return (
-    <div className="flex justify-center items-center mt-28 h-screen">
-      <SignUp />
+    <div className="flex justify-center items-center mt-0">
+        <SignUp 
+        afterSignInUrl='/?sign=true' />
     </div>
   );
 }

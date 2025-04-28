@@ -8,6 +8,8 @@ import Link from 'next/link';
 
 import { useRouter } from 'next/router';
 import { UserButton } from '@clerk/nextjs';
+import Breadcrumb from '../Breadcrumb';
+
 
 
 
@@ -21,6 +23,7 @@ export default function Header() {
     const toggleMenu = () => {
       setMenuOpen(!menuOpen);
     };
+    
     return (
         <>
      
@@ -53,18 +56,18 @@ export default function Header() {
                    <Link href={`${hommeUrl}/about`} className="text-primary text-lg font-medium hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
                         About
                    </Link>
-                   <Link href={`${hommeUrl}/SignIn`} className="text-primary text-lg font-medium hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
-                        SignIn
-                   </Link>
-                   <Link href={`${hommeUrl}/SignUp`} className="text-primary text-lg font-medium hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
-                        SignUp
-                   </Link>
-<div>   <UserButton /></div>
+                 
+
         
                 </nav>
 
             </header>
+            
+       {/* Breadcrumbs */}
+      
+  
 
+<div className='w-full mt-20'> <Breadcrumb name="John" /></div>
 {/* <section className='hidden md:block relative mt-[90px]'>
             <Ticker  />
             </section> */}

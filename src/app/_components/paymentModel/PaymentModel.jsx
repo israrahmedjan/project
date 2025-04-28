@@ -62,7 +62,7 @@ function PaymentModel() {
   return (
     <>
       {/* Breadcrumbs */}
-      <Breadcrumb user="Payment Model" name="Mitchal Stark" />
+   
 
 
     

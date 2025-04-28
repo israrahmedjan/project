@@ -1,15 +1,25 @@
 
 'use client'
-import { Home, ChevronRight } from "lucide-react";
+import { Home, ChevronRight, LogIn, LogOut, LogInIcon, LogOutIcon, User } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { UserButton, useUser } from "@clerk/nextjs";
 
-function Breadcrumb({user,name}) {
+import { usePathname } from "next/navigation";
+
+
+
+function Breadcrumb({name}) {
     const hommeUrl = process.env.NEXT_PUBLIC_FRONT_DOMAIN;
+    const { isSignedIn, user } = useUser();
+    const pathname = usePathname(); // e.g., '/user1'
+
+  const pageName = pathname.split("/")[1]; // 'user1'
   return (
     <>
-    <div className="w-full bg-gray-50 mb-16">
-    <div className="mx-4 md:mx-16 flex justify-between items-center h-20">
+ 
+    <div className="w-full bg-gray-50 mb-16 h-14">
+    <div className="mx-4 md:mx-16 flex justify-between items-center">
 
   {/* Breadcrumbs */}
   <nav className="flex items-center space-x-2 text-gray-700 text-sm md:text-base font-medium">
@@ -18,23 +28,36 @@ function Breadcrumb({user,name}) {
       <span>Home</span>
     </Link>
     <ChevronRight size={16} />
-    <a href="/user1" className="flex items-center gap-1 hover:text-primary transition">
+   {pageName && (  <a href="/user1" className="flex items-center gap-1 hover:text-primary transition">
+{pageName}
+</a>)}
   
-      <span>{user}</span>
-    </a>
+    {/* <div>{JSON.stringify(user,null,2)}</div> */}
+  
   </nav>
 
   {/* Welcome Text */}
   <div className="flex items-center gap-2 text-gray-700 font-medium text-sm md:text-base">
-  <div className="w-12 h-12 relative overflow-hidden rounded-full">
-    <Image
-      src="https://img.freepik.com/free-photo/young-male-entrepreneur-making-eye-contact-against-blue-background_662251-739.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740"
-      alt="User Profile"
-      fill
-      className="object-cover"
-    />
+  <div className="w-50 h-14 relative overflow-hidden rounded-full flex items-center">
+ 
+  {isSignedIn && (<div className="flex gap-2 items-center">
+    <span>Welcome, {user.fullName}!</span>
+     <UserButton /></div>)}
+
+     {!isSignedIn && (<div className="flex gap-0 items-center italic">
+
+      <Link href={`${hommeUrl}/SignUp`} className="text-primary text-base font-medium hover:text-secondary h-14 flex items-center justify-center px-2 border-gray-100 border-r">
+                        <span className="flex items-center"><span>Sign Up</span><User size={22} className="text-secondary" /></span>
+                   </Link>
+                   <span> | </span>
+                   <Link href={`${hommeUrl}/SignIn`} className="text-primary font-medium hover:text-secondary h-14 flex items-center justify-center px-2 border-gray-100 border-r">
+                  <span className="flex gap-2 items-center"><span>Sign IN</span> <LogOutIcon size={18} className="text-secondary" /></span>
+                   </Link>
+      </div>)}
+
   </div>
-  <span>Welcome, {name}!</span>
+  
+ 
 </div>
 
 

@@ -86,7 +86,7 @@ const [user2Data, setuser2Data] = useState(null);
   return (
     <>
   {/* Breadcrumbs */}
-<Breadcrumb user="User2" name="Mitchal Stark" />
+
 {/* Mobiles and */}
       {/* Row 1 */}
       {user2Data ? (<div>
