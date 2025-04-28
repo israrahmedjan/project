@@ -112,7 +112,7 @@ const searchParams = useSearchParams();
   return (
     <>
 
-<MapWithSearch />
+{/* <MapWithSearch /> */}
 
       {homeData ? (<div>
 
