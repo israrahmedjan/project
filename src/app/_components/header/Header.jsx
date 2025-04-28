@@ -67,7 +67,7 @@ export default function Header() {
       
   
 
-<div className='w-full mt-20'> <Breadcrumb name="John" /></div>
+{/* <div className='w-full mt-20'> <Breadcrumb /></div> */}
 {/* <section className='hidden md:block relative mt-[90px]'>
             <Ticker  />
             </section> */}

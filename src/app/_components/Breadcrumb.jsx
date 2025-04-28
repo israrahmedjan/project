@@ -9,7 +9,7 @@ import { usePathname } from "next/navigation";
 
 
 
-function Breadcrumb({name}) {
+function Breadcrumb() {
     const hommeUrl = process.env.NEXT_PUBLIC_FRONT_DOMAIN;
     const { isSignedIn, user } = useUser();
     const pathname = usePathname(); // e.g., '/user1'
