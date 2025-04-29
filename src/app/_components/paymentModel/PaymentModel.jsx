@@ -56,7 +56,7 @@ function PaymentModel() {
     getData();
   }, []);
   useEffect(() => {
-    setShowLightbox(true); // page load pe modal open ho
+    setShowLightbox(false); // page load pe modal open ho
   }, []);
 
 
@@ -424,57 +424,29 @@ function PaymentModel() {
 
         {/* Row 7 - Row7 Lisging */}
         {paymentData.Row6Listing && (<motion.section
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: false, amount: 0.3 }}
-          className=""
-        >
-          <div className='w-full p-10'><h1 className='text-3xl flex justify-center animate-fade-in-down'>Meet Our team</h1>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16 mb-4 ">
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: false, amount: 0.3 }}
+                className=""
+            >
+                <div className='w-full mb-30 p-10  bg-white'>
+                    <div className='w-full flex flex-col'>
+                        <h1 className='text-2xl mx-auto md:text-3xl font-semibold'>Our Services</h1>
+                        <h1 className='mx-auto md:text-lg'>our Services</h1>
+                        {/* <p className='mx-auto'>{paymentData.Row6Listing?.content}</p> */}
+                    </div>
+                   
+                    
+                              {(paymentData.Row6Listing.length != 0) && (
+                                <ServiceSlider services={paymentData.Row6Listing} />
+                               
+                              )}
+                  
 
-              <div className="col-span-4 md:col-span-4 mt-10 mb-10 flex flex-col md:flex-row justify-center gap-2 items-center">
 
-              {paymentData.Row6Listing.map((Row6Listing, index) => (
-                <div key={index}>
-                   <div className="flex flex-col items-center bg-white p-6 rounded-2xl shadow-lg w-80">
-                  {/* <img src="https://img.freepik.com/free-photo/portrait-handsome-fashion-stylish-businessman-model-dressed-elegant-black-classic-suit-posing-metrosexual_158538-9181.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740" alt="Profile Image" className="w-24 h-24 rounded-full object-cover mb-4" /> */}
-                 {Row6Listing?.image?.url ? (<Image
-                          src={`${Row6Listing?.image.url}`}
-                          alt={`${Row6Listing?.image.url}`}
-                          width={20}
-                          height={20}
-                          className="w-24 h-24 rounded-full object-cover mb-4"
-
-                        />
-                        ) : (<Image
-                          src={`${domain}/images/noimage.jpg`}
-                          alt={`No Image`}
-                          width={100}
-                          height={100} />)}
-                 
-                  <h2 className="text-lg font-medium mb-2">{Row6Listing?.heading}</h2>
-                  <p className="text-gray-600 text-center mb-4">
-                  {Row6Listing?.content}
-                  </p>
-                 
-              <Link href={Row6Listing?.btnAction || "/goSite"} >
-                <button className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
-                  {Row6Listing?.btnlabel || "See More"}
-                </button>
-              </Link>
                 </div>
-                </div>
-              ))}
-
-               
-           
-              </div>
-
-            </div>
-
-          </div></motion.section>)}
-
+            </motion.section>)}   
         
        {/* Row 8 bg - image */}
          

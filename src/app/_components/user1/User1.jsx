@@ -339,31 +339,6 @@ const getData = async () => {
 
         
 
-
-            {/* Row 6 */}
-            <motion.section
-                initial={{ opacity: 0, y: 100 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: false, amount: 0.3 }}
-                className=""
-            >
-                <div className='w-full p-10  bg-white'>
-                    <div className='w-full flex flex-col'>
-                        <h1 className='text-2xl mx-auto md:text-3xl font-semibold'>Our Services</h1>
-                        <h1 className='mx-auto md:text-lg'>Our Services</h1>
-                    </div>
-                   
-                    
-                              {(user1Data.Row6Listing.length != 0) && (
-                                <ServiceSlider services={user1Data.Row6Listing} />
-                               
-                              )}
-                  
-
-
-                </div>
-            </motion.section>
 {/* Row 5 */}
 {user1Data.Row5 && (<motion.section
           initial={{ opacity: 0, y: 100 }}
@@ -411,7 +386,32 @@ const getData = async () => {
 
           </div></div></motion.section>)}
 
-            
+    
+
+            {/* Row 6 */}
+            {user1Data.Row5 && (<motion.section
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: false, amount: 0.3 }}
+                className=""
+            >
+                <div className='w-full p-10  bg-white'>
+                    <div className='w-full flex flex-col'>
+                    <h1 className='text-2xl mx-auto md:text-3xl font-semibold'>{user1Data.Row6?.heading}</h1>
+                    <h1 className='mx-auto md:text-lg'>{user1Data.Row6?.headingSmall}</h1>
+                    </div>
+                   
+                    
+                              {(user1Data.Row6Listing.length != 0) && (
+                                <ServiceSlider services={user1Data.Row6Listing} />
+                               
+                              )}
+                  
+
+
+                </div>
+            </motion.section>)}        
        
      {/* Row 7 bg - image */}
      
