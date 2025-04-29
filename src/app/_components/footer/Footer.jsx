@@ -6,7 +6,7 @@ function Footer() {
     <>
  
 {/* medium devices */}
-<footer className="hidden md:block w-full bg-gray-100 py-10 px-4 md:px-16 mt-8">
+<footer className="hidden md:block w-full bg-gray-100 py-10 px-4 md:px-16">
   <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
     
     {/* Logo Section */}

@@ -206,13 +206,13 @@ const getData = async () => {
  {/* Row 3 Mobiles and bg for medium devices */}
  {user1Data.Row3 && (
  <motion.section
-                initial={{ opacity: 0, y: 100 }}
+                initial={{ opacity: 0, y: 0 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: false, amount: 0.3 }}
-                className=""
+                className="mb-20"
             >
- <div className="hidden md:block  mt-40  mb-40 relative w-full h-[230px] overflow-visible bg-cover bg-center" style={{ backgroundImage: "url('https://res.cloudinary.com/detdjaspz/image/upload/v1745327663/other_plugins_woovmw.jpg')" }}>
+ <div className="hidden md:block   mt-40  mb-40 relative w-full h-[230px] overflow-visible bg-cover z-10 bg-center" style={{ backgroundImage: "url('https://res.cloudinary.com/detdjaspz/image/upload/v1745327663/other_plugins_woovmw.jpg')" }}>
                 <div className='flex justify-between items-center gap-6'>
                  
                     <div className="absolute right-1/3 -bottom-16 ">
@@ -246,38 +246,57 @@ const getData = async () => {
             </motion.section>)}
  {/* Row 3 Mobiles and bg for small devices */}
 
+ {user1Data.Row3 && (
  <motion.section
-                initial={{ opacity: 0, y: 100 }}
+                initial={{ opacity: 0, y: 0 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: false, amount: 0.3 }}
-                className=""
+                className="mb-20"
             >
- <div className="md:hidden  mt-20  mb-10 relative w-full h-[130px] overflow-visible bg-cover bg-center" style={{ backgroundImage: "url('https://res.cloudinary.com/detdjaspz/image/upload/v1745327663/other_plugins_woovmw.jpg')" }}>
-                <div className='flex justify-between items-center gap-2'>
-                    <div></div>
-                    <div className="absolute  -top-14 right-7 ">
-                        <Image
-                            src={`${process.env.NEXT_PUBLIC_FRONT_DOMAIN}/images/3dImage.png`}
-                            alt="Mobile"
-                            width={100}
-                            height={120}
-                            className=""
-                        />
+ <div className="mt-40  mb-40 relative w-full h-[150px] overflow-visible bg-cover z-10 bg-center" style={{ backgroundImage: "url('https://res.cloudinary.com/detdjaspz/image/upload/v1745327663/other_plugins_woovmw.jpg')" }}>
+                <div className='flex justify-between items-center gap-6'>
+                 
+                    <div className="absolute right-1/3 -bottom-16 ">
+                   
+{user1Data.Row3?.image?.url ? (<Image
+                src={`${user1Data.Row3?.image.url}`}
+                alt={`${user1Data.Row3?.image.url}`}
+                width={100}
+                height={150}
+
+              />
+              ) : (<Image
+                src={`${process.env.NEXT_PUBLIC_FRONT_DOMAIN}/images/3dImage.png`}
+                alt={`No Image`}
+                width={100}
+                height={150} />)}
                     </div>
+                    <div className="absolute left-0 -bottom-44   w-[100%] shadow-md z-0  ">
+                    <div className='flex justify-between flex-col'>
+                      <div className='text-gray-600 mx-10 w-full'>
+                      <h2 className='text-2xl text-primary pt-3 pb-3'>{user1Data.Row3.headingSmall}</h2>
+                      <p className='pb-6'>{user1Data.Row3?.content}</p>
+                      </div>
+                      <div><h3 className='mx-16 text-3xl'>{user1Data.Row3.heading}</h3></div>
+                    </div>
+                      </div>
                 </div>
-            </div></motion.section>
+            </div>
+            
+            
+            </motion.section>)}
 
 
 {/* Row 4 */}
 {user1Data.Row4 && (<motion.section
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: false, amount: 0.3 }}
-          className=""
+          className="mt-20"
         >
-          <div className='w-full bg-gray-50 md:pt-16 md:pb-16 animate-fade-in-down'>
+          <div className='w-full bg-gray-50 md:pt-16 md:pb-16 animate-fade-in-down '>
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16  mb-4 ">
 
@@ -347,8 +366,8 @@ const getData = async () => {
           viewport={{ once: false, amount: 0.3 }}
           className=""
         >
-            <div className='w-full bg-gray-50'>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 md:pt-14  mx-4 md:mx-16 mb-10 mt-20 animate-fade-in-down">
+            <div className='w-full bg-gray-50 pb-10'>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 md:pt-14  mx-4 md:mx-16 mb-10 mt-10 animate-fade-in-down">
             <div className="col-span-2 rounded-md  flex justify-center items-center">
             
               {user1Data.Row5?.image?.url ? (<Image
@@ -390,13 +409,13 @@ const getData = async () => {
 
             {/* Row 6 */}
             {user1Data.Row5 && (<motion.section
-                initial={{ opacity: 0, y: 100 }}
+                initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: false, amount: 0.3 }}
                 className=""
             >
-                <div className='w-full p-10  bg-white'>
+                <div className='w-full pt-2  pb-20 bg-white'>
                     <div className='w-full flex flex-col'>
                     <h1 className='text-2xl mx-auto md:text-3xl font-semibold'>{user1Data.Row6?.heading}</h1>
                     <h1 className='mx-auto md:text-lg'>{user1Data.Row6?.headingSmall}</h1>
@@ -422,7 +441,7 @@ const getData = async () => {
           viewport={{ once: false, amount: 0.3 }}
           className=""
         >    <div
-        className="w-full mx-auto h-64 md:h-80 bg-cover bg-center bg-no-repeat"
+        className="w-full  pb-10 mx-auto h-64 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('https://img.freepik.com/free-photo/beautiful-shot-amazing-cityscape-sunset_181624-45857.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740')" }}
       >
         <div className="col-span-2 flex justify-center  items-center h-full">

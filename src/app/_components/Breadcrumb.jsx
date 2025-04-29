@@ -22,9 +22,9 @@ function Breadcrumb() {
     <div className="mx-4 md:mx-16 flex justify-between items-center">
 
   {/* Breadcrumbs */}
-  <nav className="flex items-center space-x-2 text-gray-700 text-sm md:text-base font-medium">
+  <nav className="flex items-center space-x-2 text-gray-700 text-base font-medium">
     <Link href={`${hommeUrl}`} className="flex items-center gap-1 hover:text-primary transition">
-      <Home size={18} />
+      <Home size={20} />
       <span>Home</span>
     </Link>
     <ChevronRight size={16} />
@@ -37,21 +37,21 @@ function Breadcrumb() {
   </nav>
 
   {/* Welcome Text */}
-  <div className="flex items-center gap-2 text-gray-700 font-medium text-sm md:text-base">
+  <div className="flex items-center gap-2 text-gray-700 font-medium text-base">
   <div className="w-50 h-14 relative overflow-hidden rounded-full flex items-center">
  
-  {isSignedIn && (<div className="flex gap-2 items-center">
+  {isSignedIn && (<div className="flex gap-1 md:gap-2 items-center ">
     <span>Welcome, {user.fullName}!</span>
      <UserButton /></div>)}
 
-     {!isSignedIn && (<div className="flex gap-0 items-center italic">
+     {!isSignedIn && (<div className="flex gap-1 items-center italic">
 
-      <Link href={`${hommeUrl}/SignUp`} className="text-primary text-base font-medium hover:text-secondary h-14 flex items-center justify-center px-2 border-gray-100 border-r">
-                        <span className="flex items-center"><span>Sign Up</span><User size={22} className="text-secondary" /></span>
+      <Link href={`${hommeUrl}/SignUp`} className="text-sm md:text-base font-medium hover:text-secondary h-14 flex items-center justify-center px-2 border-gray-100 border-r">
+                        <span className="flex gap-0 md:gap-2 items-center"><span className="flex gap-1 md:gap-2 items-center">Sign Up</span><User size={18} className="text-secondary" /></span>
                    </Link>
-                   <span> | </span>
-                   <Link href={`${hommeUrl}/SignIn`} className="text-primary font-medium hover:text-secondary h-14 flex items-center justify-center px-2 border-gray-100 border-r">
-                  <span className="flex gap-2 items-center"><span>Sign IN</span> <LogOutIcon size={18} className="text-secondary" /></span>
+                  
+                   <Link href={`${hommeUrl}/SignIn`} className="text-sm md:text-base font-medium hover:text-secondary h-14 flex items-center justify-center px-2 border-gray-100 border-r">
+                  <span className="flex gap-1 md:gap-2 items-center"><span>Sign IN</span> <LogOutIcon size={18} className="text-secondary" /></span>
                    </Link>
       </div>)}
 

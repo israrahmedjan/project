@@ -9,6 +9,8 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { UserButton } from '@clerk/nextjs';
 import Breadcrumb from '../Breadcrumb';
+import { usePathname } from "next/navigation";
+
 
 
 
@@ -18,11 +20,18 @@ import Breadcrumb from '../Breadcrumb';
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
     const hommeUrl = process.env.NEXT_PUBLIC_FRONT_DOMAIN;
+    const pathname = usePathname(); // e.g., '/user1'
   
 
     const toggleMenu = () => {
       setMenuOpen(!menuOpen);
     };
+
+    useEffect(()=>
+    {
+      setMenuOpen(false);
+      console.log("Use effect is called!")
+    },[pathname])
     
     return (
         <>
