@@ -103,7 +103,7 @@ function Landing() {
      
 
    
-        {/* <pre>{JSON.stringify(homeData.Row7, null, 2)}</pre> */}
+        {/* <pre>{JSON.stringify(homeData.Row7.image, null, 2)}</pre> */}
         {/* <div>{strapiDomain}{homeData?.image?.url}</div> */}
         {/* Row 1 */}
         {homeData.Row1 && (<motion.section
@@ -238,20 +238,20 @@ function Landing() {
                  {row3listing?.image?.url ? (<Image
                           src={`${row3listing?.image.url}`}
                           alt={`${row3listing?.image.url}`}
-                          width={20}
-                          height={20}
-                          className="w-24 h-24 rounded-full object-cover mb-4"
+                          width={100}
+                          height={100}
+                          className="w-30 h-30 rounded-full object-cover mb-4"
 
                         />
                         ) : (<Image
                           src={`${domain}/images/noimage.jpg`}
                           alt={`No Image`}
-                          width={100}
-                          height={100} />)}
+                          width={50}
+                          height={50} />)}
                  
                   <h2 className="text-lg font-medium mb-2">{row3listing?.heading}</h2>
                   <p className="text-gray-600 text-center mb-4">
-                  {row3listing?.content}
+                  {row3listing?.content.substring(0,50)}
                   </p>
                  
               <Link href={row3listing?.btnAction || "/goSite"} >
@@ -477,10 +477,9 @@ function Landing() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-1 pt-10 md:gap-2 mx-4 md:mx-16 mb-10 ">
             <div className="col-span-2 rounded-md  flex justify-center items-center">
            
-
             {homeData.Row7?.image?.url ? (<Image
                 src={`${homeData.Row7?.image.url}`}
-                alt={`${homeData.Row7?.image.url}`}
+                alt={`no image`}
                 width={450}
                 height={400}
 
@@ -490,11 +489,10 @@ function Landing() {
                 alt={`No Image`}
                 width={450}
                 height={400} />)}
-
             </div>
 
             <div className="col-span-2 border border-gray-50 rounded-lg shadow-sm mb-2 p-2 md:p-6">
-              <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary"> {homeData.Row7?.heading}</h1>
+              <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">{homeData.Row7?.image.url} {homeData.Row7?.heading}</h1>
               <p className="text-base text-gray-600 mb-6 md:mt-6 ">
               {homeData.Row7?.content} </p>
 
