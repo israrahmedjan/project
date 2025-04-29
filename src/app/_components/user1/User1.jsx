@@ -90,7 +90,7 @@ const getData = async () => {
             {user1Data ? (<div>
                {/* Row 1 */}
                {user1Data.Row1 && (<motion.section
-          initial={{ opacity: 0, y: 100 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: false, amount: 0.3 }}
@@ -137,7 +137,7 @@ const getData = async () => {
 
         {/* Row 2 */}
         {user1Data.Row2Listing&& (<motion.section
-          initial={{ opacity: 0, y: 100 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: false, amount: 0.3 }}
@@ -254,10 +254,10 @@ const getData = async () => {
                 viewport={{ once: false, amount: 0.3 }}
                 className="mb-20"
             >
- <div className="mt-40  mb-40 relative w-full h-[150px] overflow-visible bg-cover z-10 bg-center" style={{ backgroundImage: "url('https://res.cloudinary.com/detdjaspz/image/upload/v1745327663/other_plugins_woovmw.jpg')" }}>
+ <div className="md:hidden mt-20  mb-40 relative w-full h-[150px] overflow-visible bg-cover z-10 bg-center" style={{ backgroundImage: "url('https://res.cloudinary.com/detdjaspz/image/upload/v1745327663/other_plugins_woovmw.jpg')" }}>
                 <div className='flex justify-between items-center gap-6'>
                  
-                    <div className="absolute right-1/3 -bottom-16 ">
+                    <div className="absolute right-1/3 -bottom-4 ">
                    
 {user1Data.Row3?.image?.url ? (<Image
                 src={`${user1Data.Row3?.image.url}`}
@@ -272,13 +272,13 @@ const getData = async () => {
                 width={100}
                 height={150} />)}
                     </div>
-                    <div className="absolute left-0 -bottom-44   w-[100%] shadow-md z-0  ">
+                    <div className="absolute left-0 -bottom-0 w-[43%] shadow-md z-0  ">
                     <div className='flex justify-between flex-col'>
                       <div className='text-gray-600 mx-10 w-full'>
-                      <h2 className='text-2xl text-primary pt-3 pb-3'>{user1Data.Row3.headingSmall}</h2>
-                      <p className='pb-6'>{user1Data.Row3?.content}</p>
+                      <h2 className='text-lg text-white pt-3 pb-3'>{user1Data.Row3.headingSmall}</h2>
+                      <p className='pb-6 text-white text-sm'>{user1Data.Row3?.content.substring(0,75)}</p>
                       </div>
-                      <div><h3 className='mx-16 text-3xl'>{user1Data.Row3.heading}</h3></div>
+                      {/* <div><h3 className='mx-16 text-lg'>{user1Data.Row3.heading}</h3></div> */}
                     </div>
                       </div>
                 </div>
@@ -290,7 +290,7 @@ const getData = async () => {
 
 {/* Row 4 */}
 {user1Data.Row4 && (<motion.section
-          initial={{ opacity: 0, y: 100 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: false, amount: 0.3 }}
@@ -335,7 +335,7 @@ const getData = async () => {
                 </div>
               </div>
 
-              <div className="col-span-2 order-1 md:order-1 flex justify-center items-center">
+              <div className="col-span-2 order-1 md:order-1 flex justify-center pt-6 md:pt-0 items-center">
                 {user1Data.Row4?.image?.url ? (<Image
                   src={`${user1Data.Row4?.image.url}`}
                   alt={`${user1Data.Row4?.image.url}`}
@@ -359,8 +359,8 @@ const getData = async () => {
         
 
 {/* Row 5 */}
-{user1Data.Row5 && (<motion.section
-          initial={{ opacity: 0, y: 100 }}
+{/* {user1Data.Row5 && (<motion.section
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: false, amount: 0.3 }}
@@ -403,7 +403,7 @@ const getData = async () => {
 
             </div>
 
-          </div></div></motion.section>)}
+          </div></div></motion.section>)} */}
 
     
 
@@ -415,9 +415,9 @@ const getData = async () => {
                 viewport={{ once: false, amount: 0.3 }}
                 className=""
             >
-                <div className='w-full pt-2  pb-20 bg-white'>
+                <div className='w-full pt-4 md:pt-20  md:pb-1 bg-white'>
                     <div className='w-full flex flex-col'>
-                    <h1 className='text-2xl mx-auto md:text-3xl font-semibold'>{user1Data.Row6?.heading}</h1>
+                    <h1 className='text-xl mx-auto md:text-3xl font-semibold'>{user1Data.Row6?.heading}</h1>
                     <h1 className='mx-auto md:text-lg'>{user1Data.Row6?.headingSmall}</h1>
                     </div>
                    
@@ -435,7 +435,7 @@ const getData = async () => {
      {/* Row 7 bg - image */}
      
      {user1Data.Row7 && (<motion.section
-          initial={{ opacity: 0, y: 100 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: false, amount: 0.3 }}

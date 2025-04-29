@@ -90,7 +90,7 @@ const getData = async () => {
             {user2Data ? (<div>
                {/* Row 1 */}
                {user2Data.Row1 && (<motion.section
-          initial={{ opacity: 0, y: 100 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: false, amount: 0.3 }}
@@ -137,7 +137,7 @@ const getData = async () => {
 
         {/* Row 2 */}
         {user2Data.Row2Listing&& (<motion.section
-          initial={{ opacity: 0, y: 100 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: false, amount: 0.3 }}
@@ -206,7 +206,7 @@ const getData = async () => {
  {/* Row 3 Mobiles and bg for medium devices */}
  {user2Data.Row3 && (
  <motion.section
-                initial={{ opacity: 0, y: 100 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: false, amount: 0.3 }}
@@ -246,32 +246,50 @@ const getData = async () => {
             </motion.section>)}
  {/* Row 3 Mobiles and bg for small devices */}
 
+ {user2Data.Row3 && (
  <motion.section
-                initial={{ opacity: 0, y: 100 }}
+                initial={{ opacity: 0, y: 0 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: false, amount: 0.3 }}
-                className=""
+                className="mb-20"
             >
- <div className="md:hidden  mt-60  mb-60 relative w-full h-[130px] overflow-visible bg-cover bg-center" style={{ backgroundImage: "url('https://res.cloudinary.com/detdjaspz/image/upload/v1745327663/other_plugins_woovmw.jpg')" }}>
-                <div className='flex justify-between items-center gap-2'>
-                    <div></div>
-                    <div className="absolute  -top-14 right-7 ">
-                        <Image
-                            src={`${process.env.NEXT_PUBLIC_FRONT_DOMAIN}/images/3dImage.png`}
-                            alt="Mobile"
-                            width={100}
-                            height={120}
-                            className=""
-                        />
-                    </div>
-                </div>
-            </div></motion.section>
+ <div className="md:hidden mt-20  mb-40 relative w-full h-[150px] overflow-visible bg-cover z-10 bg-center" style={{ backgroundImage: "url('https://res.cloudinary.com/detdjaspz/image/upload/v1745327663/other_plugins_woovmw.jpg')" }}>
+                <div className='flex justify-between items-center gap-6'>
+                 
+                    <div className="absolute right-1/3 -bottom-4 ">
+                   
+{user2Data.Row3?.image?.url ? (<Image
+                src={`${user2Data.Row3?.image.url}`}
+                alt={`${user2Data.Row3?.image.url}`}
+                width={100}
+                height={150}
 
+              />
+              ) : (<Image
+                src={`${process.env.NEXT_PUBLIC_FRONT_DOMAIN}/images/3dImage.png`}
+                alt={`No Image`}
+                width={100}
+                height={150} />)}
+                    </div>
+                    <div className="absolute left-0 -bottom-0 w-[43%] shadow-md z-0  ">
+                    <div className='flex justify-between flex-col'>
+                      <div className='text-gray-600 mx-10 w-full'>
+                      <h2 className='text-lg text-white pt-3 pb-3'>{user2Data.Row3.headingSmall}</h2>
+                      <p className='pb-6 text-white text-sm'>{user2Data.Row3?.content.substring(0,75)}</p>
+                      </div>
+                      {/* <div><h3 className='mx-16 text-lg'>{user2Data.Row3.heading}</h3></div> */}
+                    </div>
+                      </div>
+                </div>
+            </div>
+            
+            
+            </motion.section>)}
 {/* Row7 position or Row4 */}
 
 {user2Data.Row7 && (<motion.section
-          initial={{ opacity: 0, y: 100 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: false, amount: 0.3 }}
@@ -306,7 +324,7 @@ const getData = async () => {
 
 {/* Row 4 */}
 {user2Data.Row4 && (<motion.section
-          initial={{ opacity: 0, y: 100 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: false, amount: 0.3 }}
@@ -378,7 +396,7 @@ const getData = async () => {
    
 {/* Row 5 */}
 {user2Data.Row5 && (<motion.section
-          initial={{ opacity: 0, y: 100 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: false, amount: 0.3 }}
@@ -425,7 +443,7 @@ const getData = async () => {
 
                  {/* Row 6 */}
                  {user2Data.Row6 && (<motion.section
-                initial={{ opacity: 0, y: 100 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: false, amount: 0.3 }}
@@ -452,7 +470,7 @@ const getData = async () => {
      {/* Row 8 bg - image */}
      
      {user2Data.Row8 && (<motion.section
-          initial={{ opacity: 0, y: 100 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: false, amount: 0.3 }}

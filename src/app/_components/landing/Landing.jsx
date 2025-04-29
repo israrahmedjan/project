@@ -107,7 +107,7 @@ function Landing() {
         {/* <div>{strapiDomain}{homeData?.image?.url}</div> */}
         {/* Row 1 */}
         {homeData.Row1 && (<motion.section
-          initial={{ opacity: 0, y: 100 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: false, amount: 0.3 }}
@@ -151,7 +151,7 @@ function Landing() {
 
         {/* Row 2 */}
         {homeData.Row2 && (<motion.section
-          initial={{ opacity: 0, y: 100 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: false, amount: 0.3 }}
@@ -220,7 +220,7 @@ function Landing() {
 
         {/* Row 3 */}
         {homeData.Row3 && (<motion.section
-          initial={{ opacity: 0, y: 100 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: false, amount: 0.3 }}
@@ -292,7 +292,7 @@ function Landing() {
 
         {/* Row 4 */}
         {homeData.Row4 && (<motion.section
-          initial={{ opacity: 0, y: 100 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: false, amount: 0.3 }}
@@ -363,7 +363,7 @@ function Landing() {
 
         {/* Row 5 */}
         {homeData.Row5 && (<motion.section
-          initial={{ opacity: 0, y: 100 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: false, amount: 0.3 }}
@@ -446,7 +446,7 @@ function Landing() {
 
         {/* Row 6 */}
         {homeData.Row6 && ( <motion.section
-          initial={{ opacity: 0, y: 100 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: false, amount: 0.3 }}
@@ -468,7 +468,7 @@ function Landing() {
         </motion.section>)}
         {/* Row 7 */}
         {homeData.Row7 && (<motion.section
-          initial={{ opacity: 0, y: 100 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: false, amount: 0.3 }}
@@ -511,7 +511,7 @@ function Landing() {
         </motion.section>)}
         {/* Row 8 */}
         {homeData.Row8 && (<motion.section
-          initial={{ opacity: 0, y: 100 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: false, amount: 0.3 }}
