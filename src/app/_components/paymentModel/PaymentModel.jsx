@@ -56,7 +56,7 @@ function PaymentModel() {
     getData();
   }, []);
   useEffect(() => {
-    setShowLightbox(false); // page load pe modal open ho
+    setShowLightbox(true); // page load pe modal open ho
   }, []);
 
 
