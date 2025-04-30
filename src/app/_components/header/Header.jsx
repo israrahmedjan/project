@@ -10,6 +10,7 @@ import { useRouter } from 'next/router';
 import { UserButton } from '@clerk/nextjs';
 import Breadcrumb from '../Breadcrumb';
 import { usePathname } from "next/navigation";
+import { getHeader } from '@/helper/helper';
 
 
 
@@ -21,6 +22,9 @@ export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
     const hommeUrl = process.env.NEXT_PUBLIC_FRONT_DOMAIN;
     const pathname = usePathname(); // e.g., '/user1'
+    const [headerData, setheaderData] = useState(null);
+  const domain = process.env.NEXT_PUBLIC_FRONT_DOMAIN;
+ 
   
 
     const toggleMenu = () => {
@@ -30,8 +34,21 @@ export default function Header() {
     useEffect(()=>
     {
       setMenuOpen(false);
-      console.log("Use effect is called!")
+      
     },[pathname])
+
+    const getData = async () => {
+      const data = await getHeader();
+      console.log("Header", data);
+      setheaderData(data.data);
+      //setcompleteData(data.data.Section1);
+    };
+  
+    useEffect(() => {
+    
+      getData();
+    }, []);
+  
     
     return (
         <>
@@ -39,11 +56,26 @@ export default function Header() {
      {/* lg devices */}
             <header className="fixed top-0 left-0 bg-white right-0 hidden md:flex border-gray-200 border h-auto justify-between px-16 z-50">
                 <div className="flex justify-center pt-4">
-                  <Link href={`${hommeUrl}`}><Image src={`${process.env.NEXT_PUBLIC_FRONT_DOMAIN}/logo.svg`} alt="Some description"
-                            width={100}
-                            height={100}
-                             className="h-12 w-auto"
-                            /></Link>
+                  <Link href={`${hommeUrl}`}>
+                  {headerData?.Header && (
+                    
+                    <>
+            
+                            <div className='h-[65px] w-[150px] '>
+                    {headerData?.Header?.logo?.url ? (<Image
+                                  src={`${headerData?.Header?.logo?.url}`}
+                                  alt={`${headerData?.Header?.logo?.url}`}
+                                  width={150}
+                                  height={125}
+                  
+                                />
+                                ) : (<span className=''>Site Logo</span>)}
+                                </div>
+
+                            
+                  </>
+                  )}
+                            </Link>
                             </div>
 
                 <nav className="flex items-center justify-center">
@@ -90,12 +122,27 @@ export default function Header() {
       <div className="flex items-center justify-between h-20">
         {/* Logo */}
         <div className="flex items-center h-20">
-          <Image
-            src={`${process.env.NEXT_PUBLIC_FRONT_DOMAIN}/logo.svg`}
-            alt="Logo"
-            width={100}
-            height={100}
-          />
+        <Link href={`${hommeUrl}`}>
+                  {headerData?.Header && (
+                    
+                    <>
+            
+                         
+                    {headerData?.Header?.logo?.url ? (<Image
+                                  src={`${headerData?.Header?.logo?.url}`}
+                                  alt={`${headerData?.Header?.logo?.url}`}
+                                  width={150}
+                                  height={100}
+                  
+                                />
+                                ) : (<span className=''>Site Logo</span>)}
+                               
+
+                            
+                  </>
+                  )}
+                            </Link>
+                
         </div>
 
         {/* Menu Button */}

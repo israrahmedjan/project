@@ -254,4 +254,45 @@ async function getFooter() {
       }
 }
 
-  export {getHome,getUser1,getUser2,getCareers,getpaymentModel,getFooter}
+
+// Get Header 
+
+
+// Get Footers
+async function getHeader() {
+ 
+  try {
+        const token = process.env.NEXT_PUBLIC_STRAPI_TOKEN;
+       
+        const params = new URLSearchParams({
+          'populate[Header][populate]': '*',
+          // 'populate[Row1][populate]': '*',
+          // 'populate[Row1Listing][populate]': '*',
+          // 'populate[Row4][populate]': '*',
+          // 'populate[Row4Listing][populate]': '*',
+          // 'populate[Row2][populate]': '*',
+          // 'populate[SocialMedia][populate]': '*',
+         
+        //  'populate[Row2Listing][populate]': '*',
+        //  'populate[Row3][populate]': '*',
+   
+        });
+    
+        
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/header?${params.toString()}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        const data = await res.json();
+        //console.log("Response Data:", data);
+        return data;
+      } catch (error) {
+        console.error("Error:", error);
+      }
+}
+
+  export {getHome,getUser1,getUser2,getCareers,getpaymentModel,getFooter,getHeader}
