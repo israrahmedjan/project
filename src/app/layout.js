@@ -5,6 +5,8 @@ import Header from "./_components/header/Header";
 import Footer from "./_components/footer/Footer";
 import { motion } from "framer-motion";
 import { ClerkProvider } from '@clerk/nextjs';
+import LogRocket from 'logrocket';
+import LogRocketInitializer from "@/lib/LogRocketInitializer";
 
 
 const poppins = Poppins({
@@ -21,12 +23,15 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  
   return (
+    
     <ClerkProvider>
     <html lang="en">
     <body className={`${poppins.variable} font-poppins`}>
-   
+    <LogRocketInitializer />
   <ProvidersCustomization>
+    
         <Header />
         {children}
 
@@ -44,6 +49,7 @@ export default function RootLayout({ children }) {
 `}
 </script>
       <Footer />
+     
       </ProvidersCustomization>
       
       </body>
