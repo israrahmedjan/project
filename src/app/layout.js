@@ -7,6 +7,8 @@ import { motion } from "framer-motion";
 import { ClerkProvider } from '@clerk/nextjs';
 import LogRocket from 'logrocket';
 import LogRocketInitializer from "@/lib/LogRocketInitializer";
+import GoogleAnalytics from "@/lib/GoogleAnalytics";
+import TawkToChat from "@/lib/TawkToChat";
 
 
 const poppins = Poppins({
@@ -30,8 +32,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
     <body className={`${poppins.variable} font-poppins`}>
     {/* <LogRocketInitializer /> */}
+    <GoogleAnalytics />
   <ProvidersCustomization>
-    
+    <TawkToChat />
         <Header />
         {children}
 
