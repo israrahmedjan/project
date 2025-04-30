@@ -103,7 +103,7 @@ function Landing() {
      
 
    
-        {/* <pre>{JSON.stringify(homeData.Row7.image, null, 2)}</pre> */}
+        {/* <pre>{JSON.stringify(homeData.Row7?.image[0], null, 2)}</pre> */}
         {/* <div>{strapiDomain}{homeData?.image?.url}</div> */}
         {/* Row 1 */}
         {homeData.Row1 && (<motion.section
@@ -474,12 +474,11 @@ function Landing() {
           viewport={{ once: false, amount: 0.3 }}
           className=""
         >
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-1 pt-10 md:gap-2 mx-4 md:mx-16 mb-10 ">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16 mb-10 animate-fade-in-down">
             <div className="col-span-2 rounded-md  flex justify-center items-center">
-           
-            {homeData.Row7?.image?.url ? (<Image
-                src={`${homeData.Row7?.image.url}`}
-                alt={`no image`}
+              {homeData.Row7?.image[0]?.url ? (<Image
+                src={`${homeData.Row7?.image[0]?.url}`}
+                alt={`${homeData.Row7?.image[0]?.url}`}
                 width={450}
                 height={400}
 
@@ -491,22 +490,23 @@ function Landing() {
                 height={400} />)}
             </div>
 
-            <div className="col-span-2 border border-gray-50 rounded-lg shadow-sm mb-2 p-2 md:p-6">
-              <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">{homeData.Row7?.image.url} {homeData.Row7?.heading}</h1>
+            <div className="col-span-2 border border-gray-50 rounded-lg shadow-sm p-2 md:p-6">
+              <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">
+
+                {homeData.Row7?.heading}</h1>
               <p className="text-base text-gray-600 mb-6 md:mt-6 ">
-              {homeData.Row7?.content} </p>
+                {homeData.Row7?.content} </p>
 
 
-
-              <Link href={homeData?.Row7?.btnAction || "/nopathset"} >
+              <Link href={homeData?.Row7?.btnAction || "/gosite"} >
                 <button className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
-                  {homeData?.Row7?.btnlabel || "See More"}
+                  {homeData?.Row7?.btnLabel || "Get a ride"}
                 </button>
               </Link>
 
             </div>
-          </div>
-        </motion.section>)}
+
+          </div></motion.section>)}
         {/* Row 8 */}
         {homeData.Row8 && (<motion.section
           initial={{ opacity: 0, y: 20 }}

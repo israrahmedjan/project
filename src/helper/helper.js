@@ -217,5 +217,41 @@ async function getCareers() {
 
 
 
+// Get Footers
+async function getFooter() {
+ 
+  try {
+        const token = process.env.NEXT_PUBLIC_STRAPI_TOKEN;
+       
+        const params = new URLSearchParams({
+          'populate[Footer][populate]': '*',
+          'populate[Row1][populate]': '*',
+          'populate[Row1Listing][populate]': '*',
+          'populate[Row4][populate]': '*',
+          'populate[Row4Listing][populate]': '*',
+          'populate[Row2][populate]': '*',
+          'populate[SocialMedia][populate]': '*',
+         
+        //  'populate[Row2Listing][populate]': '*',
+        //  'populate[Row3][populate]': '*',
+   
+        });
+    
+        
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/footer?${params.toString()}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        const data = await res.json();
+        //console.log("Response Data:", data);
+        return data;
+      } catch (error) {
+        console.error("Error:", error);
+      }
+}
 
-  export {getHome,getUser1,getUser2,getCareers,getpaymentModel}
+  export {getHome,getUser1,getUser2,getCareers,getpaymentModel,getFooter}
