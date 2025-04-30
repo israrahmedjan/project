@@ -33,8 +33,9 @@ export default function RootLayout({ children }) {
     <body className={`${poppins.variable} font-poppins`}>
     {/* <LogRocketInitializer /> */}
     <GoogleAnalytics />
+    {/* <TawkToChat /> */}
   <ProvidersCustomization>
-    <TawkToChat />
+   
         <Header />
         {children}
 
