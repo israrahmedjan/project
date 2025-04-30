@@ -9,6 +9,7 @@ import LogRocket from 'logrocket';
 import LogRocketInitializer from "@/lib/LogRocketInitializer";
 import GoogleAnalytics from "@/lib/GoogleAnalytics";
 import TawkToChat from "@/lib/TawkToChat";
+import PaymentScreen from "@/lib/Onramper";
 
 
 const poppins = Poppins({
@@ -35,6 +36,7 @@ export default function RootLayout({ children }) {
     <GoogleAnalytics />
     {/* <TawkToChat /> */}
   <ProvidersCustomization>
+    {/* <PaymentScreen /> */}
    
         <Header />
         {children}
