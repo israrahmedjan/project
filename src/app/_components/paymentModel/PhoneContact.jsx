@@ -2,9 +2,18 @@
 
 import GooglePayButton from "@/lib/GooglePayButton";
 import { Phone, Mail } from "lucide-react"; // Lucide se icons import karna hai
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 export default function PhoneContact({data}) {
-   const price = useSelector((state) => state.counter.giftitem).toString();
+   const price = useSelector((state) => state.counter.giftitem);
+
+   const amount = "350"; 
+const [sendPrice,setsendPrice] = useState(0);
+   useEffect(()=>
+  {
+setsendPrice(price);
+  },[price])
+
   
   return (
     <div className="p-6 rounded-md w-full max-w-md mx-auto mt-10 border-gray-100">
@@ -12,6 +21,7 @@ export default function PhoneContact({data}) {
       {/* Phone Number Field */}
     
       <div className="relative mb-6">
+        {price}
         <select
           className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-transparent border-none outline-none text-gray-600 text-sm"
         >
@@ -30,7 +40,9 @@ export default function PhoneContact({data}) {
       </div>
       
 
-    <div className="h-20">  <GooglePayButton amount="450" />   </div>
+    <div className="h-20">  
+  <GooglePayButton amount={amount} />
+  </div>
     </div>
   );
 }
