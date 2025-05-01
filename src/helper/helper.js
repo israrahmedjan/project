@@ -66,9 +66,10 @@ async function getHomeSeo() {
             headers: {
               Authorization: `Bearer ${token}`,
             },
-            // next: {
-            //   revalidate: 60, // Revalidates the page every 60 seconds
-            // },
+            cache: 'no-store',
+              // next: {
+              //   revalidate: 60, // Revalidates the page every 60 seconds
+              // },
           }
         );
         const data = await res.json();
@@ -112,6 +113,10 @@ async function getUser1() {
             headers: {
               Authorization: `Bearer ${token}`,
             },
+            cache: 'no-store',
+            // next: {
+            //   revalidate: 60, // Revalidates the page every 60 seconds
+            // },
          
           }
         );
@@ -139,6 +144,10 @@ async function getUser1Seo() {
             headers: {
               Authorization: `Bearer ${token}`,
             },
+            cache: 'no-store',
+            // next: {
+            //   revalidate: 60, // Revalidates the page every 60 seconds
+            // },
          
           }
         );
@@ -183,6 +192,10 @@ async function getUser2() {
             headers: {
               Authorization: `Bearer ${token}`,
             },
+            cache: 'no-store',
+            // next: {
+            //   revalidate: 60, // Revalidates the page every 60 seconds
+            // },
           }
         );
         const data = await res.json();
@@ -208,6 +221,10 @@ async function getUser2Seo() {
             headers: {
               Authorization: `Bearer ${token}`,
             },
+            cache: 'no-store',
+            // next: {
+            //   revalidate: 60, // Revalidates the page every 60 seconds
+            // },
           }
         );
         const data = await res.json();
@@ -249,6 +266,10 @@ async function getpaymentModel() {
             headers: {
               Authorization: `Bearer ${token}`,
             },
+            cache: 'no-store',
+            // next: {
+            //   revalidate: 60, // Revalidates the page every 60 seconds
+            // },
           }
         );
         const data = await res.json();
@@ -274,6 +295,10 @@ async function getpaymentModelSeo() {
             headers: {
               Authorization: `Bearer ${token}`,
             },
+            cache: 'no-store',
+            // next: {
+            //   revalidate: 60, // Revalidates the page every 60 seconds
+            // },
           }
         );
         const data = await res.json();
