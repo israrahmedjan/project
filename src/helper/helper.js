@@ -112,7 +112,7 @@ async function getUser1() {
             headers: {
               Authorization: `Bearer ${token}`,
             },
-            // cache: 'no-store',
+            cache: 'no-store',
           }
         );
         const data = await res.json();
