@@ -43,7 +43,7 @@ function PaymentModel({paymentData}) {
 
 {/* Row 1 */}
 {paymentData.Row1 && (<motion.section
-          initial={{ opacity: 0, y: 100 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: false, amount: 0.3 }}
@@ -170,7 +170,7 @@ function PaymentModel({paymentData}) {
 
       {/* Row 2 */}
       {paymentData.Row2 && (<motion.section
-          initial={{ opacity: 0, y: 100 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: false, amount: 0.3 }}
@@ -239,7 +239,7 @@ function PaymentModel({paymentData}) {
         {/* Row 8 */}
         {paymentData.Row8 && (
  <motion.section
-                initial={{ opacity: 0, y: 100 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: false, amount: 0.3 }}
@@ -281,7 +281,7 @@ function PaymentModel({paymentData}) {
 
         {/* Row 5 */}
         {paymentData.Row5 && (<motion.section
-          initial={{ opacity: 0, y: 100 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: false, amount: 0.3 }}
@@ -316,7 +316,7 @@ function PaymentModel({paymentData}) {
 
         {/* Row 6 */}
         {paymentData.Row6 && (<motion.section
-          initial={{ opacity: 0, y: 100 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: false, amount: 0.3 }}
@@ -358,7 +358,7 @@ function PaymentModel({paymentData}) {
 
         {/* Row 7 */}
         {paymentData.Row7 && (<motion.section
-          initial={{ opacity: 0, y: 100 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: false, amount: 0.3 }}
@@ -400,7 +400,7 @@ function PaymentModel({paymentData}) {
 
         {/* Row 7 - Row7 Lisging */}
         {paymentData.Row6Listing && (<motion.section
-                initial={{ opacity: 0, y: 100 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: false, amount: 0.3 }}
@@ -427,7 +427,7 @@ function PaymentModel({paymentData}) {
        {/* Row 8 bg - image */}
          
        {paymentData.Row8 && (<motion.section
-              initial={{ opacity: 0, y: 100 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: false, amount: 0.3 }}
