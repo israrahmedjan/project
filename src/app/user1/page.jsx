@@ -3,10 +3,10 @@ import React from 'react'
 import User1 from '../_components/user1/User1'
 import { getUser1, getUser1Seo } from '@/helper/helper';
 
-
+export const dynamic = 'force-dynamic';
 export const generateMetadata = async () => {
   const seoData = await getUser1Seo();
-  console.log("Seo data User1",seoData.metaTitle);
+  //console.log("Seo data User1",seoData.metaTitle);
   return {
     title: seoData.metaTitle,
     description: seoData.metaDescription,
