@@ -44,8 +44,8 @@ async function getHome() {
             }
           );
           const data = await res.json();
-          console.log("Home Data:", data);
-          return data;
+         // console.log("Home Data:", data);
+          return data.data;
         } catch (error) {
           console.error("Error:", error.name);
         }

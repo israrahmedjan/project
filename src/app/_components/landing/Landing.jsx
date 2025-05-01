@@ -3,107 +3,32 @@ import { ArrowRight, Camera, CheckCircle, Clock, Mail, User } from 'lucide-react
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
-import Ticker from '../Ticker';
 import ServiceSlider from '../ServiceSlider';
 
 
 import { motion } from 'framer-motion';
-import { getHome } from '@/helper/helper'
-import Loading from '../Loading'
-import Breadcrumb from '../Breadcrumb'
-import MapWithSearch from '../MapWithSearch'
 
-function Landing() {
-  const [homeData, sethomeData] = useState(null);
+function Landing({ homeData }) {
+  //const [homeData, sethomeData] = useState(null);
 
 
   const domain = process.env.NEXT_PUBLIC_FRONT_DOMAIN;
   const strapiDomain = process.env.NEXT_PUBLIC_STRAPI_API_URL;
 
-  const icons = {
-    'vector': `${domain}/images/icons/Vector.png`,
-    'vector2': `${domain}/images/icons/Vector2.png`,
-    'camera': `${domain}/images/icons/camera.png`,
-    'handsdot': `${domain}/images/icons/handsdot.png`,
-    'handshake': `${domain}/images/icons/handshake.png`,
-    'pie': `${domain}/images/icons/pie.png`,
-    'circlearrow': `${domain}/images/icons/circlearrow.png`,
-    'graph': `${domain}/images/icons/graph.png`,
-    'heart': `${domain}/images/icons/heart.png`,
-  }
-  const servicesIcons = {
-    'user': `${domain}/images/services/user.png`,
-    'siezer': `${domain}/images/services/siezer.png`,
-    'map': `${domain}/images/services/map.png`,
-    'usersearch': `${domain}/images/services/usersearch.png`,
-    'like': `${domain}/images/services/like.png`,
-
-  }
-
-  const services = [
-    {
-      title: 'Web Development',
-      image: servicesIcons.user, // apni image path daalna
-      name: 'Custom Websites',
-      description: 'Building responsive and modern websites tailored to your needs.',
-    },
-    {
-      title: 'Mobile Apps',
-      image: servicesIcons.siezer,
-      name: 'iOS & Android Apps',
-      description: 'High-performance apps with great user experience.',
-    },
-    {
-      title: 'UI/UX Design',
-      image: servicesIcons.map,
-      name: 'Creative Designs',
-      description: 'Beautiful and functional designs that engage your audience.',
-    },
-    {
-      title: 'SEO Services',
-      image: servicesIcons.usersearch,
-      name: 'Boost Ranking',
-      description: 'Improve your site ranking and visibility on search engines.',
-    },
-    {
-      title: 'Wordpress Developer',
-      image: servicesIcons.like,
-      name: 'Custom Theme',
-      description: 'Beautiful and functional designs that engage your audience.',
-    },
-  ];
-
-  const getData = async () => {
-    const data = await getHome();
-    console.log("Home Data 11", data);
-    sethomeData(data.data);
-    //setcompleteData(data.data.Section1);
-  };
-
-  useEffect(() => {
-    console.log("Url live:", process.env.NEXT_PUBLIC_STRAPI_API_URL)
-    getData();
-  }, []);
-
-
-
-
-  // End Sign end message
-
 
   return (
     <>
 
-{/* <MapWithSearch /> */}
+      {/* <MapWithSearch /> */}
 
-      {homeData ? (<div>
+      <div>
 
 
-     
-     
 
-   
-        {/* <pre>{JSON.stringify(homeData.Row7?.image[0], null, 2)}</pre> */}
+
+
+
+        {/* <pre>{JSON.stringify(homeData, null, 2)}</pre> */}
         {/* <div>{strapiDomain}{homeData?.image?.url}</div> */}
         {/* Row 1 */}
         {homeData.Row1 && (<motion.section
@@ -181,7 +106,7 @@ function Landing() {
                         <div className='flex flex-col'><p>{listing?.content}</p>
                         </div>
                       </li>
-                                           </div>
+                      </div>
                     ))}
 
 
@@ -192,7 +117,7 @@ function Landing() {
                   <button className="px-4 py-2 md:px-4 md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
                     {homeData?.Row2.btnLabel || "Get it More"}
                   </button>
-                  <Link href= {homeData?.Row2.btnAction || "/gosite"} className='flex'><h2 className='font-normal text-primary hover:text-secondary md:text-[18px]'>Learn more about our app</h2><ArrowRight /></Link>
+                  <Link href={homeData?.Row2.btnAction || "/gosite"} className='flex'><h2 className='font-normal text-primary hover:text-secondary md:text-[18px]'>Learn more about our app</h2><ArrowRight /></Link>
                 </div>
               </div>
 
@@ -231,39 +156,39 @@ function Landing() {
 
               <div className="col-span-4 md:col-span-4 mt-10 mb-10 flex flex-col md:flex-row justify-center gap-2 items-center">
 
-              {homeData.Row3Listing.map((row3listing, index) => (
-                <div key={index}>
-                   <div className="flex flex-col items-center bg-white p-6 rounded-2xl shadow-lg w-80">
-                  {/* <img src="https://img.freepik.com/free-photo/portrait-handsome-fashion-stylish-businessman-model-dressed-elegant-black-classic-suit-posing-metrosexual_158538-9181.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740" alt="Profile Image" className="w-24 h-24 rounded-full object-cover mb-4" /> */}
-                 {row3listing?.image?.url ? (<Image
-                          src={`${row3listing?.image.url}`}
-                          alt={`${row3listing?.image.url}`}
-                          width={100}
-                          height={100}
-                          className="w-30 h-30 rounded-full object-cover mb-4"
+                {homeData.Row3Listing.map((row3listing, index) => (
+                  <div key={index}>
+                    <div className="flex flex-col items-center bg-white p-6 rounded-2xl shadow-lg w-80">
+                      {/* <img src="https://img.freepik.com/free-photo/portrait-handsome-fashion-stylish-businessman-model-dressed-elegant-black-classic-suit-posing-metrosexual_158538-9181.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740" alt="Profile Image" className="w-24 h-24 rounded-full object-cover mb-4" /> */}
+                      {row3listing?.image?.url ? (<Image
+                        src={`${row3listing?.image.url}`}
+                        alt={`${row3listing?.image.url}`}
+                        width={100}
+                        height={100}
+                        className="w-30 h-30 rounded-full object-cover mb-4"
 
-                        />
-                        ) : (<Image
-                          src={`${domain}/images/noimage.jpg`}
-                          alt={`No Image`}
-                          width={50}
-                          height={50} />)}
-                 
-                  <h2 className="text-lg font-medium mb-2">{row3listing?.heading}</h2>
-                  <p className="text-gray-600 text-center mb-4">
-                  {row3listing?.content.substring(0,50)}
-                  </p>
-                 
-              <Link href={row3listing?.btnAction || "/goSite"} >
-                <button className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
-                  {row3listing?.btnlabel || "See More"}
-                </button>
-              </Link>
-                </div>
-                </div>
-              ))}
+                      />
+                      ) : (<Image
+                        src={`${domain}/images/noimage.jpg`}
+                        alt={`No Image`}
+                        width={50}
+                        height={50} />)}
 
-               
+                      <h2 className="text-lg font-medium mb-2">{row3listing?.heading}</h2>
+                      <p className="text-gray-600 text-center mb-4">
+                        {row3listing?.content.substring(0, 50)}
+                      </p>
+
+                      <Link href={row3listing?.btnAction || "/goSite"} >
+                        <button className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
+                          {row3listing?.btnlabel || "See More"}
+                        </button>
+                      </Link>
+                    </div>
+                  </div>
+                ))}
+
+
                 {/* <div className="flex flex-col items-center bg-white p-6 rounded-2xl shadow-lg w-80">
                   <img src="https://img.freepik.com/free-photo/person-job-male-college-men_1150-1779.jpg?uid=R166975833&ga=GA1.1.1254879187.1728653419&semt=ais_hybrid&w=740" alt="Profile Image" className="w-24 h-24 rounded-full object-cover mb-4" />
                   <h2 className="text-lg font-medium mb-2">John</h2>
@@ -322,7 +247,7 @@ function Landing() {
                         <div className='flex flex-col'><p>{listing?.content}</p>
                         </div>
                       </li>
-                                           </div>
+                      </div>
                     ))}
 
 
@@ -332,13 +257,13 @@ function Landing() {
                 <div className='flex text-base flex-col md:flex-row  justify-between items-center gap-2'>
                   <button className="px-4 py-2 md:px-4 md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
                     {homeData?.Row4.btnLabel || "Get it More"}
-                   
-                   
+
+
                   </button>
-                  <Link href= {homeData?.Row4.btnAction || "/gosite"} className='flex'><h2 className='font-normal text-primary hover:text-secondary md:text-[18px]'>Learn more about our app</h2><ArrowRight /></Link>
+                  <Link href={homeData?.Row4.btnAction || "/gosite"} className='flex'><h2 className='font-normal text-primary hover:text-secondary md:text-[18px]'>Learn more about our app</h2><ArrowRight /></Link>
                 </div>
               </div>
-              
+
               <div className="col-span-2 order-1 md:order-2 flex justify-center items-center">
                 {homeData.Row4?.image?.url ? (<Image
                   src={`${homeData.Row4?.image.url}`}
@@ -374,7 +299,7 @@ function Landing() {
               <div className="col-span-2 order-2 md:order-1 flex justify-center items-center">
 
 
-                  {homeData.Row5?.image?.url ? (<Image
+                {homeData.Row5?.image?.url ? (<Image
                   src={`${homeData.Row5?.image.url}`}
                   alt={`${homeData.Row5?.image.url}`}
                   width={450}
@@ -390,7 +315,7 @@ function Landing() {
               <div className="col-span-2 order-1 md:order-2  border-gray-100 border-r  p-2 md:p-6">
                 <h1 className="text-xl md:text-3xl md:pb-2 font-normal text-primary">{homeData?.Row5?.heading}?</h1>
                 <p className="text-base text-gray-600 mb-2">
-                {homeData.Row5?.content}
+                  {homeData.Row5?.content}
                 </p>
                 {homeData.Row5Listing && (
                   <ul className='flex flex-col justify-start items-start gap-3 mb-8 text-sm'>
@@ -441,11 +366,11 @@ function Landing() {
 
             </div>
           </div>
-          </motion.section>)}
-          
+        </motion.section>)}
+
 
         {/* Row 6 */}
-        {homeData.Row6 && ( <motion.section
+        {homeData.Row6 && (<motion.section
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -539,7 +464,7 @@ function Landing() {
                         <div className='flex flex-col'><p>{listing?.content}</p>
                         </div>
                       </li>
-                                           </div>
+                      </div>
                     ))}
 
 
@@ -550,7 +475,7 @@ function Landing() {
                   <button className="px-4 py-2 md:px-4 md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
                     {homeData?.Row8.btnLabel || "Get it More"}
                   </button>
-                  <Link href= {homeData?.Row8.btnAction || "/gosite"} className='flex'><h2 className='font-normal text-primary hover:text-secondary md:text-[18px]'>Learn more about our app</h2><ArrowRight /></Link>
+                  <Link href={homeData?.Row8.btnAction || "/gosite"} className='flex'><h2 className='font-normal text-primary hover:text-secondary md:text-[18px]'>Learn more about our app</h2><ArrowRight /></Link>
                 </div>
               </div>
 
@@ -574,7 +499,7 @@ function Landing() {
             </div>
           </div></motion.section>
         )}
-      </div>) : (<div><Loading /></div>)}
+      </div>
     </>
   )
 }
