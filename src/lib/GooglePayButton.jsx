@@ -15,8 +15,8 @@ export default function GooglePayButton({ amount }) {
 
         const button = paymentsClient.createButton({
           onClick: () => onGooglePayClicked(amount),
-          buttonType: 'buy', // 'buy', 'donate', 'checkout', etc.
-          buttonColor: 'black', // 'default', 'white', 'black'
+          buttonType: 'google',
+          buttonColor: 'white', 
         });
 
         const container = document.getElementById('google-pay-button-container');
@@ -49,7 +49,7 @@ export default function GooglePayButton({ amount }) {
         },
       ],
       merchantInfo: {
-        merchantName: 'Your Business Name',
+        merchantName: 'Test Store',
       },
       transactionInfo: {
         totalPriceStatus: 'FINAL',
@@ -70,7 +70,7 @@ export default function GooglePayButton({ amount }) {
       })
       .catch((err) => {
         console.error('Payment failed:', err);
-        alert('Payment Failed or Canceled');
+        alert('Payment Failed or Cancelled');
       });
   };
 

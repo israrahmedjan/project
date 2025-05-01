@@ -1,24 +1,39 @@
 'use client'
 import Image from 'next/image';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Crosshair, CrossIcon, MapPin } from "lucide-react"; // Location icon lucide-react se
+import { useDispatch, useSelector } from 'react-redux';
+import { increment, decrement, giftItemLoad } from '@/redux/slices/counterSlice'; // path adjust karein
 
 function Items({data,dataArray}) {
     const domain = process.env.NEXT_PUBLIC_FRONT_DOMAIN;
     const [location, setLocation] = useState("New York");
     const mapSrc = `https://maps.google.com/maps?q=${encodeURIComponent(location)}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
-  
+    const dispatch = useDispatch();
+  const count = useSelector((state) => state.counter.value);
+  const [price,setprice] = useState(null)
   
     const handleChange = (e) => {
       setLocation(e.target.value);
     };
+
+    useEffect(()=>
+    {
+setprice(data?.headingSmall*count);
+
+    },[count,price])
   
+    useEffect(()=>
+    {
+      dispatch(giftItemLoad(parseInt(data?.headingSmall*count)));
+    },[count])
   return (
     <>
      <div className='border-gray-200 border-l-2  pl-6 pr-2 flex flex-row justify-between items-center gap-2'>
     <div className='flex flex-col items-center gap-2'>
       {/* {JSON.stringify(data,null,2)} */}
         <div><h3 className='text-base font-semibold'>{data?.heading}</h3></div>
+       
         <div>
         {/* <Image
                 src={`${domain}/images/gift/location.png`}
@@ -48,11 +63,11 @@ function Items({data,dataArray}) {
       
       {/* Item fields increment/decrement */}
       <div className="flex items-center gap-2 border-gray-100 border-b-[1px] pb-3 text-center">
-        <div className='w-full mx-auto'>
-            <span className='mx-4'>${data?.headingSmall}</span>
-            <button className="px-3 py-1 bg-primary hover:bg-secondary text-white rounded-full ">-</button>
-        <span className="text-lg font-semibold items-center mx-4">1</span> {/* Quantity */}
-        <button className="px-3 py-1 bg-primary hover:bg-secondary text-white rounded-full">+</button>
+        <div className='w-[250px] mx-auto'>
+            <span className='mx-4'>${price}</span>
+            <button onClick={() => dispatch(decrement())} className="px-3 py-1 bg-primary hover:bg-secondary text-white rounded-full ">-</button>
+        <span className="text-lg font-semibold items-center w-[10px] mx-4">{count}</span> {/* Quantity */}
+        <button  onClick={() => dispatch(increment())}  className="px-3 py-1 bg-primary hover:bg-secondary text-white rounded-full">+</button>
         </div>
       </div>
 

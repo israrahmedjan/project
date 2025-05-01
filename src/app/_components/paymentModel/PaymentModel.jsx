@@ -16,12 +16,15 @@ import PhoneContact from './PhoneContact'
 import Items from './Items'
 import PhoneContactSmall from './PhoneContactSmall'
 import ItemsSmall from './ItemsSmall'
+import GooglePayButton from '@/lib/GooglePayButton'
+import { useSelector } from 'react-redux'
 
 function PaymentModel() {
 
   const [paymentData, setpaymentData] = useState(null);
   const [showLightbox, setShowLightbox] = useState(false);
   const domain = process.env.NEXT_PUBLIC_FRONT_DOMAIN;
+  const price = useSelector((state) => state.counter.giftitem).toString();
 
   const icons = {
     'vector': `${domain}/images/icons/Vector.png`,
@@ -106,6 +109,7 @@ function PaymentModel() {
                   {paymentData?.Row1?.btnLabel || "Get a ride"}
                 </button>
               </Link>
+             
 
             </div>
 
@@ -142,7 +146,7 @@ function PaymentModel() {
     <div><p className='text-center text-sm mb-2'>Get that hardworking man the best gift, a night out with his future forever buddy!</p></div>
   </div>
   <div className='flex justify-center flex-col md:flex-row items-center mt-0 gap-2'>
-    <div><PhoneContact /></div>
+    <div><PhoneContact data= {paymentData.Row3} /></div>
     <Items data= {paymentData.Row3} dataArray= {paymentData.Row3Listing}  />
   </div>
   <div className='flex justify-between mx-20 border-gray-100 border-t-[1px] h-[10px] pt-2 items-center  gap-10 mt-0'>
@@ -150,8 +154,11 @@ function PaymentModel() {
       Cancel
     </button></div>
     <div><button className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
-      Pay $250
+      Pay ${price}
     </button></div>
+
+         
+
   </div>
 </div>
 

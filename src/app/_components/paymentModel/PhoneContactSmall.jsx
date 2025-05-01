@@ -1,5 +1,6 @@
 "use client";
 
+import GooglePayButton from "@/lib/GooglePayButton";
 import { Phone, Mail } from "lucide-react"; // Lucide se icons import karna hai
 
 export default function PhoneContactSmall() {
@@ -25,7 +26,7 @@ export default function PhoneContactSmall() {
         <Mail className="absolute right-10 top-1/2 transform -translate-y-1/2 text-gray-500 w-5 h-5" />
       </div>
 
-    <div className="h-10 border-red-500 border">Pay With Google</div>
+    <div className="h-10 border-red-500 border bg-black"><GooglePayButton amount="450" />Gooogle</div>
     </div>
   );
 }
