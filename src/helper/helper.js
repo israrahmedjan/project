@@ -58,7 +58,7 @@ async function getHomeSeo() {
             headers: {
               Authorization: `Bearer ${token}`,
             },
-            // cache: 'no-store',
+            cache: 'no-store',
             // next: {
             //   revalidate: 60, // Revalidates the page every 60 seconds
             // },
