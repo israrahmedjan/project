@@ -16,7 +16,7 @@ export const generateMetadata = async () => {
 async function page() {
 
   const user2Data = await getUser2(); // ✅ async function ko await karo
-  console.log("homeData", user2Data);
+  //console.log("homeData", user2Data);
   
   return (
     <>

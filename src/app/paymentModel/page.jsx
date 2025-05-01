@@ -6,7 +6,7 @@ import { getpaymentModel, getpaymentModelSeo } from '@/helper/helper';
 
 export const generateMetadata = async () => {
   const seoData = await getpaymentModelSeo();
-  console.log("Seo data",seoData.metaTitle);
+ // console.log("Seo data",seoData.metaTitle);
   return {
     title: seoData.metaTitle,
     description: seoData.metaDescription,

@@ -1,11 +1,3 @@
-import React from 'react'
-import axios from 'axios';
-import { useSelector } from "react-redux";
-import Login from '@/app/_components/user/Login';
-import { useDispatch } from 'react-redux';
-import { addUserInfo, addWishListItems, loadOldData, loginAction, LoginModelBoxAction } from '@/redux/slices/userSlice';
-import { addToWishlist } from './whislist';
-import { addcartItems } from '@/redux/slices/cartSlice';
 
 async function getHome() {
  
@@ -66,7 +58,7 @@ async function getHomeSeo() {
             headers: {
               Authorization: `Bearer ${token}`,
             },
-            cache: 'no-store',
+            // cache: 'no-store',
             // next: {
             //   revalidate: 60, // Revalidates the page every 60 seconds
             // },

@@ -18,7 +18,7 @@ export const generateMetadata = async () => {
 
 export default async function Home() {
    const homeData = await getHome(); // ✅ async function ko await karo
-   console.log("homeData", homeData);
+   //console.log("homeData", homeData);
   return (
     <>
     <div className="mt-[130px]">
