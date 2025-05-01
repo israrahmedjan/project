@@ -1,18 +1,18 @@
 
-import { getHome } from "@/helper/helper";
+import { getHome, getHomeSeo } from "@/helper/helper";
 import Landing from "./_components/landing/Landing";
 import Loading from "./_components/Loading";
+import seoData from "./seoData";
 // import SearchBox from "./_components/produccts/SearchBox";
 
 
 export const generateMetadata = async () => {
-  // const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/seo/about`);
-  // const data = await res.json();
-
+  const seoData = await getHomeSeo();
+  console.log("Seo data",seoData.metaTitle);
   return {
-    title: "Testing Title",
-    description: "Testing Descriptons",
-    keywords: ["business", "project", "test", "seo"],
+    title: seoData.metaTitle,
+    description: seoData.metaDescription,
+    keywords: [`${seoData.keywords}`],
   };
 };
 

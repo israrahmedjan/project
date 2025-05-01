@@ -50,6 +50,33 @@ async function getHome() {
           console.error("Error:", error.name);
         }
 }
+async function getHomeSeo() {
+ 
+  try {
+        const token = process.env.NEXT_PUBLIC_STRAPI_TOKEN;
+       
+        const params = new URLSearchParams({
+          'populate[SEO][populate]': '*',
+          });
+        
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/homepage?${params.toString()}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+            // next: {
+            //   revalidate: 60, // Revalidates the page every 60 seconds
+            // },
+          }
+        );
+        const data = await res.json();
+       // console.log("Home Data:", data);
+        return data.data.SEO;
+      } catch (error) {
+        console.error("Error:", error.name);
+      }
+}
 
 // Get User 1 Data
 async function getUser1() {
@@ -299,4 +326,4 @@ async function getHeader() {
       }
 }
 
-  export {getHome,getUser1,getUser2,getCareers,getpaymentModel,getFooter,getHeader}
+  export {getHome,getHomeSeo,getUser1,getUser2,getCareers,getpaymentModel,getFooter,getHeader}
