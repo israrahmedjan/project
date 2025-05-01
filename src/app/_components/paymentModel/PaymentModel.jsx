@@ -121,7 +121,7 @@ function PaymentModel() {
 {/* Row3 */}
       {/* Light Box Gift Items */}
       {/* Medium and large devices */}
-      {paymentData.Row3 && (<div>{showLightbox && (<div><div className="hidden md:flex fixed inset-0 bg-black bg-opacity-60  justify-center items-center z-50 text-gray-600">
+      {paymentData.Row3 && (<div>{showLightbox && (<div><div className="flex fixed inset-0 bg-black bg-opacity-60  justify-center items-center z-50 text-gray-600">
 
 <div className="bg-white p-2 rounded-lg shadow-lg w-[90%] md:w-[800px]  h-[630px]">
   <div className='mx-auto flex flex-col items-center border-gray-100 border-b-2 border'>
@@ -166,7 +166,7 @@ function PaymentModel() {
   
 {/* Small devices */}
 {showLightbox && (
-           <div className="md:hidden fixed inset-0 bg-black bg-opacity-60 justify-center items-center z-50 text-gray-600">
+           <div className="hidden fixed inset-0 bg-black bg-opacity-60 justify-center items-center z-50 text-gray-600">
 
            <div className="bg-white p-2 rounded-lg shadow-lg w-[90%] md:w-[800px] border-red-400 border h-[660px] mx-auto relative">
              <div className='mx-auto order-2 flex flex-col items-center'>
