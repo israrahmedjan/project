@@ -3,14 +3,14 @@ import "./globals.css";
 import { ProvidersCustomization } from "@/redux/Providers";
 import Header from "./_components/header/Header";
 import Footer from "./_components/footer/Footer";
-import { motion } from "framer-motion";
+
 import { ClerkProvider } from '@clerk/nextjs';
 import LogRocket from 'logrocket';
 import LogRocketInitializer from "@/lib/LogRocketInitializer";
 import GoogleAnalytics from "@/lib/GoogleAnalytics";
 import TawkToChat from "@/lib/TawkToChat";
 import PaymentScreen from "@/lib/Onramper";
-
+import { useSelector } from 'react-redux'
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -26,6 +26,8 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  
+  
   
   return (
     
