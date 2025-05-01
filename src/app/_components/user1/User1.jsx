@@ -13,81 +13,18 @@ import Breadcrumb from '../Breadcrumb'
 import { getUser1 } from '@/helper/helper'
 import Loading from '../Loading'
 
-function User1() {
+function User1({user1Data}) {
 
 
     const domain = process.env.NEXT_PUBLIC_FRONT_DOMAIN;
-    const [user1Data, setuser1Data] = useState(null);
-    const icons = {
-        'vector': `${domain}/images/icons/Vector.png`,
-        'vector2': `${domain}/images/icons/Vector2.png`,
-        'camera': `${domain}/images/icons/camera.png`,
-        'handsdot': `${domain}/images/icons/handsdot.png`,
-        'handshake': `${domain}/images/icons/handshake.png`,
-        'pie': `${domain}/images/icons/pie.png`,
-        'circlearrow': `${domain}/images/icons/circlearrow.png`,
-        'graph': `${domain}/images/icons/graph.png`,
-        'heart': `${domain}/images/icons/heart.png`,
-    }
-    const servicesIcons = {
-        'user': `${domain}/images/services/user.png`,
-        'siezer': `${domain}/images/services/siezer.png`,
-        'map': `${domain}/images/services/map.png`,
-        'usersearch': `${domain}/images/services/usersearch.png`,
-        'like': `${domain}/images/services/like.png`,
-
-    }
-
-    const services = [
-        {
-            title: 'Web Development',
-            image: servicesIcons.user, // apni image path daalna
-            name: 'Custom Websites',
-            description: 'Building responsive and modern websites tailored to your needs.',
-        },
-        {
-            title: 'Mobile Apps',
-            image: servicesIcons.siezer,
-            name: 'iOS & Android Apps',
-            description: 'High-performance apps with great user experience.',
-        },
-        {
-            title: 'UI/UX Design',
-            image: servicesIcons.map,
-            name: 'Creative Designs',
-            description: 'Beautiful and functional designs that engage your audience.',
-        },
-        {
-            title: 'SEO Services',
-            image: servicesIcons.usersearch,
-            name: 'Boost Ranking',
-            description: 'Improve your site ranking and visibility on search engines.',
-        },
-        {
-            title: 'Wordpress Developer',
-            image: servicesIcons.like,
-            name: 'Custom Theme',
-            description: 'Beautiful and functional designs that engage your audience.',
-        },
-    ];
-
-const getData = async () => {
-    const data = await getUser1();
-    console.log("User 1 Data", data);
-    setuser1Data(data.data);
-    //setcompleteData(data.data.Section1);
-    };
-  
-    useEffect(() => {
-      console.log("Url live:",process.env.NEXT_PUBLIC_STRAPI_API_URL)
-      getData();
-    }, []);
+   
+    
 
 
     return (
         <>
        
-            {user1Data ? (<div>
+            <div>
                {/* Row 1 */}
                {user1Data.Row1 && (<motion.section
           initial={{ opacity: 0, y: 30 }}
@@ -453,7 +390,7 @@ const getData = async () => {
       </div></motion.section>)}
 
  
-            </div>):<div><Loading /></div>}
+            </div>
         </>
     )
 }

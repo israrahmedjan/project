@@ -1,24 +1,27 @@
 import React from 'react'
 
 import User1 from '../_components/user1/User1'
+import { getUser1, getUser1Seo } from '@/helper/helper';
 
 
 export const generateMetadata = async () => {
-  // const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/seo/about`);
-  // const data = await res.json();
-
+  const seoData = await getUser1Seo();
+  console.log("Seo data User1",seoData.metaTitle);
   return {
-    title: "About us",
-    description: "testing about us",
-    keywords: ["business", "project", "test", "seo"],
+    title: seoData.metaTitle,
+    description: seoData.metaDescription,
+    keywords: [`${seoData.keywords}`],
   };
 };
 
-function page() {
+async function page() {
+  const user1Data = await getUser1(); // ✅ async function ko await karo
+  console.log("Data user1",user1Data)
   return (
     <>
     <div className="">
-      <User1 />
+     
+      {user1Data ? (<User1 user1Data ={user1Data } />) : (<div><Loading /></div>)}
     </div>
     </>
   )
