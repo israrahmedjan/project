@@ -85,7 +85,7 @@ const getData = async () => {
               <div>
                 <a
                   href="mailto:jobs@example.com"
-                  className="inline-block mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
+                  className="px-4 py-2 md:px-4 float-left md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition"
                 >
                   Apply Now
                 </a>
