@@ -2,6 +2,7 @@
 import React from 'react'
 import User2 from '../_components/user2/User2'
 import { getUser2, getUser2Seo } from '@/helper/helper';
+export const dynamic = 'force-dynamic';
 
 export const generateMetadata = async () => {
   const seoData = await getUser2Seo();

@@ -3,6 +3,7 @@ import React from 'react'
 
 import PaymentModel from '../_components/paymentModel/PaymentModel'
 import { getpaymentModel, getpaymentModelSeo } from '@/helper/helper';
+export const dynamic = 'force-dynamic';
 
 export const generateMetadata = async () => {
   const seoData = await getpaymentModelSeo();

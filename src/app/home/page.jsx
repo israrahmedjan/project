@@ -1,6 +1,7 @@
 import GooglePayButton from '@/lib/GooglePayButton'
 import React from 'react'
 import CounterUI from '../_components/CounterUI';
+export const dynamic = 'force-dynamic';
 
 function page() {
   const amount = '24.99'; // This can come from cart total, user input, etc.
