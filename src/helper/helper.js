@@ -112,7 +112,7 @@ async function getUser1() {
             headers: {
               Authorization: `Bearer ${token}`,
             },
-         
+            cache: 'no-store',
           }
         );
         const data = await res.json();
@@ -249,7 +249,6 @@ async function getpaymentModel() {
             headers: {
               Authorization: `Bearer ${token}`,
             },
-            cache: 'no-store',
               // next: {
               //   revalidate: 60, // Revalidates the page every 60 seconds
               // },
