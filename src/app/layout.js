@@ -34,9 +34,9 @@ export default function RootLayout({ children }) {
     <ClerkProvider>
     <html lang="en">
     <body className={`${poppins.variable} font-poppins`}>
-    {/* <LogRocketInitializer /> */}
+    <LogRocketInitializer />
     <GoogleAnalytics />
-    {/* <TawkToChat /> */}
+    <TawkToChat />
   <ProvidersCustomization>
     {/* <PaymentScreen /> */}
    
