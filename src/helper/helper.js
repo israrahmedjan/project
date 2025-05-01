@@ -38,10 +38,13 @@ async function getHome() {
               headers: {
                 Authorization: `Bearer ${token}`,
               },
+              // next: {
+              //   revalidate: 60, // Revalidates the page every 60 seconds
+              // },
             }
           );
           const data = await res.json();
-          //console.log("Response Data:", data);
+          console.log("Home Data:", data);
           return data;
         } catch (error) {
           console.error("Error:", error.name);
@@ -81,6 +84,7 @@ async function getUser1() {
             headers: {
               Authorization: `Bearer ${token}`,
             },
+         
           }
         );
         const data = await res.json();

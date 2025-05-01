@@ -13,11 +13,6 @@ import { usePathname } from "next/navigation";
 import { getHeader } from '@/helper/helper';
 
 
-
-
-
-
-
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
     const hommeUrl = process.env.NEXT_PUBLIC_FRONT_DOMAIN;
@@ -93,6 +88,9 @@ export default function Header() {
                    </Link>
                    <Link href={`${hommeUrl}/careers`} className="text-primary text-lg font-medium hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
                         Careers
+                   </Link>
+                   <Link href={`${hommeUrl}/testIsr`} className="text-primary text-lg font-medium hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
+                        Test ISR
                    </Link>
                    {/* <Link href={`${hommeUrl}/about`} className="text-primary text-lg font-medium hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
                         About

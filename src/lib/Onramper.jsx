@@ -17,7 +17,13 @@ export default function PaymentScreen() {
       <h1 className="text-2xl font-bold mb-4">Buy Crypto</h1>
 
       {!paymentSuccess ? (
-   <a href="https://buy.onramper.com?apiKey=pk_prod_01HETEQF46GSK6BS5JWKDF31BT&mode=buy" target="_blank" class="button">Buy Crypto</a>
+    <iframe        
+    src="https://buy.onramper.com?apiKey=pk_prod_01HETEQF46GSK6BS5JWKDF31BT&mode=buy"
+    title="Onramper Widget"
+    height="630px"
+    width="420px"
+    allow="accelerometer; autoplay; camera; gyroscope; payment; microphone"
+  />
   
       ) : (
         <div className="text-green-600 text-lg font-semibold">
