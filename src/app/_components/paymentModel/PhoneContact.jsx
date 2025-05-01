@@ -21,7 +21,7 @@ setsendPrice(price);
       {/* Phone Number Field */}
     
       <div className="relative mb-6">
-        {price}
+       
         <select
           className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-transparent border-none outline-none text-gray-600 text-sm"
         >
