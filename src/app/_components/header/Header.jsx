@@ -89,9 +89,7 @@ export default function Header() {
                    <Link href={`${hommeUrl}/careers`} className="text-primary text-lg font-medium hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
                         Careers
                    </Link>
-                   <Link href={`${hommeUrl}/testIsr`} className="text-primary text-lg font-medium hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
-                        Test ISR
-                   </Link>
+                 
                    {/* <Link href={`${hommeUrl}/about`} className="text-primary text-lg font-medium hover:text-secondary h-20 flex items-center justify-center px-6 border-gray-100 border-r">
                         About
                    </Link> */}
