@@ -238,18 +238,7 @@ async function getpaymentModel() {
          'populate[Row6][populate]': '*',
          'populate[Row6Listing][populate]': '*',
          'populate[Row7][populate]': '*',
-        // 'populate[Row4][populate]': '*',
-        // 'populate[Row4Listing][populate]': '*',
-        // //  'populate[Row3Listing][populate]': '*',
-        //  'populate[Row5][populate]': '*',
-        //  'populate[Row5Listing][populate]': '*',
-        //  'populate[Row6][populate]': '*',
-        //  'populate[Row6Listing][populate]': '*',
-        //  'populate[Row7][populate]': '*',
-        // //  'populate[Row8][populate]': '*',
-        // //  'populate[Row8Listing][populate]': '*',
-        // //  'populate[Row8][populate]': '*',
-        // //  'populate[Row8Listing][populate]': '*',
+ 
         });
     
         
@@ -263,7 +252,32 @@ async function getpaymentModel() {
         );
         const data = await res.json();
         //console.log("Response Data:", data);
-        return data;
+        return data.data;
+      } catch (error) {
+        console.error("Error:", error);
+      }
+}
+async function getpaymentModelSeo() {
+ 
+  try {
+        const token = process.env.NEXT_PUBLIC_STRAPI_TOKEN;
+       
+        const params = new URLSearchParams({
+          'populate[SEO][populate]': '*',
+        });
+    
+        
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/payment-model?${params.toString()}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        const data = await res.json();
+        //console.log("Response Data:", data);
+        return data.data.SEO;
       } catch (error) {
         console.error("Error:", error);
       }
@@ -378,4 +392,4 @@ async function getHeader() {
       }
 }
 
-  export {getHome,getHomeSeo,getUser1,getUser1Seo,getUser2,getUser2Seo,getCareers,getpaymentModel,getFooter,getHeader}
+  export {getHome,getHomeSeo,getUser1,getUser1Seo,getUser2,getUser2Seo,getCareers,getpaymentModel,getpaymentModelSeo,getFooter,getHeader}

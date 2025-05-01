@@ -19,45 +19,14 @@ import ItemsSmall from './ItemsSmall'
 import GooglePayButton from '@/lib/GooglePayButton'
 import { useSelector } from 'react-redux'
 
-function PaymentModel() {
+function PaymentModel({paymentData}) {
 
-  const [paymentData, setpaymentData] = useState(null);
+  //const [paymentData, setpaymentData] = useState(null);
   const [showLightbox, setShowLightbox] = useState(false);
   const domain = process.env.NEXT_PUBLIC_FRONT_DOMAIN;
   const price = useSelector((state) => state.counter.giftitem).toString();
 
-  const icons = {
-    'vector': `${domain}/images/icons/Vector.png`,
-    'vector2': `${domain}/images/icons/Vector2.png`,
-    'camera': `${domain}/images/icons/camera.png`,
-    'handsdot': `${domain}/images/icons/handsdot.png`,
-    'handshake': `${domain}/images/icons/handshake.png`,
-    'pie': `${domain}/images/icons/pie.png`,
-    'circlearrow': `${domain}/images/icons/circlearrow.png`,
-    'graph': `${domain}/images/icons/graph.png`,
-    'heart': `${domain}/images/icons/heart.png`,
-  }
-  const servicesIcons = {
-    'user': `${domain}/images/services/user.png`,
-    'siezer': `${domain}/images/services/siezer.png`,
-    'map': `${domain}/images/services/map.png`,
-    'usersearch': `${domain}/images/services/usersearch.png`,
-    'like': `${domain}/images/services/like.png`,
-
-  }
-
-
-  const getData = async () => {
-    const data = await getpaymentModel();
-    console.log("User 1 Data", data);
-    setpaymentData(data.data);
-    //setcompleteData(data.data.Section1);
-  };
-
-  useEffect(() => {
-    console.log("Url live:", process.env.NEXT_PUBLIC_STRAPI_API_URL)
-    getData();
-  }, []);
+  
   useEffect(() => {
     setShowLightbox(true); // page load pe modal open ho
   }, []);
@@ -70,7 +39,7 @@ function PaymentModel() {
 
 
     
-      {paymentData ? (<div>
+    <div>
 
 {/* Row 1 */}
 {paymentData.Row1 && (<motion.section
@@ -475,7 +444,7 @@ function PaymentModel() {
             </div>
           </div></motion.section>)}
     
-      </div>) : <div><Loading /></div>}
+      </div>
     </>
   )
 }
