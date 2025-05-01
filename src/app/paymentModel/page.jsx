@@ -16,7 +16,7 @@ export const generateMetadata = async () => {
 
 async function page() {
   const paymentData = await getpaymentModel(); // ✅ async function ko await karo
-   console.log("homeData", paymentData);
+   console.log("paymentData", paymentData);
   return (
     <>
     <div className="mt-[80px]">
