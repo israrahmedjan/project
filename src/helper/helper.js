@@ -186,7 +186,32 @@ async function getUser2() {
         );
         const data = await res.json();
         //console.log("Response Data:", data);
-        return data;
+        return data.data;
+      } catch (error) {
+        console.error("Error:", error);
+      }
+}
+async function getUser2Seo() {
+ 
+  try {
+        const token = process.env.NEXT_PUBLIC_STRAPI_TOKEN;
+       
+        const params = new URLSearchParams({
+          'populate[SEO][populate]': '*',
+        });
+       
+        
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/user2?${params.toString()}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        const data = await res.json();
+        //console.log("Response Data:", data);
+        return data.data.SEO;
       } catch (error) {
         console.error("Error:", error);
       }
@@ -353,4 +378,4 @@ async function getHeader() {
       }
 }
 
-  export {getHome,getHomeSeo,getUser1,getUser1Seo,getUser2,getCareers,getpaymentModel,getFooter,getHeader}
+  export {getHome,getHomeSeo,getUser1,getUser1Seo,getUser2,getUser2Seo,getCareers,getpaymentModel,getFooter,getHeader}
