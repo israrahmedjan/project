@@ -66,7 +66,6 @@ async function getHomeSeo() {
             headers: {
               Authorization: `Bearer ${token}`,
             },
-            cache: 'no-store',
             // next: {
             //   revalidate: 60, // Revalidates the page every 60 seconds
             // },
@@ -113,7 +112,6 @@ async function getUser1() {
             headers: {
               Authorization: `Bearer ${token}`,
             },
-            cache: 'no-store',
           }
         );
 
