@@ -81,11 +81,11 @@ function PaymentModel({paymentData}) {
                 {paymentData.Row1?.content} </p>
 
 
-              <Link href={paymentData?.Row1?.btnAction || "/gosite"} >
+              {/* <Link href={paymentData?.Row1?.btnAction || "/gosite"} >
                 <button className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
                   {paymentData?.Row1?.btnLabel || "Get a ride"}
                 </button>
-              </Link>
+              </Link> */}
              
 
             </div>

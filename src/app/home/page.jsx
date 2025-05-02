@@ -2,6 +2,7 @@
 import GooglePayButton from '@/lib/GooglePayButton'
 import React, { useState } from 'react'
 import CounterUI from '../_components/CounterUI';
+
 export const dynamic = 'force-dynamic';
 
 function page() {
@@ -17,7 +18,8 @@ function page() {
   return (
     <>
       <h1>Pay with Google Pay - ${price}</h1>
-      <GooglePayButton key={price} amount={price.toString()} />
+      {/* <GooglePayButton key={price} amount={price.toString()} /> */}
+     
       <div>QTY : <button className='bg-gray-500 p-5' onClick={AddPrice}>Change Price</button></div>
       
     <div>Home Page!</div>

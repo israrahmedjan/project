@@ -37,6 +37,7 @@ export default function RootLayout({ children }) {
     <LogRocketInitializer />
     <GoogleAnalytics />
     <TawkToChat />
+
   <ProvidersCustomization>
     {/* <PaymentScreen /> */}
    

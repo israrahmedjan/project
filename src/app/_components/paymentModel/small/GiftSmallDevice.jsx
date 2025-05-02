@@ -131,7 +131,7 @@ function GiftSmallDevice({data}) {
    <Mail className="absolute right-10 top-1/2 transform -translate-y-1/2 text-gray-500 w-5 h-5" />
  </div>
 
-<div className="h-10 font-semibold text-lg flex mt-4 justify-center"> <GooglePayButton  amount={"256"} /> </div>
+{/* <div className="h-10 font-semibold text-lg flex mt-4 justify-center"> <GooglePayButton  amount={"256"} /> </div> */}
 </div>
                  </div>
                  {/* <div className='flex justify-center border-gray-100 border-t pt-0 items-center gap-0 mt-0'>

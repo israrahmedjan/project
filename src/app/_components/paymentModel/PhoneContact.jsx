@@ -40,9 +40,10 @@ setsendPrice(price);
       </div>
       
 
-    <div className="h-20">  
+    <div className="h-20 absolut">  
       {/* {price > 0 ? "Greate":"Less than"} */}
-      { price > 0 && (<GooglePayButton key={price} amount={(price).toString()} />  )}
+      { price > 0 && (<GooglePayButton key={price} amount={(price).toString()} />  )} 
+     
       
   
   </div>
