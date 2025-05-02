@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 export default function PhoneContact({data}) {
    const price = useSelector((state) => state.counter.giftitem);
 
-   const amount = "350"; 
+ //  const amount = "350"; 
 const [sendPrice,setsendPrice] = useState(0);
    useEffect(()=>
   {
@@ -42,7 +42,7 @@ setsendPrice(price);
 
     <div className="h-20">  
       {/* {price > 0 ? "Greate":"Less than"} */}
-      { price > 0 && (<GooglePayButton amount={(price).toFixed(2).toString()} />  )}
+      { price > 0 && (<GooglePayButton key={price} amount={(price).toString()} />  )}
       
   
   </div>
