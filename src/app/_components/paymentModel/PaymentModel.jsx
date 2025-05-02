@@ -14,10 +14,10 @@ import { getpaymentModel, getUser2 } from '@/helper/helper'
 import Loading from '../Loading'
 import PhoneContact from './PhoneContact'
 import Items from './Items'
-import PhoneContactSmall from './PhoneContactSmall'
-import ItemsSmall from './ItemsSmall'
+
 import GooglePayButton from '@/lib/GooglePayButton'
 import { useSelector } from 'react-redux'
+import GiftSmall from './small/GiftSmallDevice'
 
 function PaymentModel({paymentData}) {
 
@@ -34,9 +34,17 @@ function PaymentModel({paymentData}) {
 
   return (
     <>
-      {/* Breadcrumbs */}
-   
-
+      
+      {/* Small devicess option */}
+      {paymentData.Row3 && (<motion.section
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: false, amount: 0.3 }}
+          className=""
+        >
+    <GiftSmall data={paymentData.Row3} />
+    </motion.section>)}
 
     
     <div>
@@ -134,44 +142,7 @@ function PaymentModel({paymentData}) {
 </div></div>)}</div>)}
   
 {/* Small devices */}
-{showLightbox && (
-           <div className="hidden fixed inset-0 bg-black bg-opacity-60 justify-center items-center z-50 text-gray-600">
 
-
-           <div className="bg-white p-2 rounded-lg shadow-lg w-[90%] md:w-[800px] h-[660px] mx-auto relative">
-             <div className='mx-auto order-2 flex flex-col items-center'>
-               <div className=''><Image
-                 src={`${domain}/images/gift/gift.png`}
-                 alt="No Image"
-                 width={50}
-                 height={50}
- 
-               /></div>
-
-{/* <div className="">
-  <GooglePayButton amount="5.00" />
-  <span>test</span>
-</div> */}
-               <div><h3 className='text-base pt-2  font-semibold'>The Gift Shop</h3></div>
-               <div><p className='text-center text-sm mt-2'>Get that hardworking man the best gift, a night out with his future forever buddy!</p></div>
-             </div>
-             <div className='flex order-1 justify-center flex-col items-center mt-1'>
-              
-               <ItemsSmall />
-               <div className=''><PhoneContactSmall /></div>
-             </div>
-             <div className='flex justify-center border-gray-100 border-t pt-0 items-center gap-0 mt-0'>
-               <div>  <button onClick={() => setShowLightbox(false)} className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
-                 Cancel
-               </button></div>
-               <div><button className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
-                 Pay $250
-               </button></div>
-             </div>
-           </div>
-     
-         </div>
-      )}
 
 
       {/* Row 2 */}

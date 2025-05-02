@@ -20,7 +20,7 @@ async function page() {
    console.log("paymentData", paymentData);
   return (
     <>
-    <div className="mt-[80px]">
+    <div className="mt-0 md:mt-[80px]">
     
       {paymentData ? (<PaymentModel paymentData={paymentData} />) : (<div><Loading /></div>)}
     </div>

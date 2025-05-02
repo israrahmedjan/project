@@ -18,7 +18,7 @@ function Breadcrumb() {
   return (
     <>
  
-    <div className="w-full bg-gray-50 mb-16 h-14">
+    <div className="w-full bg-gray-50 mb-0 md:mb-16  h-14">
     <div className="mx-4 md:mx-16 flex justify-between items-center">
 
   {/* Breadcrumbs */}
