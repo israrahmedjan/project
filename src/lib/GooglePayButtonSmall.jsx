@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 
-export default function GooglePayButton({ amount }) {
+export default function GooglePayButtonSmall({ amount }) {
   useEffect(() => {
     const script = document.createElement('script');
     script.src = 'https://pay.google.com/gp/p/js/pay.js';

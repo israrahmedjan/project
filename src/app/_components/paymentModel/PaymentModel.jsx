@@ -24,7 +24,7 @@ function PaymentModel({paymentData}) {
   //const [paymentData, setpaymentData] = useState(null);
   const [showLightbox, setShowLightbox] = useState(false);
   const domain = process.env.NEXT_PUBLIC_FRONT_DOMAIN;
-  const price = useSelector((state) => state.counter.giftitem).toString();
+  const price = useSelector((state) => state.counter.giftitem);
 
   
   useEffect(() => {
@@ -90,9 +90,9 @@ function PaymentModel({paymentData}) {
 {/* Row3 */}
       {/* Light Box Gift Items */}
       {/* Medium and large devices */}
-      {paymentData.Row3 && (<div>{showLightbox && (<div><div className="flex fixed inset-0 bg-black bg-opacity-60  justify-center items-center z-50 text-gray-600">
+      {paymentData.Row3 && (<div>{showLightbox && (<div><div className="hidden md:flex fixed inset-0 bg-black bg-opacity-60  justify-center items-center z-50 text-gray-600">
 
-<div className="bg-white p-2 rounded-lg shadow-lg w-[90%] md:w-[800px]  h-[630px]">
+<div className=" bg-white p-2 rounded-lg shadow-lg w-[90%] md:w-[800px]  h-[630px]">
   <div className='mx-auto flex flex-col items-center border-gray-100 border-b-2 border'>
     <div>
 
@@ -135,9 +135,10 @@ function PaymentModel({paymentData}) {
   
 {/* Small devices */}
 {showLightbox && (
-           <div className="hidden fixed inset-0 bg-black bg-opacity-60 justify-center items-center z-50 text-gray-600">
+           <div className="md:hidden fixed inset-0 bg-black bg-opacity-60 justify-center items-center z-50 text-gray-600">
 
-           <div className="bg-white p-2 rounded-lg shadow-lg w-[90%] md:w-[800px] border-red-400 border h-[660px] mx-auto relative">
+
+           <div className="bg-white p-2 rounded-lg shadow-lg w-[90%] md:w-[800px] h-[660px] mx-auto relative">
              <div className='mx-auto order-2 flex flex-col items-center'>
                <div className=''><Image
                  src={`${domain}/images/gift/gift.png`}
@@ -146,6 +147,11 @@ function PaymentModel({paymentData}) {
                  height={50}
  
                /></div>
+
+{/* <div className="">
+  <GooglePayButton amount="5.00" />
+  <span>test</span>
+</div> */}
                <div><h3 className='text-base pt-2  font-semibold'>The Gift Shop</h3></div>
                <div><p className='text-center text-sm mt-2'>Get that hardworking man the best gift, a night out with his future forever buddy!</p></div>
              </div>

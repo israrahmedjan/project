@@ -41,7 +41,10 @@ setsendPrice(price);
       
 
     <div className="h-20">  
-  <GooglePayButton amount={amount} />
+      {/* {price > 0 ? "Greate":"Less than"} */}
+      { price > 0 && (<GooglePayButton amount={(price).toFixed(2).toString()} />  )}
+      
+  
   </div>
     </div>
   );
