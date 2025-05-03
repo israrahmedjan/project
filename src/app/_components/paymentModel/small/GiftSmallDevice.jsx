@@ -1,20 +1,37 @@
 'use client'
 import Image from 'next/image';
-import React, { useState } from 'react'
-import ItemsSmall from './ItemsSmall';
-import PhoneContactSmall from './PhoneContactSmall';
+import React, { useEffect, useState } from 'react'
 import { Mail, MapPin, Phone } from 'lucide-react';
 import GooglePayButton from '@/lib/GooglePayButton';
+import { useDispatch, useSelector } from 'react-redux';
+import { increment, decrement, giftItemLoad } from '@/redux/slices/counterSlice'; // path adjust karein
+
 
 function GiftSmallDevice({data}) {
   const domain = process.env.NEXT_PUBLIC_FRONT_DOMAIN;
-   const [location, setLocation] = useState("New York");
-          const mapSrc = `https://maps.google.com/maps?q=${encodeURIComponent(location)}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
-        
-        
-          const handleChange = (e) => {
-            setLocation(e.target.value);
-          };
+  const [price,setprice] = useState(null)
+
+  const [location, setLocation] = useState("New York");
+  const mapSrc = `https://maps.google.com/maps?q=${encodeURIComponent(location)}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
+  const dispatch = useDispatch();
+const count = useSelector((state) => state.counter.value);
+
+
+  const handleChange = (e) => {
+    setLocation(e.target.value);
+  };
+
+  useEffect(()=>
+  {
+setprice(data?.headingSmall*count);
+
+  },[count,price])
+
+  useEffect(()=>
+  {
+    dispatch(giftItemLoad(parseInt(data?.headingSmall*count)));
+  },[count])
+
   return (
     <div>     <div className='md:hidden w-full bg-gray-50 mt-4 animate-fade-in-down'>
 
@@ -28,8 +45,8 @@ function GiftSmallDevice({data}) {
                      height={50}
      
                    /></div>
-                   <div><h3 className='text-base pt-2  font-semibold'>The Gift Shop</h3></div>
-                   <div><p className='text-center text-sm mt-2'>Get that hardworking man the best gift, a night out with his future forever buddy!</p></div>
+                   <div><h3 className='text-base pt-2  font-semibold'>{data.heading}</h3></div>
+                   <div><p className='text-center text-sm mt-2'>{data.content}!</p></div>
                  </div>
                  <div className='flex order-1 justify-center flex-col items-center mt-1'>
                   
@@ -78,10 +95,10 @@ function GiftSmallDevice({data}) {
           {/* Item fields increment/decrement */}
           <div className="flex flex-col items-center gap-2 text-center">
         <div className='w-full mx-auto'>
-            <span className='mx-4'>$250</span>
-        <button className="px-1 py-1 bg-primary hover:bg-secondary text-white rounded-full ">-</button>
+            <span className='mx-4'>${price}</span>
+        <button onClick={() => dispatch(decrement())} className="px-1 py-1 bg-primary hover:bg-secondary text-white rounded-full ">-</button>
         <span className="text-lg font-semibold items-center mx-2">1</span> {/* Quantity */}
-        <button className="px-1 py-1 bg-primary hover:bg-secondary text-white rounded-full">+</button>
+        <button onClick={() => dispatch(increment())} className="px-1 py-1 bg-primary hover:bg-secondary text-white rounded-full">+</button>
         </div>
       </div>
 
@@ -142,6 +159,8 @@ function GiftSmallDevice({data}) {
                      Pay $250
                    </button></div>
                  </div> */}
+
+                  { price > 0 && (<GooglePayButton key={price} amount={(price).toString()} />  )} 
                </div>
     
     
