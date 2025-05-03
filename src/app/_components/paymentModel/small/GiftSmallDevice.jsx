@@ -97,7 +97,7 @@ setprice(data?.headingSmall*count);
         <div className='w-full mx-auto'>
             <span className='mx-4'>${price}</span>
         <button onClick={() => dispatch(decrement())} className="px-1 py-1 bg-primary hover:bg-secondary text-white rounded-full ">-</button>
-        <span className="text-lg font-semibold items-center mx-2">1</span> {/* Quantity */}
+        <span className="text-lg font-semibold items-center mx-2">{count}</span> {/* Quantity */}
         <button onClick={() => dispatch(increment())} className="px-1 py-1 bg-primary hover:bg-secondary text-white rounded-full">+</button>
         </div>
       </div>
