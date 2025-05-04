@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 export default function GooglePayButtonSmall({ amount }) {
   useEffect(() => {
     const script = document.createElement('script');
+    console.log("Google pay useeffect!")
     script.src = 'https://pay.google.com/gp/p/js/pay.js';
     script.async = true;
     script.onload = () => {
@@ -19,7 +20,7 @@ export default function GooglePayButtonSmall({ amount }) {
           buttonColor: 'blue', 
         });
 
-        const container = document.getElementById('google-pay-button-container');
+        const container = document.getElementById('google-pay-button-container-small');
         if (container && container.childElementCount === 0) {
           container.appendChild(button);
         }
@@ -74,5 +75,5 @@ export default function GooglePayButtonSmall({ amount }) {
       });
   };
 
-  return <div id="google-pay-button-container" />;
+  return <div id="google-pay-button-container-small" />;
 }

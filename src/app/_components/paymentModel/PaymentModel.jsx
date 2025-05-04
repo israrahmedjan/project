@@ -13,6 +13,7 @@ import { motion } from 'framer-motion';
 
 import GiftSmall from './small/GiftSmallDevice'
 import GiftlargeDevice from './large/GiftlargeDevice'
+import GooglePayButton from '@/lib/GooglePayButton'
 
 function PaymentModel({ paymentData }) {
 
@@ -29,7 +30,23 @@ function PaymentModel({ paymentData }) {
     
 {/* <div><pre>{JSON.stringify(paymentData?.Row5,null,2)}</pre></div> */}
 
+
     { paymentData && (<div>
+
+      {/* <div className='mb-56 border-red-500 border'>
+      <h1>Googe pay test</h1>
+      <GooglePayButton amount="55" />
+      </div> */}
+
+
+
+  {/* Row3 */}
+
+        {/* Medium and large devices */}
+        {paymentData?.Row3 && (<div>
+   
+   <GiftlargeDevice data={paymentData.Row3} dataListing={paymentData.Row3Listing}  />
+ </div>)}
 
       {/* Small devicess option */}
       {paymentData?.Row3 && (<motion.section
@@ -41,6 +58,10 @@ function PaymentModel({ paymentData }) {
       >
         <GiftSmall data={paymentData.Row3} />
       </motion.section>)}
+        {/* Light Box Gift Items */}
+  
+
+
 
 
       <div>
@@ -77,10 +98,11 @@ function PaymentModel({ paymentData }) {
                 {paymentData.Row1?.content} </p>
 
 
-               <Link href={paymentData?.Row1?.btnAction || "/gosite"} >
-                <button className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
+               <Link href={paymentData?.Row1?.btnAction || "/gosite"} className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
+                {/* <button className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
                   {paymentData?.Row1?.btnLabel || "Get a ride"}
-                </button>
+                </button> */}
+               {paymentData?.Row1?.btnLabel || "Get a ride"}
               </Link> 
 
 
@@ -91,13 +113,7 @@ function PaymentModel({ paymentData }) {
 
 
 
-        {/* Row3 */}
-        {/* Light Box Gift Items */}
-        {/* Medium and large devices */}
-        {paymentData?.Row3 && (<div>
-
-          <GiftlargeDevice data={paymentData.Row3} dataListing={paymentData.Row3Listing}  />
-        </div>)}
+      
 
      
 
@@ -145,10 +161,14 @@ function PaymentModel({ paymentData }) {
            
 
                 <div className='flex text-base flex-col md:flex-row  justify-between items-center gap-2'>
-                  <button className="px-4 py-2 md:px-4 md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
-                    {paymentData?.Row2.btnLabel || "Get it More"}
-                  </button>
-                  <Link href={paymentData?.Row2.btnAction || "/gosite"} className='flex'><h2 className='font-normal text-primary hover:text-secondary md:text-[18px]'>Learn more about our app</h2><ArrowRight /></Link>
+                  
+                  <Link href={paymentData?.Row2.btnAction || "/gosite"} className="px-4 py-2 md:px-4 md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition" >
+                  {paymentData?.Row2.btnLabel || "Get it More"}
+                  </Link>
+                  {/* <button className="px-4 py-2 md:px-4 md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
+                    Get a reide
+                  </button> */}
+                  <Link href={paymentData?.Row2.btnAction || "/gosite"} className="flex"><h2 className='font-normal text-primary hover:text-secondary md:text-[18px]'>Learn more about our app</h2><ArrowRight /></Link>
                 </div>
               </div>
 
@@ -241,12 +261,12 @@ function PaymentModel({ paymentData }) {
               <p className="text-base text-gray-600 mb-6 md:mt-6 ">
                 {paymentData.Row5?.content} </p>
 
-<Link href={`${paymentData?.Row5.btnAction}`} >
-{paymentData?.Row5?.btnLabel ? (
-                <button className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
-                  {paymentData?.Row5.btnLabel}
-                </button>
-):null}
+<Link href={`${paymentData?.Row5.btnAction}`} className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition" >
+{paymentData?.Row5?.btnLabel }
+                {/* // <button className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
+                //   {paymentData?.Row5.btnLabel}
+                // </button> */}
+
               </Link>
            
 
@@ -285,10 +305,11 @@ function PaymentModel({ paymentData }) {
                 {paymentData.Row6?.content} </p>
 
 
-              <Link href={paymentData?.Row6?.btnAction || "/gosite"} >
-                <button className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
+              <Link href={paymentData?.Row6?.btnAction || "/gosite"} className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition" >
+              {paymentData?.Row6?.btnLabel || "Get a ride"}
+                {/* <button className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
                   {paymentData?.Row6?.btnLabel || "Get a ride"}
-                </button>
+                </button> */}
               </Link>
 
             </div>
@@ -327,10 +348,11 @@ function PaymentModel({ paymentData }) {
                 {paymentData.Row7?.content} </p>
 
 
-              <Link href={paymentData?.Row7?.btnAction || "/gosite"} >
-                <button className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
+              <Link href={paymentData?.Row7?.btnAction || "/gosite"} className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition" >
+              {paymentData?.Row7?.btnLabel || "Get a ride"}
+                {/* <button className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
                   {paymentData?.Row7?.btnLabel || "Get a ride"}
-                </button>
+                </button> */}
               </Link>
 
             </div>
@@ -384,9 +406,9 @@ function PaymentModel({ paymentData }) {
           </div></motion.section>)}
 
       </div>
-
+     
       </div>)}
-
+   
     </>
   )
 }

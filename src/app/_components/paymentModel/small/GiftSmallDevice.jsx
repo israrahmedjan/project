@@ -5,6 +5,7 @@ import { Mail, MapPin, Phone } from 'lucide-react';
 import GooglePayButton from '@/lib/GooglePayButton';
 import { useDispatch, useSelector } from 'react-redux';
 import { increment, decrement, giftItemLoad } from '@/redux/slices/counterSlice'; // path adjust karein
+import GooglePayButtonSmall from '@/lib/GooglePayButtonSmall';
 
 
 function GiftSmallDevice({data}) {
@@ -31,12 +32,15 @@ setprice(data?.headingSmall*count);
   {
     dispatch(giftItemLoad(parseInt(data?.headingSmall*count)));
   },[count])
-
+if(!count) return null
+if(!location) return null
+if(!price) return null
+if(!data) return null
   return (
-    <div>     <div className='md:hidden w-full bg-gray-50 mt-4 animate-fade-in-down'>
+    <div>     <div className='md:hidden w-full bg-gray-50 mt-4 animate-fade-in-down mb-16'>
 
     <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16  mb-4 ">
-    <div className="bg-white p-2 rounded-lg shadow-lg w-[90%] md:w-[800px] h-[660px] mx-auto relative">
+    <div className="bg-white p-2 rounded-lg shadow-lg w-[90%] mx-auto">
                  <div className='mx-auto order-2 flex flex-col items-center'>
                   <div className=''><Image
                      src={`${domain}/images/gift/gift.png`}
@@ -65,8 +69,8 @@ setprice(data?.headingSmall*count);
 <div className="w-full flex justify-center">
         <iframe
           title="Google Maps"
-          width="150"
-          height="75"
+          width="100%"
+          height="200"
           style={{ border: 0 }}
           loading="lazy"
           allowFullScreen
@@ -96,9 +100,9 @@ setprice(data?.headingSmall*count);
           <div className="flex flex-col items-center gap-2 text-center">
         <div className='w-full mx-auto'>
             <span className='mx-4'>${price}</span>
-        <button onClick={() => dispatch(decrement())} className="px-1 py-1 bg-primary hover:bg-secondary text-white rounded-full ">-</button>
+        <button onClick={() => dispatch(decrement())} className="px-auto  h-5 w-5 bg-primary hover:bg-secondary text-white rounded-full ">-</button>
         <span className="text-lg font-semibold items-center mx-2">{count}</span> {/* Quantity */}
-        <button onClick={() => dispatch(increment())} className="px-1 py-1 bg-primary hover:bg-secondary text-white rounded-full">+</button>
+        <button onClick={() => dispatch(increment())} className="px-auto  h-5 w-5 bg-primary hover:bg-secondary text-white rounded-full">+</button>
         </div>
       </div>
 
@@ -126,10 +130,10 @@ setprice(data?.headingSmall*count);
     </div>
 
   </div>
-  <div className="p-1 rounded-md w-full max-w-md mx-auto mt-0">
+  <div className="p-1 rounded-md w-full max-w-md mx-auto mt-0 ">
  
  {/* Phone Number Field */}
- <div className="relative mb-1">
+ <div className="relative mb-1 ">
 
    <select
      className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-transparent border-none outline-none text-gray-600 text-sm"
@@ -151,16 +155,10 @@ setprice(data?.headingSmall*count);
 {/* <div className="h-10 font-semibold text-lg flex mt-4 justify-center"> <GooglePayButton  amount={"256"} /> </div> */}
 </div>
                  </div>
-                 {/* <div className='flex justify-center border-gray-100 border-t pt-0 items-center gap-0 mt-0'>
-                   <div>  <button onClick={() => setShowLightbox(false)} className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
-                     Cancel
-                   </button></div>
-                   <div><button className="px-4 py-2 md:px-4 float-right md:py-2 bg-primary hover:bg-secondary text-white rounded-full  transition">
-                     Pay $250
-                   </button></div>
-                 </div> */}
-
-                  { price > 0 && (<GooglePayButton key={price} amount={(price).toString()} />  )} 
+             
+<div className=' mx-auto flex items-center justify-center mt-5'>
+                  { price > 0 && (<GooglePayButtonSmall key={price} amount={(price).toString()} className="mx-auto"  />  )} 
+               </div>
                </div>
     
     

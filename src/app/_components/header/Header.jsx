@@ -143,13 +143,13 @@ export default function Header() {
 
         {/* Menu Button */}
         <nav className="flex items-center">
-          <button onClick={toggleMenu} className="p-2">
+          <span onClick={toggleMenu} className="p-2">
             {menuOpen ? (
               <X className="w-8 h-8 text-primary" />
             ) : (
               <Menu className="w-8 h-8 text-primary" />
             )}
-          </button>
+          </span>
         </nav>
       </div>
 

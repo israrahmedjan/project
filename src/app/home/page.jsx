@@ -18,7 +18,7 @@ function page() {
   return (
     <>
       <h1>Pay with Google Pay - ${price}</h1>
-      {/* <GooglePayButton key={price} amount={price.toString()} /> */}
+      <GooglePayButton key={price} amount={price.toString()} />
      
       <div>QTY : <button className='bg-gray-500 p-5' onClick={AddPrice}>Change Price</button></div>
       

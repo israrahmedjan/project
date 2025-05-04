@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 export default function GooglePayButton({ amount }) {
   useEffect(() => {
     const script = document.createElement('script');
+    console.log("Google pay useeffect!")
     script.src = 'https://pay.google.com/gp/p/js/pay.js';
     script.async = true;
     script.onload = () => {

@@ -91,9 +91,9 @@ setprice(data?.headingSmall*count);
     </div>
     
 
-  <div className="h-20 absolut">  
+  <div className="h-20 relative">  
     {/* {price > 0 ? "Greate":"Less than"} */}
-    { price > 0 && (<GooglePayButton key={price} amount={(price).toString()} />  )} 
+    { price > 0 && (<GooglePayButton key={price} amount={(price).toString()} className="absolute z-50"  />  )} 
    
     
 
