@@ -21,7 +21,7 @@ async function page() {
   
   return (
     <>
-    <div className="mt-[80px]">
+    <div className="mt-5 md:mt-[100px]">
       
       {user2Data ? (<User2 user2Data={user2Data} />) : (<div><Loading /></div>)}
     </div>

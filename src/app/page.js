@@ -21,7 +21,7 @@ export default async function Home() {
    //console.log("homeData", homeData);
   return (
     <>
-    <div className="mt-[130px]">
+    <div className="mt-5 md:mt-[100px]">
     {/* <pre>{JSON.stringify(mydata, null, 2)}</pre> */}
     {homeData ? (<Landing homeData={homeData} />) : (<div><Loading /></div>)}
     </div>

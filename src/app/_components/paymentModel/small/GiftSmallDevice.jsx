@@ -37,10 +37,12 @@ if(!location) return null
 if(!price) return null
 if(!data) return null
   return (
-    <div>     <div className='md:hidden w-full bg-gray-50 mt-4 animate-fade-in-down mb-16'>
+    <div className="md:hidden grid grid-cols-1 md:grid-cols-4 gap-1  md:gap-2 mx-4 md:mx-16 mb-10  animate-fade-in-down">   
+      
+       <div className='md:hidden w-full  animate-fade-in-down pt-4 mb-16'>
 
     <div className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-2 mx-4 md:mx-16  mb-4 ">
-    <div className="bg-white p-2 rounded-lg shadow-lg w-[90%] mx-auto">
+    <div className="bg-white p-2 rounded-lg shadow-lg w-[100%] mx-auto">
                  <div className='mx-auto order-2 flex flex-col items-center'>
                   <div className=''><Image
                      src={`${domain}/images/gift/gift.png`}

@@ -16,10 +16,10 @@ export const generateMetadata = async () => {
 
 async function page() {
   const user1Data = await getUser1(); // ✅ async function ko await karo
-  console.log("Data user1",user1Data)
+ // console.log("Data user1",user1Data)
   return (
     <>
-    <div className="">
+    <div className="mt-5 md:mt-[100px]">
      
       {user1Data ? (<User1 user1Data ={user1Data } />) : (<div><Loading /></div>)}
     </div>
