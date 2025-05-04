@@ -1,13 +1,15 @@
 'use client';
 
 import Script from 'next/script';
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 export default function GoogleAnalytics() {
+  if (!GA_ID) return null; // No GA ID, do not render scripts
   return (
     <>
       {/* Load the gtag.js script */}
       <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-N03S465KCH"
+       src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
         strategy="afterInteractive"
       />
       
@@ -18,7 +20,7 @@ export default function GoogleAnalytics() {
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', 'G-N03S465KCH');
+          gtag('config', '${GA_ID}');
         `}
       </Script>
     </>

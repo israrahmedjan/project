@@ -5,9 +5,10 @@ import { useEffect } from 'react';
 import LogRocket from 'logrocket';
 
 export default function LogRocketInitializer() {
+  const logRocketId = process.env.NEXT_PUBLIC_LOGROCKET_ID;
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      LogRocket.init('tjh6br/first-fiverr-project');
+    if (logRocketId) {
+      LogRocket.init(logRocketId);
     }
   }, []);
 
