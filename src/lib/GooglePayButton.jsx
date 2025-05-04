@@ -1,11 +1,13 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function GooglePayButton({ amount }) {
+  const [message, setMessage] = useState(null);
+  const [messageType, setMessageType] = useState(null); // 'success' | 'error'
+
   useEffect(() => {
     const script = document.createElement('script');
-    console.log("Google pay useeffect!")
     script.src = 'https://pay.google.com/gp/p/js/pay.js';
     script.async = true;
     script.onload = () => {
@@ -17,7 +19,7 @@ export default function GooglePayButton({ amount }) {
         const button = paymentsClient.createButton({
           onClick: () => onGooglePayClicked(amount),
           buttonType: 'pay',
-          buttonColor: 'blue', 
+          buttonColor: 'blue',
         });
 
         const container = document.getElementById('google-pay-button-container');
@@ -67,13 +69,30 @@ export default function GooglePayButton({ amount }) {
     paymentsClient.loadPaymentData(paymentDataRequest)
       .then((paymentData) => {
         console.log('Payment success:', paymentData);
-        alert('Payment Successful!');
+        setMessage('Payment Successful!');
+        setMessageType('success');
       })
       .catch((err) => {
         console.error('Payment failed:', err);
-        alert('Payment Failed or Cancelled');
+        setMessage('Payment Failed or Cancelled.');
+        setMessageType('error');
       });
   };
 
-  return <div id="google-pay-button-container" />;
+  return (
+    <div>
+      <div id="google-pay-button-container" />
+      
+      {/* Display Message */}
+      {message && (
+        <div
+          className={`mt-4 p-3 rounded text-xl mx-auto font-semibold italic  ${
+            messageType === 'success' ? 'text-green-600' : 'bg-red-100 text-red-800'
+          }`}
+        >
+          {message}
+        </div>
+      )}
+    </div>
+  );
 }
